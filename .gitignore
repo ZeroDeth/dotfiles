@@ -1,0 +1,13 @@
+*.DS_Store
+/backup
+/tmp
+
+.tmux/backup
+.tmux/tmp
+
+.vim/backup
+.vim/tmp
+.vim/.viminfo
+
+zsh/backup
+zsh/tmp
