@@ -1,13 +1,15 @@
 *.DS_Store
-/backup
-/tmp
+*backup
+*tmp
+*Resources
 
-.tmux/backup
-.tmux/tmp
+#.tmux/backup
+#.tmux/tmp
 
-.vim/backup
-.vim/tmp
-.vim/.viminfo
+#.vim/backup
+#.vim/tmp
+#.vim/.viminfo
 
-zsh/backup
-zsh/tmp
+#zsh/backup
+#zsh/tmp
+
