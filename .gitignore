@@ -1,15 +1,18 @@
 *.DS_Store
-~/GDrive/dotfiles/backup/*
-~/GDrive/dotfiles/tmp/*
-~/GDrive/dotfiles/Resources/*
+backup/*
+tmp/*
+Resources/*
 
-~/GDrive/dotfiles/.tmux/backup/*
-~/GDrive/dotfiles/.tmux/tmp/*
+#tmux
+.tmux/backup/*
+.tmux/tmp/*
 
-~/GDrive/dotfiles/.vim/backup/*
-~/GDrive/dotfiles/.vim/tmp/*
-~/GDrive/dotfiles/.vim/.viminfo/*
+#vim
+.vim/backup/*
+.vim/tmp/*
+.vim/.viminfo
 
-~/GDrive/dotfiles/zsh/backup/*
-~/GDrive/dotfiles/zsh/tmp/*
+#zsh
+zsh/backup/*
+zsh/tmp/*
 
