@@ -4,15 +4,20 @@ tmp/*
 Resources/*
 
 #tmux
+.tmux/orig/*
 .tmux/backup/*
 .tmux/tmp/*
 
 #vim
+.vim/orig/*
 .vim/backup/*
 .vim/tmp/*
 .vim/.viminfo
 
 #zsh
+zsh/orig/*
 zsh/backup/*
 zsh/tmp/*
 
+#bash
+bash/orig/*
