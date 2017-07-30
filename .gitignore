@@ -12,7 +12,6 @@ Resources/*
 .vim/orig/*
 .vim/backup/*
 .vim/tmp/*
-.vim/.viminfo
 
 #zsh
 zsh/orig/*

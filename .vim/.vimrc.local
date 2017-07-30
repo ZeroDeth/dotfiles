@@ -4,6 +4,17 @@ if exists("+colorcolumn")
   set colorcolumn=81          " display a marker after column 80
 endif
 
+" -- command mode --------------------------------------------------------------
+
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <M-b> <S-Left>
+cnoremap <M-f> <S-Right>
+
 "  -- Start of vim-plug manager ------------------------------------------------
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
@@ -13,7 +24,7 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-" Plug 'junegunn/vim-easy-align'
+"Plug 'junegunn/vim-easy-align'
 
 " Any valid git URL is allowed
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
@@ -23,19 +34,19 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 " Using a non-master branch
-" Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
 " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 " Plugin options
-" Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+"Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 
 " Plugin outside ~/.vim/plugged with post-update hook
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Unmanaged plugin (manually installed and updated)
-Plug '~/my-prototype-plugin'
+"Plug '~/my-prototype-plugin'
 
 " Code to execute when the plugin is lazily loaded on demand
 Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
