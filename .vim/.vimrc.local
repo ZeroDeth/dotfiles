@@ -4,6 +4,19 @@ if exists("+colorcolumn")
   set colorcolumn=81          " display a marker after column 80
 endif
 
+" --              --------------------------------------------------------------
+
+" E576: Failed to parse ShaDa file: extra bytes in msgpack string at position 3
+" https://vi.stackexchange.com/questions/10028/e576-failed-to-parse-shada-file-extra-bytes-in-msgpack-string-at-position-3
+" Keep the existing file name when running vim, and use another when using neovim
+    if !has('nvim')
+      set viminfo+=n~/.vim/.viminfo
+    else
+      " Do nothing here to use the neovim default
+      " or do soemething like:
+      " set viminfo+=n~/.shada
+    endif
+
 " -- command mode --------------------------------------------------------------
 
 cnoremap <C-a> <Home>
@@ -65,12 +78,12 @@ Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.py' }
 " set the filetype to ansible, ansible_template, or ansible_hosts if auto-detection does not work
 :set ft=ansible
 
-" let g:ansible_unindent_after_newline = 1
-" let g:ansible_attribute_highlight = "ob"
-" let g:ansible_name_highlight = 'd'
-" let g:ansible_extra_keywords_highlight = 1
-" let g:ansible_normal_keywords_highlight = 'Constant'
-" let g:ansible_with_keywords_highlight = 'Constant'
+  let g:ansible_unindent_after_newline = 1
+  let g:ansible_attribute_highlight = "ob"
+  let g:ansible_name_highlight = 'd'
+  let g:ansible_extra_keywords_highlight = 1
+  let g:ansible_normal_keywords_highlight = 'Constant'
+  let g:ansible_with_keywords_highlight = 'Constant'
 
 " Ansible snippets
 " Plug 'phenomenes/ansible-snippets'
@@ -144,6 +157,11 @@ Plug 'plasticboy/vim-markdown'
   let g:vim_markdown_json_frontmatter = 1
   let g:vim_markdown_no_extensions_in_markdown = 1
   let g:vim_markdown_autowrite = 1
+
+" Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+
+" javascript libraries syntax
+"  let g:used_javascript_libs = 'jquery,underscore,react,flux,chai'
 
 " Initialize plugin system
 call plug#end()

@@ -91,7 +91,8 @@ if has("persistent_undo")
   set undofile  " enable persistent undo
 endif
 
-let &viminfo=&viminfo . ",n" . s:vimdir . "/.viminfo" " viminfo location
+" E138: Can't write viminfo file ~/.vim/.viminfo
+"  let &viminfo=&viminfo . ",n" . s:vimdir . "/.viminfo" " viminfo location
 
 
 " -- file type detection -------------------------------------------------------

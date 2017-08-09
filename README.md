@@ -50,7 +50,16 @@
 8. Navigation from command line
   - Vim +N filename: Go to the Nth line of the file after opening it.
 
-##
+### Disabling auto indent temporarily to paste
+```
+:set paste
+:set nopaste
+```
+or
+Avoid having to turn paste on and off, just put the text. Rather than going into insert mode and pasting, in command mode type
+`"+p`
+
+###
 Type
 
 :h cmdline-editing

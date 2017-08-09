@@ -264,3 +264,25 @@ bind C-z send-prefix
 
 # move status line to top
 #set -g status-position top
+
+# -- List of plugins -----------------------------------------------------------
+# Tmux Plugin Manager
+set -g @tpm_plugins '         \
+  tmux-plugins/tpm             \
+  tmux-plugins/tmux-sensible    \
+  tmux-plugins/tmux-resurrect    \
+  tmux-plugins/tmux-continuum     \
+ '
+
+## Restore tmux environment after system restart.
+#run-shell ~/.tmux/plugins/tmux-resurrect/resurrect.tmux
+
+## last saved environment is automatically restored when tmux is started.
+#run-shell ~/.tmux/plugins/tmux-continuum/continuum.tmux
+set -g @continuum-restore 'on'
+
+## Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
+
+## Fixes iterm2 integration. Should go after "run '~/.tmux/plugins/tpm/tpm'"
+#setw -g aggressive-resize off
