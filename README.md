@@ -44,7 +44,7 @@
   - /i – Search for a pattern which will you take you to the next occurrence of it.
   - ?i – Search for a pattern which will you take you to the previous occurrence of it.
   - * – Go to the next occurrence of the current word under the cursor.
-  - # – Go to the previous occurrence of the current word under the cursor.
+  - #– Go to the previous occurrence of the current word under the cursor.
 7. Code navigation
   - % – Go to the matching braces, or parenthesis inside code.
 8. Navigation from command line

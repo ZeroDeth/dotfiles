@@ -286,3 +286,6 @@ run '~/.tmux/plugins/tpm/tpm'
 
 ## Fixes iterm2 integration. Should go after "run '~/.tmux/plugins/tpm/tpm'"
 #setw -g aggressive-resize off
+
+# Toggle synchronization panes option
+bind E set-window-option synchronize-panes

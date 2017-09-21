@@ -44,6 +44,12 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+  nnoremap <F5> :NERDTreeToggle<CR>
+
+" A plugin of NERDTree showing git status
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
 " Using a non-master branch
@@ -98,7 +104,13 @@ Plug 'markcornick/vim-vagrant'
 
 Plug 'hashivim/vim-packer'
 
-Plug 'scrooloose/nerdcommenter'
+" Comment functions so powerful—no comment necessary.
+" Plug 'scrooloose/nerdcommenter'
+
+" Add spaces after comment delimiters by default
+" let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+" let g:NERDCompactSexyComs = 1
 
 Plug 'ervandew/supertab'
 
@@ -132,7 +144,7 @@ Plug 'kien/ctrlp.vim'
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 " set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
-  let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+" let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
   let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/]\.(git|hg|svn)$',
     \ 'file': '\v\.(exe|so|dll)$',
