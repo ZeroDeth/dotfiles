@@ -1,0 +1,15 @@
+==> Casks
+
+atom
+docker
+font-hack-nerd-font
+font-hack-nerd-font-mono
+font-hasklig-nerd-font
+font-sourcecodepro-nerd-font
+font-sourcecodepro-nerd-font-mono
+google-cloud-sdk
+iterm2
+minikube
+pdk
+vagrant
+virtualbox
