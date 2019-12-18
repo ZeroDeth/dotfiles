@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# `.exports` is used to provide custom variables.
+#
+# This file is used as a part of `.shell_env`
+
+# === GitHub ===
+
+## create a personal access token:
+## https://github.com/settings/tokens/new?scopes=gist,public_repo&description=Homebrew
+export HOMEBREW_GITHUB_API_TOKEN=""
+
+# === Homebrew ===
+
+## Tell homebrew to not autoupdate every single time I run it (just once a week).
+export HOMEBREW_AUTO_UPDATE_SECS=604800
