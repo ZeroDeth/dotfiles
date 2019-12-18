@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+
+# `.functions` provides helper functions for shell.
+#
+# This file is used as a part of `.shell_env`
+
+# === Commonly used functions ===
+
+## Delete a given line number in the known_hosts file.
+knownrm() {
+  re='^[0-9]+$'
+  if ! [[ $1 =~ $re ]] ; then
+    echo "error: line number missing" >&2;
+  else
+    sed -i '' "$1d" ~/.ssh/known_hosts
+  fi
+}
+
+## Display the Top 10 most frequently used shell commands that I type, which is as follows:
+function commands() {
+  awk '{a[$2]++}END{for(i in a){print a[i] " " i}}'
+}
+
+## To run gitignore.io from your command line you need an active internet connection and an environment function. You need to add a function to your environment that lets you access the gitignore.io API.
+function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}
+
+pyclean () {
+  # Cleans py[cod] and __pychache__ dirs in the current tree:
+  find . | grep -E "(__pycache__|\.py[cod]$)" | xargs rm -rf
+}
+
+mc () {
+  # Create a new directory and enter it
+  mkdir -p "$@" && cd "$@"
+}
+
+cdf () {
+  # cd into whatever is the forefront Finder window.
+  local path=$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')
+  echo "$path"
+  cd "$path"
+}
+
+# From Dan Ryan's blog - http://danryan.co/using-antigen-for-zsh.html
+man() {
+  # Shows pretty `man` page.
+  env \
+    LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+    LESS_TERMCAP_md=$(printf "\e[1;31m") \
+    LESS_TERMCAP_me=$(printf "\e[0m") \
+    LESS_TERMCAP_se=$(printf "\e[0m") \
+    LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+    LESS_TERMCAP_ue=$(printf "\e[0m") \
+    LESS_TERMCAP_us=$(printf "\e[1;32m") \
+      man "$@"
+}
+
+loadenv() {
+  while read line; do
+    if [ "${line:0:1}" = '#' ]; then
+      continue
+    fi
+    export $line > /dev/null
+  done < "$1"
+  echo 'Loaded!'
+}
+
+# === Helm functions ===
+
+## Easily install/uninstall Helm on RBAC Kubernetes
+## https://medium.com/@pczarkowski/easily-install-uninstall-helm-on-rbac-kubernetes-8c3c0e22d0d7
+helmins() {
+ kubectl -n kube-system create serviceaccount tiller
+ kubectl create clusterrolebinding tiller --clusterrole cluster-admin --serviceaccount=kube-system:tiller
+ helm init --service-account=tiller
+}
+
+helmdel() {
+ kubectl -n kube-system delete deployment tiller-deploy
+ kubectl delete clusterrolebinding tiller
+ kubectl -n kube-system delete serviceaccount tiller
+}

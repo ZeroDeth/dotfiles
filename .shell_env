@@ -1,0 +1,31 @@
+#!/usr/bin/env zsh
+
+# `shell_env.sh` is a main file for any general-case utils.
+#
+# This file is used as a source file for zsh.
+
+# === Plugin management ===
+
+# Antibody is a shell plugin manager made from the ground up thinking about performance.
+# Documentation can be found at https://getantibody.github.io
+# A plugin file is basically text file ~/.zsh_plugins.txt that has one plugin per line.
+
+# antibody bundle < "$HOME/.antibody.txt" > "$HOME/.zsh-plugins"
+# source "$HOME/.zsh-plugins"
+
+source <(antibody init)
+antibody bundle < $HOME/.zsh_plugins.txt
+
+# === Shell parts ===
+
+source "$HOME/.shell/.aliases"
+source "$HOME/.shell/.exports"
+source "$HOME/.shell/.external"
+source "$HOME/.shell/.functions"
+source "$HOME/.shell/.kubectl_aliases"
+
+# === Local variables and overrides ===
+
+if [[ -f "$HOME/.shell_env_local" ]]; then
+  source "$HOME/.shell_env_local"
+fi
