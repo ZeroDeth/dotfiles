@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+#export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # display how long all tasks over 10 seconds take
 export REPORTTIME=10
@@ -381,6 +381,10 @@ alias -s {yml,yaml}=vim
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# if [ -e $HOME/.bash_aliases ]; then
+#     source $HOME/.bash_aliases
+# fi
+
 ## Make an alias for running git commands in our .dotfiles repository.
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
@@ -484,82 +488,17 @@ source /usr/local/etc/bash_completion.d/az
 ## AWS Serverless Application Model (AWS SAM CLI)
 # export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
-# Antibody is a shell plugin manager made from the ground up thinking about performance.
-# Documentation can be found at https://getantibody.github.io
-# A plugin file is basically text file ~/.zsh_plugins.txt that has one plugin per line.
-source <(antibody init)
-antibody bundle < ~/.zsh_plugins.txt
-
 ## ## ## ## gCloud SDK ## ## ## ##
 # https://cloud.google.com/sdk/docs/quickstart-macos
 if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
 #### #### #### #### #### #### ####
 
-## To run gitignore.io from your command line you need an active internet connection and an environment function. You need to add a function to your environment that lets you access the gitignore.io API.
-function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}
-
 ## ## ## ## Kubernetes SDK ## ## ## ##
-## minikube Autocomplete in zsh
-source <(minikube completion zsh)
 
-## Kubectl Autocomplete in zsh into the current shell
-# source <(kubectl completion zsh) # only once
 ## add autocomplete permanently to your zsh shell
 # if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
 # zstyle ':completion:*:*:kubectl:*' list-grouped false
-
-
-## helm Autocomplete in zsh
-source <(helm completion zsh)
-
-## Istio Autocomplete in zsh
-# source <(istioctl completion zsh)
-
-## Multi pod and container log tailing for Kubernetes
-## https://github.com/wercker/stern
-source <(stern --completion=zsh)
-
-alias kx='kubectx'
-alias kn='kubens'
-
-# Get current context
-alias krc='kubectl config current-context'
-# List all contexts
-alias klc='kubectl config get-contexts -o name | sed "s/^/  /;\|^  $(krc)$|s/ /*/"'
-# Change current context
-alias kcc='kubectl config use-context "$(klc | fzf -e | sed "s/^..//")"'
-
-# Get current namespace
-alias krn='kubectl config get-contexts --no-headers "$(krc)" | awk "{print \$5}" | sed "s/^$/default/"'
-# List all namespaces
-alias kln='kubectl get -o name ns | sed "s|^.*/|  |;\|^  $(krn)$|s/ /*/"'
-# Change current namespace
-alias kcn='kubectl config set-context --current --namespace "$(kln | fzf -e | sed "s/^..//")"'
-# kusotmoize
-alias kak='kubectl apply -k .'
-alias krmk='kubectl delete -k .'
-alias kgk='kubectl get -k .'
-alias kdk='kubectl describe -k .'
-# alias kust='kustomize build . -o all.yaml'
-
-# alias k='kubectl'
-# alias sk='kubectl -n kube-system'
-# alias ke='EDITOR=vim kubectl edit'
-# alias klbaddr="kubectl get svc -ojsonpath='{.status.loadBalancer.ingress[0].hostname}'"
-#
-# alias kdebug='kubectl run -i -t debug --rm --image=caarlos0/debug --restart=Never'
-# alias knrunning='kubectl get pods --field-selector=status.phase!=Running'
-# alias kfails='kubectl get po -owide --all-namespaces | grep "0/" | tee /dev/tty | wc -l'
-# alias kimg="kubectl get deployment --output=jsonpath='{.spec.template.spec.containers[*].image}'"
-#
-# alias kdall='kubectl describe --all-namespaces'
-# alias kgpoall='kubectl get pods --all-namespaces'
-# alias kgnoowide='kubectl get nodes -o=wide'
-# alias kgnsowide='kubectl get namespaces -o=wide'
-# alias krmall='kubectl delete --all'
-# alias ksysrmall='kubectl --namespace=kube-system delete --all'
-# alias krmpoall='kubectl delete pods --all'
 
 ## Kubernetes prompt info for bash and zsh
 ## https://github.com/jonmosco/kube-ps1
@@ -569,34 +508,10 @@ alias kdk='kubectl describe -k .'
 ## Set the KUBECONFIG environment variable, Add paths similar to:
 # export KUBECONFIG=$HOME/.kube/la-config:$HOME/.kube/config
 
-## Easily install/uninstall Helm on RBAC Kubernetes
-## https://medium.com/@pczarkowski/easily-install-uninstall-helm-on-rbac-kubernetes-8c3c0e22d0d7
-helmins() {
- kubectl -n kube-system create serviceaccount tiller
- kubectl create clusterrolebinding tiller --clusterrole cluster-admin --serviceaccount=kube-system:tiller
- helm init --service-account=tiller
-}
-helmdel() {
- kubectl -n kube-system delete deployment tiller-deploy
- kubectl delete clusterrolebinding tiller
- kubectl -n kube-system delete serviceaccount tiller
-
-}
-
 ## krew is now installed! To start using kubectl plugins, you need to add
 # export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$HOME/.krew/bin:$PATH"
 #### #### #### #### #### #### ####
-
-## Code Completion for terraform-docs https://github.com/segmentio/terraform-docs
-source <(terraform-docs completion zsh)
-
-## create a personal access token:
-## https://github.com/settings/tokens/new?scopes=gist,public_repo&description=Homebrew
-export HOMEBREW_GITHUB_API_TOKEN=""
-
-## Tell homebrew to not autoupdate every single time I run it (just once a week).
-export HOMEBREW_AUTO_UPDATE_SECS=604800
 
 # ## Setting Up Go
 # ## https://www.zhubert.com/blog/2014/02/11/setting-up-go/
@@ -623,22 +538,6 @@ export HOMEBREW_AUTO_UPDATE_SECS=604800
 #£ Added by Krypton
 export GPG_TTY=$(tty)
 
-## Delete a given line number in the known_hosts file.
-knownrm() {
-  re='^[0-9]+$'
-  if ! [[ $1 =~ $re ]] ; then
-    echo "error: line number missing" >&2;
-  else
-    sed -i '' "$1d" ~/.ssh/known_hosts
-  fi
-}
-
-## Display the Top 10 most frequently used shell commands that I type, which is as follows:
-function commands() {
-  awk '{a[$2]++}END{for(i in a){print a[i] " " i}}'
-}
-
-alias topten="history | commands | sort -rn | head"
 
 ### ### ### Key Bindings ### ### ###
 ### This plugin provides a few widgets that you can use with bindkey:
@@ -653,6 +552,14 @@ bindkey '^ ' autosuggest-accept
 ## autosuggest-enable: Re-enables suggestions.
 ## autosuggest-toggle: Toggles between enabled/disabled suggestions.
 ### ### ### ### ### ### ### ### ###
+
+
+## User configuration
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+## Custom envs:
+source "$ZSH/oh-my-zsh.sh"
+source "$HOME/.shell_env"
 
 ## Order-blind profiler - at the bottom
 # zprof
