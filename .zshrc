@@ -381,6 +381,9 @@ alias -s {yml,yaml}=vim
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+## Make an alias for running git commands in our .dotfiles repository.
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
 ## Filesystem aliases
 alias ..='cd ..'
 alias ...='cd ../..'
