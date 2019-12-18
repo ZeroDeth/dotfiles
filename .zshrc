@@ -488,7 +488,7 @@ source /usr/local/etc/bash_completion.d/az
 # Documentation can be found at https://getantibody.github.io
 # A plugin file is basically text file ~/.zsh_plugins.txt that has one plugin per line.
 source <(antibody init)
-antibody bundle < ~/.bundles.txt
+antibody bundle < ~/.zsh_plugins.txt
 
 ## ## ## ## gCloud SDK ## ## ## ##
 # https://cloud.google.com/sdk/docs/quickstart-macos
