@@ -14,6 +14,7 @@ Resources/*
 .vim/tmp/*
 
 #zsh
+.oh-my-zsh/*
 zsh/orig/*
 zsh/backup/*
 zsh/tmp/*
