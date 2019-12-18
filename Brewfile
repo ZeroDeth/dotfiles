@@ -1,7 +1,7 @@
 # specify a directory to install
 cask_args appdir: "/Applications"
 
-# install packages
+# Taps
 tap "azure/draft"
 tap "homebrew/bundle"
 tap "kryptco/tap"
@@ -19,11 +19,9 @@ tap "kube-score/tap"
 tap "reconquest/tubekit", "https://github.com/reconquest/tubekit.git"
 #tap "solo-io/tap"
 
-brew "awscli"
+# Brew
+brew "bash"
 brew "fizsh"
-brew "minikube"
-brew "tfenv"
-brew "wget"
 brew "azure/draft/draft"
 #brew "ack"
 brew "autoenv"
@@ -59,7 +57,7 @@ brew "kustomize"
 brew "lolcat"
 brew "mas"
 brew "minikube"
-brew "mosh"
+#brew "mosh"
 brew "neofetch"
 brew "neovim"
 brew "ngrep"
@@ -112,8 +110,10 @@ cask "gitkraken"
 cask "iterm2"
 #cask "pdk"
 cask "sourcetree"
+#cask "telegram"
 cask "vagrant"
 cask "virtualbox"
+cask "virtualbox-extension-pack"
 cask "visual-studio-code"
 cask "zoomus"
 
