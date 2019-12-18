@@ -49,9 +49,3 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 _fzf_compgen_path() {
   ag -g "" "$1"
 }
-
-
-# === z ===
-# https://github.com/rupa/z
-
-source "/usr/local/etc/profile.d/z.sh"
