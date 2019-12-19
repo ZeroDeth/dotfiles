@@ -22,141 +22,6 @@ ZSH_TMUX_AUTOQUIT='false'
 # Your terminal appears to support fewer than 256 colors!
 export TERM="xterm-256color"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-## ## ## ## Spaceship Settings ## ## ## ##
-## https://github.com/denysdovhan/spaceship-prompt/wiki/Presets
-## ORDER
-SPACESHIP_PROMPT_ORDER=(
-  time          # Time stamps section
-  vi_mode       # Vi-mode indicator
-  user          # Username section
-  host          # Hostname section
-  dir           # Current directory section
-  git           # Git section (git_branch + git_status)
-  # hg            # Mercurial section (hg_branch  + hg_status)
-  package       # Package version
-  node          # Node.js section
-  ruby          # Ruby section
-  # elixir        # Elixir section
-  # xcode         # Xcode section
-  #swift         # Swift section
-  golang        # Go section
-  docker        # Docker section
-  # php           # PHP section
-  # rust          # Rust section
-  # haskell       # Haskell Stack section
-  # julia         # Julia section
-  aws           # Amazon Web Services section
-  venv          # virtualenv section
-  # conda         # conda virtualenv section
-  pyenv         # Pyenv section
-  # dotnet        # .NET section
-  # ember         # Ember.js section
-  kubecontext   # Kubectl context section
-  terraform     # Terraform workspace section
-  exec_time     # Execution time
-  line_sep      # Line break
-  battery       # Battery level and status
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
-
-## USER
-SPACESHIP_USER_PREFIX="" # remove `with` before username
-SPACESHIP_USER_SUFFIX="" # remove space before host
-
-## HOST
-## Result will look like this:
-##   username@:(hostname)
-SPACESHIP_HOST_PREFIX="@:("
-SPACESHIP_HOST_SUFFIX=") "
-
-## DIR
-SPACESHIP_DIR_PREFIX='' # disable directory prefix, cause it's not the first section
-SPACESHIP_DIR_TRUNC='1' # show only last directory
-
-## GIT
-## Disable git symbol
-SPACESHIP_GIT_SYMBOL="" # disable git prefix
-SPACESHIP_GIT_BRANCH_PREFIX="" # disable branch prefix too
-## Wrap git in `git:(...)`
-SPACESHIP_GIT_PREFIX='git:('
-SPACESHIP_GIT_SUFFIX=") "
-SPACESHIP_GIT_BRANCH_SUFFIX="" # remove space after branch name
-## Unwrap git status from `[...]`
-SPACESHIP_GIT_STATUS_PREFIX=""
-SPACESHIP_GIT_STATUS_SUFFIX=""
-
-## NODE
-SPACESHIP_NODE_PREFIX="node:("
-SPACESHIP_NODE_SUFFIX=") "
-SPACESHIP_NODE_SYMBOL=""
-
-## RUBY
-SPACESHIP_RUBY_PREFIX="ruby:("
-SPACESHIP_RUBY_SUFFIX=") "
-SPACESHIP_RUBY_SYMBOL=""
-
-## XCODE
-SPACESHIP_XCODE_PREFIX="xcode:("
-SPACESHIP_XCODE_SUFFIX=") "
-SPACESHIP_XCODE_SYMBOL=""
-
-## SWIFT
-SPACESHIP_SWIFT_PREFIX="swift:("
-SPACESHIP_SWIFT_SUFFIX=") "
-SPACESHIP_SWIFT_SYMBOL=""
-
-## GOLANG
-SPACESHIP_GOLANG_PREFIX="golang:("
-SPACESHIP_GOLANG_SUFFIX=") "
-SPACESHIP_GOLANG_SYMBOL=""
-
-## DOCKER
-SPACESHIP_DOCKER_PREFIX="docker:("
-SPACESHIP_DOCKER_SUFFIX=") "
-SPACESHIP_DOCKER_SYMBOL=""
-
-## VENV
-SPACESHIP_VENV_PREFIX="venv:("
-SPACESHIP_VENV_SUFFIX=") "
-
-## PYENV
-SPACESHIP_PYENV_PREFIX="python:("
-SPACESHIP_PYENV_SUFFIX=") "
-SPACESHIP_PYENV_SYMBOL=""
-
-## kubecontext
-SPACESHIP_KUBECONTEXT_SHOW=""
-SPACESHIP_KUBECONTEXT_PREFIX="k8s:("
-SPACESHIP_KUBECONTEXT_SUFFIX=") "
-SPACESHIP_KUBECONTEXT_SYMBOL=""
-
-## Terraform
-SPACESHIP_TERRAFORM_SHOW=""
-SPACESHIP_TERRAFORM_PREFIX="tf:("
-SPACESHIP_TERRAFORM_SUFFIX=") "
-SPACESHIP_KUBECONTEXT_SYMBOL=""
-
-##aws
-SPACESHIP_AWS_SHOW=""
-SPACESHIP_AWS_PREFIX="aws:("
-SPACESHIP_AWS_SUFFIX=") "
-SPACESHIP_AWS_SYMBOL=""
-#### #### #### #### #### #### ####
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -303,13 +168,6 @@ zstyle ':completion:*:*:kill:*:processes' command 'ps --forest -e -o pid,user,tt
 ## List all processes for killall
 zstyle ':completion:*:processes-names' command "ps -eo cmd= | sed 's:\([^ ]*\).*:\1:;s:\(/[^ ]*/\)::;/^\[/d'"
 
-## Display information about the kubectl current context and namespace in zsh prompt.
-## https://github.com/superbrothers/zsh-kubectl-prompt
-# autoload -U colors; colors
-# source /usr/local/etc/zsh-kubectl-prompt/kubectl.zsh
-# RPROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
-# zstyle ':zsh-kubectl-prompt:' separator '|'
-# zstyle ':zsh-kubectl-prompt:' namespace false
 
 ## SSH usernames
 if [[ -f ~/.ssh/config ]]; then
@@ -397,11 +255,6 @@ if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion
 ## add autocomplete permanently to your zsh shell
 # if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
 # zstyle ':completion:*:*:kubectl:*' list-grouped false
-
-## Kubernetes prompt info for bash and zsh
-## https://github.com/jonmosco/kube-ps1
-# source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
-# PROMPT='$(kube_ps1)'$PROMPT
 
 ## Set the KUBECONFIG environment variable, Add paths similar to:
 # export KUBECONFIG=$HOME/.kube/la-config:$HOME/.kube/config
