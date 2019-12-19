@@ -26,7 +26,7 @@ export GPG_TTY=$(tty)
 eval "$(gpg-agent --daemon --allow-preset-passphrase > /dev/null 2>&1)"
 
 # Editor:
-export EDITOR=$(which vim)
+export EDITOR=$(which nvim)
 
 ## Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
