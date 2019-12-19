@@ -356,8 +356,6 @@ export LANG=en_GB.UTF-8
 export LC_ALL="${LANG}"
 [[ -n "${LC_CTYPE}" ]] && unset LC_CTYPE
 
-## A suffix alias allows you to open the file you type in the command line using the specified program based on the file extension.
-alias -s {yml,yaml}=vim
 
 ## Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -372,109 +370,9 @@ alias -s {yml,yaml}=vim
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # if [ -e $HOME/.bash_aliases ]; then
 #     source $HOME/.bash_aliases
 # fi
-
-## Make an alias for running git commands in our .dotfiles repository.
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-
-## Filesystem aliases
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-
-# alias ll="ls -lah ${colorflag}"
-# alias lld="ls -l | grep ^d"
-## Colorize output, add file type indicator, and put sizes in human readable format
-# alias la="ls -AF ${colorflag}"
-## Same as above, but in long listing format
-# alias l="ls -lFh ${colorflag}"
-
-## macOS Finder
-# alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
-# alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
-
-# Hide/show all desktop icons (useful when presenting)
-alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-
-## Templating tmux with tmuxinator
-## example format: tmuxinator start project
-# alias tx=tmuxinator
-alias mux=tmuxinator
-
-## Show my ip address
-alias myip="curl http://ipecho.net/plain; echo"
-
-# IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en0"
-alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
-
-# Flush Directory Service cache
-alias flush="dscacheutil -flushcache"
-
-# View HTTP traffic
-alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-
-# Trim new lines and copy to clipboard
-alias trimcopy="tr -d '\n' | pbcopy"
-
-# Recursively delete `.DS_Store` files
-alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
-# remove broken symlinks
-alias clsym="find -L . -name . -o -type d -prune -o -type l -exec rm {} +"
-
-# File size
-alias fs="stat -f \"%z bytes\""
-
-# ROT13-encode text. Works for decoding, too! ;)
-alias rot13='tr a-zA-Z n-za-mN-ZA-M'
-
-# One of @janmoesen’s ProTip™s
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-    alias "$method"="lwp-request -m '$method'"
-done
-
-# Kill all the tabs in Chrome to free up memory
-# [C] explained: http://www.commandlinefu.com/commands/view/402/exclude-grep-from-your-grepped-output-of-ps-alias-included-in-description
-alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
-
-alias chrome="/Applications/Google\\ \\Chrome.app/Contents/MacOS/Google\\ \\Chrome"
-alias canary="/Applications/Google\\ Chrome\\ Canary.app/Contents/MacOS/Google\\ Chrome\\ Canary"
-
-# alias pcat='pygmentize -f terminal256 -O style=native -g'
-
-## Remote Shell Session Setup: iTerm2+tmux+mosh
-alias sshcvp='mosh --ssh='ssh -p 10140' r123s19 -- sh -c "tmux ls | grep -vq attached && tmux a || tmux new"'
-
-## Configure Help command
-alias help=run-help
-
-autoload -U run-help
-autoload run-help-git
-autoload run-help-svn
-autoload run-help-svk
-
-## Git aliases.
-# alias gs='git status'
-# alias gc='git commit'
-# alias gp='git pull --rebase'
-# alias gcam='git commit -am'
-# alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
-# alias gfp='git fetch --all && git pull --all'
 
 ## iTerm2 Shell Integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
@@ -535,7 +433,7 @@ export PATH="$HOME/.krew/bin:$PATH"
 # ## Using pyenv-virtualenv
 # eval "$(pyenv virtualenv-init -)"
 
-#£ Added by Krypton
+## Added by Krypton
 export GPG_TTY=$(tty)
 
 
