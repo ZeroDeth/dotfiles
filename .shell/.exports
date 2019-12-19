@@ -4,6 +4,57 @@
 #
 # This file is used as a part of `.shell_env`
 
+# === Compiler flags ===
+
+# This is required because `openssl` is keg-only in `brew`,
+# see: `brew info openssl` for more information.
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+# export ARCHFLAGS="-arch x86_64"
+
+# === General ===
+
+## You may need to manually set your language environment
+export LANG=en_GB.UTF-8
+export LC_ALL="${LANG}"
+[[ -n "${LC_CTYPE}" ]] && unset LC_CTYPE
+
+## Added by Krypton
+export GPG_TTY=$(tty)
+eval "$(gpg-agent --daemon --allow-preset-passphrase > /dev/null 2>&1)"
+
+# Editor:
+export EDITOR=$(which vim)
+
+## Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='nvim'
+# fi
+
+# === Path modifications ===
+
+##  GNU Command Line Tools on macOS
+## gnu-tar
+PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+## gnu-sed
+PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+## krew is now installed! To start using kubectl plugins, you need to add
+# export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+PATH="$HOME/.krew/bin:$PATH"
+
+## AWS Serverless Application Model (AWS SAM CLI)
+# PATH="/usr/local/opt/sqlite/bin:$PATH"
+
+## Linux man page
+# PATH="/usr/local/man:$PATH"
+
+export PATH
+
 # === GitHub ===
 
 ## create a personal access token:
@@ -14,3 +65,31 @@ export HOMEBREW_GITHUB_API_TOKEN=""
 
 ## Tell homebrew to not autoupdate every single time I run it (just once a week).
 export HOMEBREW_AUTO_UPDATE_SECS=604800
+
+## Disables statistics that brew collects
+export HOMEBREW_NO_ANALYTICS=1
+
+
+# === Go Settings ===
+
+export GOPATH=$HOME/go
+PATH=$PATH:$GOPATH/bin
+
+# === Kubernetes ===
+
+## Set the KUBECONFIG environment variable, Add paths similar to:
+# export KUBECONFIG=$HOME/.kube/la-config:$HOME/.kube/config
+
+# === Version managers ===
+
+# goenv intercepts Go commands using shim executables injected into your PATH
+eval "$(goenv init -)"
+
+## pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+eval "$(pyenv init -)"
+
+# === Virtualenvs ===
+
+## pyenv-virtualenv
+eval "$(pyenv virtualenv-init -)"
