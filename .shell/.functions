@@ -24,10 +24,10 @@ function commands() {
 ## To run gitignore.io from your command line you need an active internet connection and an environment function. You need to add a function to your environment that lets you access the gitignore.io API.
 function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}
 
-pyclean () {
-  # Cleans py[cod] and __pychache__ dirs in the current tree:
-  find . | grep -E "(__pycache__|\.py[cod]$)" | xargs rm -rf
-}
+# pyclean () {
+#   # Cleans py[cod] and __pychache__ dirs in the current tree:
+#   find . | grep -E "(__pycache__|\.py[cod]$)" | xargs rm -rf
+# }
 
 mc () {
   # Create a new directory and enter it
