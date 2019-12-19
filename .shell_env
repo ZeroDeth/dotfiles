@@ -22,6 +22,7 @@ source "$HOME/.shell/.aliases"
 source "$HOME/.shell/.exports"
 source "$HOME/.shell/.external"
 source "$HOME/.shell/.functions"
+source "$HOME/.shell/.prompt"
 source "$HOME/.shell/.kubectl_aliases"
 
 # === Local variables and overrides ===
