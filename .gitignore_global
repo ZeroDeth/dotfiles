@@ -1,2 +1,38 @@
 *~
+
+# Folder view configuration files
 .DS_Store
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
+
+# Ignore Terraform working directories and Terraform State files.
+**/.terraform
+**/terraform.tfstate*
+**/terraform.plan
+**/terraform.tfvars
+!bootstrap/terraform.tfstate
+**/terraform.auto.tfvars
+**/errored.tfstate
+**/generated
+
+# Ignore Terraform outputs
+**/config-map-aws-auth_*.yaml
+**/kubeconfig_*
+
+# Certificates:
+*.crt
+*.user-ca-bundle
+*.merged-ca-bundle
+
+# Ignore VSCode files
+**/.vscode
+
+### Ignore JetBrains files
+**/.idea
