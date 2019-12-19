@@ -21,3 +21,6 @@ zsh/tmp/*
 
 #bash
 bash/orig/*
+
+#Local variables and overrides
+.shell_env_local
