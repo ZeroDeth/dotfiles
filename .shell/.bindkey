@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# `.bindkey` plugin provides a few widgets that you can use with bindkey.
+#
+# This file is used as a part of `.shell_env`
+
+# ====== Key Bindings ======
+
+## autosuggest-accept: Accepts the current suggestion.
+bindkey '^ ' autosuggest-accept
+## autosuggest-execute: Accepts and executes the current suggestion.
+# bindkey '^M' autosuggest-execute
+## autosuggest-clear: Clears the current suggestion.
+## autosuggest-fetch: Fetches a suggestion (works even when suggestions are disabled).
+## autosuggest-disable: Disables suggestions.
+## autosuggest-enable: Re-enables suggestions.
+## autosuggest-toggle: Toggles between enabled/disabled suggestions.
