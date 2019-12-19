@@ -38,6 +38,11 @@ alias .....="cd ../../../.."
 ## Sorts directories in top, colors, and prints `/` at directories:
 # alias ls="/usr/local/bin/gls --color -h --group-directories-first -F"
 
+# neovim
+if command -v nvim >/dev/null 2>&2; then
+	alias vim='nvim'
+fi
+
 ## Templating tmux with tmuxinator
 ## example format: tmuxinator start project
 # alias tx=tmuxinator
