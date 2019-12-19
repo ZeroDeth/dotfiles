@@ -142,13 +142,3 @@ SPACESHIP_AWS_SYMBOL=""
 # PROMPT='%{$fg[blue]%}($ZSH_KUBECTL_PROMPT)%{$reset_color%}'
 # zstyle ':zsh-kubectl-prompt:' separator '|'
 # zstyle ':zsh-kubectl-prompt:' namespace false
-
-# ====== Load alterantive Themes ======
-
-## Set name of the theme to load --- if set to "random", it will
-## load a random theme each time oh-my-zsh is loaded, in which case,
-## to know which specific one was loaded, run: echo $RANDOM_THEME
-## Setting this variable when ZSH_THEME=random will cause zsh to load
-## See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
