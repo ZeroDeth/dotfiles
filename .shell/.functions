@@ -65,6 +65,14 @@ loadenv() {
   echo 'Loaded!'
 }
 
+# # Logic to call when needed
+# load-function() {
+#   # Some long process
+# }
+#
+# # Helper alias if other scripts need to be loaded
+# alias loadnvm='[ -s "$NVM_DIR/nvm.sh" ] && load-function'
+
 # === Helm functions ===
 
 ## Easily install/uninstall Helm on RBAC Kubernetes
