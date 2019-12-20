@@ -32,6 +32,9 @@ alias ...='cd ../..'
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+## Zsh keeps the history of directories you visited so you can quickly switch to any of them.
+d='dirs -v | head -10'
+
 # alias ll="ls -lah ${colorflag}"
 # alias lld="ls -l | grep ^d"
 ## Colorize output, add file type indicator, and put sizes in human readable format
