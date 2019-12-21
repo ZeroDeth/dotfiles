@@ -38,14 +38,8 @@ d='dirs -v | head -10'
 ## Show only hidden files in Terminal
 alias lh="ls -ld .?*"
 
-# alias ll="ls -lah ${colorflag}"
-# alias lld="ls -l | grep ^d"
-## Colorize output, add file type indicator, and put sizes in human readable format
-# alias la="ls -AF ${colorflag}"
-## Same as above, but in long listing format
-# alias l="ls -lFh ${colorflag}"
-## Sorts directories in top, colors, and prints `/` at directories:
-# alias ls="/usr/local/bin/gls --color -h --group-directories-first -F"
+## Show only directories and files in Terminal
+alias l="ls -lAh ${colorflag}"
 
 # neovim
 if command -v nvim >/dev/null 2>&2; then
