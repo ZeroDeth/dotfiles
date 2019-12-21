@@ -146,7 +146,8 @@ mas "Shazam", id: 897118787
 mas "Slack", id: 803453959
 mas "SnippetsLab", id: 1006087419
 mas "Speedtest", id: 1153157709
-mas "Telegram Desktop", id: 946399090
+mas "Telegram", id: 747648890
+#mas "Telegram Desktop", id: 946399090
 mas "Termius", id: 1176074088
 mas "Todoist", id: 585829637
 mas "Transmit", id: 1436522307
