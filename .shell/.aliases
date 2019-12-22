@@ -42,9 +42,9 @@ alias lh="ls -ld .?*"
 alias l="ls -lAh ${colorflag}"
 
 # neovim
-if command -v nvim >/dev/null 2>&2; then
-	alias vim='nvim'
-fi
+# if command -v nvim >/dev/null 2>&2; then
+# 	alias vim='nvim'
+# fi
 
 ## Templating tmux with tmuxinator
 ## example format: tmuxinator start project
