@@ -114,12 +114,22 @@ SPACESHIP_KUBECONTEXT_SHOW=""
 SPACESHIP_KUBECONTEXT_PREFIX="k8s:("
 SPACESHIP_KUBECONTEXT_SUFFIX=") "
 SPACESHIP_KUBECONTEXT_SYMBOL=""
+SPACESHIP_KUBECONTEXT_COLOR_GROUPS=(
+  # red if namespace is "kube-system"
+  red    '\(kube-system)$'
+  # else, green if "dev-01" is anywhere in the context or namespace
+  green  dev-01
+  # else, red if context name ends with ".k8s.local" _and_ namespace is "system"
+  red    '\.k8s\.local \(system)$'
+  # else, yellow if the entire content is "tst-" followed by digits, and no namespace is displayed
+  yellow '^tst-[0-9]+$'
+)
 
 ## Terraform
 SPACESHIP_TERRAFORM_SHOW=""
 SPACESHIP_TERRAFORM_PREFIX="tf:("
 SPACESHIP_TERRAFORM_SUFFIX=") "
-SPACESHIP_KUBECONTEXT_SYMBOL=""
+SPACESHIP_TERRAFORM_SYMBOL=""
 
 ##aws
 SPACESHIP_AWS_SHOW=""
