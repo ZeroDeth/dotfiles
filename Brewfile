@@ -102,7 +102,7 @@ brew "reconquest/tubekit/tubekit"
 
 # Casks
 #cask "atom"
-cask "bartender"
+#cask "bartender"
 #cask "bbedit"
 cask "brave-browser"
 cask "docker"
