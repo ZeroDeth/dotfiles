@@ -25,7 +25,11 @@ export LC_ALL="${LANG}"
 export GPG_TTY=$(tty)
 eval "$(gpg-agent --daemon --allow-preset-passphrase > /dev/null 2>&1)"
 
-# Editor:
+# Using Krypton with Advanced SSH (assh)
+# https://www.krypt.co/docs/use-krypton-with/advanced-ssh.html
+# export KR_SKIP_SSH_CONFIG=1
+
+## Editor:
 export EDITOR=$(which nvim)
 
 ## Preferred editor for local and remote sessions
