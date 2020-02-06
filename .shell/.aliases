@@ -16,7 +16,7 @@ alias xq="xmllint --format"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # Copy public key to clipboard:
-alias pubkey="cat ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+alias pubkey="cat ~/.ssh/id_krypton.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 alias topten="history | commands | sort -rn | head"
 
