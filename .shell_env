@@ -10,11 +10,11 @@
 # Documentation can be found at https://getantibody.github.io
 # A plugin file is basically text file ~/.zsh_plugins.txt that has one plugin per line.
 
-# antibody bundle < "$HOME/.antibody.txt" > "$HOME/.zsh-plugins"
-# source "$HOME/.zsh-plugins"
+antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh
+source ~/.zsh_plugins.sh
 
-source <(antibody init)
-antibody bundle < $HOME/.zsh_plugins.txt
+# source <(antibody init)
+# antibody bundle < ~/.zsh_plugins.txt
 # antibody update
 
 # === Shell parts ===
