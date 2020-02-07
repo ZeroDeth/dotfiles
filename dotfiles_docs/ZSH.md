@@ -30,5 +30,5 @@ echo $SHELL
 upgrade_oh_my_zsh
 ```
 
-## Inspiration
+## Resources
 - [Use Homebrew zsh Instead of the OS X Default](https://rick.cogley.info/post/use-homebrew-zsh-instead-of-the-osx-default/)
