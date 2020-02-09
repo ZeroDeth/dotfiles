@@ -21,11 +21,10 @@ source ~/.zsh_plugins.sh
 
 source "$HOME/.shell/.aliases"
 source "$HOME/.shell/.exports"
-source "$HOME/.shell/.external"
-source "$HOME/.shell/.tmux"
 source "$HOME/.shell/.completions"
-source "$HOME/.shell/.functions"
+source "$HOME/.shell/.external"
 source "$HOME/.shell/.prompt"
+source "$HOME/.shell/.functions"
 source "$HOME/.shell/.kubectl_aliases"
 source "$HOME/.shell/.bindkey"
 source "$HOME/.shell/.tmux"
