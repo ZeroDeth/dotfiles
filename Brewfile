@@ -57,6 +57,7 @@ brew "helm", link: false
 brew "htop"
 brew "istioctl"
 brew "jq"
+brew "kind"
 brew "kops"
 brew "kubebuilder"
 brew "kubecfg"
