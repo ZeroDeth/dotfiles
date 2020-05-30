@@ -39,6 +39,9 @@ export EDITOR=$(which nvim)
 #   export EDITOR='nvim'
 # fi
 
+## direnv
+eval "$(direnv hook zsh)"
+
 # === Path modifications ===
 
 ##  GNU Command Line Tools on macOS

@@ -6,3 +6,6 @@ export PATH="/usr/local/opt/ncurses/bin:$PATH"
 
 ## Vault command line completion
 complete -C /usr/local/bin/vault vault
+
+## direnv
+eval "$(direnv hook bash)"
