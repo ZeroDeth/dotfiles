@@ -42,6 +42,9 @@ export EDITOR=$(which nvim)
 ## direnv
 eval "$(direnv hook zsh)"
 
+## VMware Fusion command-line utils
+export PATH=$PATH:"/Applications/VMware Fusion.app/Contents/Library"
+
 # === Path modifications ===
 
 ##  GNU Command Line Tools on macOS

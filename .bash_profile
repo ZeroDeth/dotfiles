@@ -9,3 +9,6 @@ complete -C /usr/local/bin/vault vault
 
 ## direnv
 eval "$(direnv hook bash)"
+
+## VMware Fusion command-line utils
+export PATH=$PATH:"/Applications/VMware Fusion.app/Contents/Library"

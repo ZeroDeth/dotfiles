@@ -79,8 +79,8 @@ alias canary="/Applications/Google\\ Chrome\\ Canary.app/Contents/MacOS/Google\\
 
 # alias pcat='pygmentize -f terminal256 -O style=native -g'
 
-## VMware on the Command-line
-alias vmrun="/Applications/VMWare\ Fusion.app/Contents/Library/vmrun"
+## VMware Fusion command-line utils
+# alias vmrun="/Applications/VMWare\ Fusion.app/Contents/Library/vmrun"
 
 ## Remote Shell Session Setup: iTerm2+tmux+mosh
 alias sshcvp='mosh --ssh='ssh -p 10140' r123s19 -- sh -c "tmux ls | grep -vq attached && tmux a || tmux new"'
