@@ -30,14 +30,14 @@ eval "$(gpg-agent --daemon --allow-preset-passphrase > /dev/null 2>&1)"
 # export KR_SKIP_SSH_CONFIG=1
 
 ## Editor:
-export EDITOR=$(which nvim)
+# export EDITOR=$(which nvim)
 
 ## Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 ## direnv
 eval "$(direnv hook zsh)"
@@ -89,6 +89,12 @@ PATH=$PATH:$GOPATH/bin
 
 ## Set the KUBECONFIG environment variable, Add paths similar to:
 # export KUBECONFIG=$HOME/.kube/la-config:$HOME/.kube/config
+
+## Set KUBE_EDITOR to Visual Studio Code, assumes 'code' is in PATH
+## Running `k edit ...` will open up the yaml using Visual Studio Code
+# export KUBE_EDITOR='code --wait'
+## inline temporary editor change for mac users
+export KUBE_EDITOR='open -a "Visual Studio Code" --wait'
 
 # === Version managers ===
 
