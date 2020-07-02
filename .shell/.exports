@@ -92,9 +92,9 @@ PATH=$PATH:$GOPATH/bin
 
 ## Set KUBE_EDITOR to Visual Studio Code, assumes 'code' is in PATH
 ## Running `k edit ...` will open up the yaml using Visual Studio Code
-# export KUBE_EDITOR='code --wait'
+export KUBE_EDITOR='code --wait'
 ## inline temporary editor change for mac users
-export KUBE_EDITOR='open -a "Visual Studio Code" --wait'
+# export KUBE_EDITOR='open -a "Visual Studio Code" --wait'
 
 # === Version managers ===
 
