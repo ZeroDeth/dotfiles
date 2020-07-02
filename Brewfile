@@ -53,7 +53,7 @@ brew "gnu-sed"
 brew "gnu-tar"
 brew "go"
 brew "goenv"
-#brew "helm"
+#brew "helm@2"
 brew "helm", link: false
 brew "htop"
 brew "istioctl"
