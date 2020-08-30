@@ -96,5 +96,9 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sb
 source "$ZSH/oh-my-zsh.sh"
 source "$HOME/.shell_env"
 
+## Fun
+## Hint; Managed by iTerm2
+# neofetch --ascii "$(fortune -o |cowsay -W 50)" |lolcat
+
 ## Order-blind profiler - at the bottom
 # zprof
