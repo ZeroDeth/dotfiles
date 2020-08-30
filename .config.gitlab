@@ -1,0 +1,14 @@
+[user]
+
+	name = Sherif Abdalla
+	email = sherif.abdalla@bossastudios.com
+  signingkey = D13467D9637658BE243DC5452D38F8057638423D
+
+[gpg]
+
+	program = /usr/local/bin/krgpg
+
+[commit]
+
+	gpgSign = true
+	template = /Users/zerodeth/.stCommitMsg
