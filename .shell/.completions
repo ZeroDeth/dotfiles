@@ -64,6 +64,18 @@ setopt COMPLETE_IN_WORD
 zstyle ':completion:*' completer _complete _prefix
 zstyle ':completion:*' add-space true
 
+## If a new command line being added to the history list duplicates an older one, the older command is removed from the list (even if it is not the previous event).
+setopt HIST_IGNORE_ALL_DUPS
+## Remove superfluous blanks from each command line being added to the history list.
+setopt HIST_REDUCE_BLANKS
+## Save history entries as soon as they are entered.
+# setopt INC_APPEND_HISTORY
+## Share history between different instances of the shell.
+# setopt SHARE_HISTORY
+## Automatically list choices on an ambiguous completion.
+setopt AUTO_LIST
+## Automatically use menu completion after the second consecutive request for completion, for example by pressing the tab key repeatedly. This option is overridden by MENU_COMPLETE.
+setopt AUTO_MENU
 ## When completing from the middle of a word, move the cursor to the end of the word
 setopt ALWAYS_TO_END
 
