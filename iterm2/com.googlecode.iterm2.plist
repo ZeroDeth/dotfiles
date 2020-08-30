@@ -38937,9 +38937,13 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/iterm2</string>
+	<string>~/Downloads</string>
+	<key>NSNavLastUserSetHideExtensionButtonState</key>
+	<false/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{799, 448}</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
+	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -38982,11 +38986,11 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
-	<string>368 366 799 448 0 0 1536 937 </string>
+	<string>3090 525 347 181 0 0 1344 817 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>458 408 620 392 0 0 1536 937 </string>
+	<string>2954 366 620 392 1344 -132 3840 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>453 236 650 475 0 0 1536 960 </string>
+	<string>1856 -9 874 513 1344 -101 3840 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_DC6C15A7-69EB-4299-87D2-BE30C883DF1F</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_DC6C15A7-69EB-4299-87D2-BE30C883DF1F_selection</key>
@@ -40584,7 +40588,7 @@
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
-			<string>fortune | cowsay | lolcat</string>
+			<string>neofetch --ascii "$(fortune -o |cowsay -W 50)" |lolcat</string>
 			<key>Jobs to Ignore</key>
 			<array>
 				<string>rlogin</string>
@@ -48112,13 +48116,11 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.7</string>
+		<string>3.3.9</string>
 		<string>3.3.8</string>
-	</array>
-	<key>NoSyncBFPRecents</key>
-	<array>
-		<string>SauceCodePro Nerd Font</string>
-		<string>PowerlineSymbols</string>
+		<string>3.3.11</string>
+		<string>3.3.7</string>
+		<string>3.3.12</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
@@ -48134,38 +48136,35 @@
 	<true/>
 	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt_selection</key>
 	<integer>0</integer>
-	<key>NoSyncFrame_SessionsPreferences</key>
-	<dict>
-		<key>screenFrame</key>
-		<string>{{0, 0}, {1536, 960}}</string>
-		<key>topLeft</key>
-		<string>{465, 849}</string>
-	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1536, 960}}</string>
+		<string>{{1344, -101}, {3840, 1080}}</string>
 		<key>topLeft</key>
-		<string>{323, 864}</string>
+		<string>{1613, 494}</string>
 	</dict>
+	<key>NoSyncHaveUsedCopyMode</key>
+	<true/>
 	<key>NoSyncInstallUtilitiesPackage</key>
 	<true/>
 	<key>NoSyncInstallUtilitiesPackage_selection</key>
 	<integer>0</integer>
 	<key>NoSyncInstallationId</key>
-	<string>1F6354C8-CFFD-49B0-815A-9757EC87B70B</string>
+	<string>D30A9B5A-62A5-4A4A-A437-906FA2789A80</string>
+	<key>NoSyncLastTipTime</key>
+	<real>598396764.86119199</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>36</integer>
+	<integer>510</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>601554578.59014797</real>
+	<real>598387990.161129</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
 	<key>NoSyncPermissionToShowTip</key>
-	<false/>
+	<true/>
 	<key>NoSyncRecordedVariables</key>
 	<dict>
 		<key>0</key>
@@ -48492,6 +48491,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>currentTab.currentSession.jobPid</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>frame</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -48524,7 +48531,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentTab.currentSession.terminalIconName</string>
+				<string>currentTab.currentSession.lastCommand</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -48532,7 +48539,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentTab.currentSession.lastCommand</string>
+				<string>currentTab.currentSession.terminalIconName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -48815,7 +48822,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentSession.pid</string>
+				<string>currentSession.path</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -48823,7 +48830,7 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentSession.path</string>
+				<string>currentSession.pid</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -48880,8 +48887,15 @@
 			</dict>
 		</array>
 	</dict>
+	<key>NoSyncSavePanelSavedSettings_SaveProfile</key>
+	<dict>
+		<key>Initial Directory</key>
+		<string>/Users/zerodeth/Downloads</string>
+	</dict>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
-	<real>601226978.76110196</real>
+	<real>597947154.46569002</real>
+	<key>NoSyncTipsDisabled</key>
+	<true/>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenBookmark</key>
@@ -48936,7 +48950,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/ZeroDeth/iterm2</string>
+	<string>/Users/zerodeth/iterm2</string>
 	<key>PreserveWindowSizeWhenTabBarVisibilityChanges</key>
 	<false/>
 	<key>Print In Black And White</key>
@@ -48950,11 +48964,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final_new.xml?shard=26</string>
+	<string>https://iterm2.com/appcasts/final_new.xml?shard=56</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-02-11T10:52:10Z</date>
+	<date>2020-08-29T18:22:48Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -54207,6 +54221,6 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.8</string>
+	<string>3.3.12</string>
 </dict>
 </plist>
