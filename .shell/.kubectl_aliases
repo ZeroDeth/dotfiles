@@ -35,6 +35,11 @@ alias kgk='kubectl get -k .'
 alias kdk='kubectl describe -k .'
 # alias kust='kustomize build . -o all.yaml'
 
+# === Plugins ===
+
+## Quickly show resource usage
+alias kvu="kubectl view-utilization -h"
+
 # === Others ===
 
 # alias sk='kubectl -n kube-system'
