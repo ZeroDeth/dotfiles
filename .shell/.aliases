@@ -9,13 +9,13 @@
 ## Make an alias for running git commands in our .dotfiles repository.
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
-# Pretty print XML (use `jq` for json):
+## Pretty print XML (use `jq` for json):
 alias xq="xmllint --format"
 
-# Lock the screen (when going AFK)
+## Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
-# Copy public key to clipboard:
+## Copy public key to clipboard:
 alias pubkey="cat ~/.ssh/id_krypton.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 alias topten="history | commands | sort -rn | head"
@@ -103,14 +103,15 @@ autoload run-help-svk
 
 # === Network ===
 
-# IP addresses
+## IP addresses
 alias myip="curl http://ipecho.net/plain; echo"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 
-# Flush Directory Service cache
-alias flush="dscacheutil -flushcache"
+## Flush Directory Service cache
+# alias flush="dscacheutil -flushcache"
+alias flushsudo="sudo killall -HUP mDNSResponder; sleep 2"
 
 # View HTTP traffic
 alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
