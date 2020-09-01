@@ -45,6 +45,9 @@ eval "$(direnv hook zsh)"
 ## VMware Fusion command-line utils
 export PATH=$PATH:"/Applications/VMware Fusion.app/Contents/Library"
 
+## Command-line option parsing utility
+export GNU_GETOPT_PREFIX="$(brew --prefix gnu-getopt)"
+
 # === Path modifications ===
 
 ##  GNU Command Line Tools on macOS
