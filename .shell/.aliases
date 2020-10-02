@@ -58,6 +58,8 @@ alias trimcopy="tr -d '\n' | pbcopy"
 alias clStore="find . -name '*.DS_Store' -type f -ls -delete"
 # remove broken symlinks
 alias clSym="find -L . -name . -o -type d -prune -o -type l -exec rm {} +"
+# Recursively delete `.terraform` files
+alias clTerraform="find . -name '*.terraform' -type d -ls -delete"
 
 # File size
 alias fs="stat -f \"%z bytes\""
