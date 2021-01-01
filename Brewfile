@@ -28,6 +28,7 @@ tap "nexeck/tmuxinator"
 tap "reconquest/tubekit", "https://github.com/reconquest/tubekit.git"
 tap "teamookla/speedtest"
 tap "versent/taps"
+tap "johanhaleby/kubetail"
 
 # Brew
 brew "antibody"
@@ -92,6 +93,7 @@ brew "kubebuilder"
 brew "kubecfg"
 brew "kubectx"
 brew "kustomize"
+brew "johanhaleby/kubetail/kubetail", args: ["with-short-names"]
 brew "lolcat"
 brew "mas"
 brew "mercurial"
