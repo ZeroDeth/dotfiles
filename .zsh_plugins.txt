@@ -61,3 +61,6 @@ zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh
 
 # Theme, should be the last:
 denysdovhan/spaceship-prompt
+
+# Bash script that enables you to aggregate (tail/follow) logs from multiple pods into one stream
+#johanhaleby/kubetail
