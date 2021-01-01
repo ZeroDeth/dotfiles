@@ -2,3 +2,7 @@
 
 	name = Sherif Abdalla
 	email = sherif@abdalla.uk
+	signingKey = ""
+
+[hub]
+	protocol = https

@@ -1,8 +1,8 @@
 [user]
 
 	name = Sherif Abdalla
-	email = sherif.abdalla@bossastudios.com
-  signingkey = D13467D9637658BE243DC5452D38F8057638423D
+	email = sherif@abdalla.uk
+	signingKey = ""
 
 [gpg]
 
