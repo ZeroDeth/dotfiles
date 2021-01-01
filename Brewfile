@@ -207,6 +207,10 @@ mas "WiFi Signal", id: 525912054
 mas "Xcode", id: 497799835
 mas "Yoink", id: 457622435
 
-
+# WhaleBrew
 whalebrew "whalebrew/pwgen"
 whalebrew "whalebrew/whalesay"
+whalebrew "elasticsearch:7.9.3"
+whalebrew "jenkins"
+whalebrew "nginx"
+whalebrew "hashicorp/packer"
