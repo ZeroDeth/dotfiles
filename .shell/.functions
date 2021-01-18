@@ -6,6 +6,12 @@
 
 # === Commonly used functions ===
 
+## Test Your Shell Load Time
+timezsh() {
+  shell=${1-$SHELL}
+  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
+}
+
 ## Delete a given line number in the known_hosts file.
 knownrm() {
   re='^[0-9]+$'
