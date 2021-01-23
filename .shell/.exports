@@ -86,6 +86,9 @@ export HOMEBREW_NO_ANALYTICS=1
 # === Go Settings ===
 
 export GOPATH=$HOME/go
+## For Go binaries by the Go installer
+# export $PATH=/usr/local/bin/go
+## For Go binaries you compiled yourself
 PATH=$PATH:$GOPATH/bin
 
 # === Kubernetes ===
@@ -101,8 +104,10 @@ export KUBE_EDITOR='code --wait'
 
 # === Version managers ===
 
-# goenv intercepts Go commands using shim executables injected into your PATH
+## goenv intercepts Go commands using shim executables injected into your PATH
 eval "$(goenv init -)"
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
 
 ## pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi

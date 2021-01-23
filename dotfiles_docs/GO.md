@@ -53,3 +53,7 @@ Then check your PATH:
 echo $PATH
 ```
 If it includes `/Users/<NAME>/Code/go/bin` then you are ready to Go!
+
+## Resources
+
+- [Development Environment for Go Lang](https://tsuyoshiushio.medium.com/development-environment-for-go-lang-ede316d4512a)
