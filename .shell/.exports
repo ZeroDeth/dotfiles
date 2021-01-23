@@ -105,7 +105,6 @@ export KUBE_EDITOR='code --wait'
 # === Version managers ===
 
 ## goenv intercepts Go commands using shim executables injected into your PATH
-## https://tsuyoshiushio.medium.com/development-environment-for-go-lang-ede316d4512a
 eval "$(goenv init -)"
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
