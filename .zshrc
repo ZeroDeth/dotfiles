@@ -86,6 +86,19 @@ fpath=(~/.docker/completions $fpath)
 ## zsh-completions
 # plugins+=(zsh-completions)
 
+## homebrew
+case $(uname) in
+Darwin)
+  if [[ $(uname -m) == 'arm64' ]]; then
+    BREW_PREFIX='/opt/homebrew'
+  elif [[ $(uname -m) == 'x86_64' ]]; then
+    BREW_PREFIX='/usr/local'
+  fi
+  ;;
+Linux) BREW_PREFIX='/home/linuxbrew/.linuxbrew' ;;
+esac
+eval $($BREW_PREFIX/bin/brew shellenv)
+
 ## iTerm2 Shell Integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
