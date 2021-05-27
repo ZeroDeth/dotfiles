@@ -20,7 +20,7 @@ git clone --separate-git-dir=$HOME/.dotfiles https://github.com/ZeroDeth/dotfile
 ```
 git clone --separate-git-dir=$HOME/.dotfiles https://github.com/ZeroDeth/dotfiles.git tmpdotfiles
 rsync --recursive --verbose --exclude '.git' tmpdotfiles/ $HOME/
-rm -r tmpdotfiles
+rm -rf tmpdotfiles
 ```
 ```
 cd $HOME
