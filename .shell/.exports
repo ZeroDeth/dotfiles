@@ -109,11 +109,21 @@ eval "$(goenv init -)"
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 
-## pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-eval "$(pyenv init -)"
-
 # === Virtualenvs ===
 
-## pyenv-virtualenv
-eval "$(pyenv virtualenv-init -)"
+## Setup virtualenv home
+# export WORKON_HOME=$HOME/.virtualenvs
+# source /usr/local/bin/virtualenvwrapper.sh
+
+## Tell pyenv-virtualenvwrapper to use pyenv when creating new Python environments
+# export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+
+## pyenv shims to initialize
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+if which pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
+  eval "$(pyenv init -)"
+  ## pyenv-virtualenv
+  eval "$(pyenv virtualenv-init -)"
+fi
