@@ -29,7 +29,7 @@ robbyrussell/oh-my-zsh path:plugins/common-aliases
 robbyrussell/oh-my-zsh path:plugins/compleat
 robbyrussell/oh-my-zsh path:plugins/git-extras
 #robbyrussell/oh-my-zsh path:plugins/npm
-robbyrussell/oh-my-zsh path:plugins/osx
+robbyrussell/oh-my-zsh path:plugins/macos
 #robbyrussell/oh-my-zsh path:plugins/chucknorris
 #robbyrussell/oh-my-zsh path:plugins/docker
 #robbyrussell/oh-my-zsh path:plugins/encode64

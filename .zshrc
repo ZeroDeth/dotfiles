@@ -76,7 +76,7 @@ fpath=(~/.docker/completions $fpath)
 # plugins=(
 #   gitfast
 #   python
-#   osx
+#   macos
 #   brew
 # )
 
