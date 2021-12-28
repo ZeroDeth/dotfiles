@@ -9,6 +9,9 @@
 ## Make an alias for running git commands in our .dotfiles repository.
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
+## Install A VIM/NeoVIM Version Support Python3 (https://clay-atlas.com/us/blog/2021/09/04/mac-os-en-install-vim-support-python3/)
+# alias python="python3"
+
 ## Pretty print XML (use `jq` for json):
 alias xq="xmllint --format"
 
