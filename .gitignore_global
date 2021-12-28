@@ -36,3 +36,6 @@ Thumbs.db
 
 ### Ignore JetBrains files
 **/.idea
+
+### pyenv
+.python-version

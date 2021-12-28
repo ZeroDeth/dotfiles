@@ -94,7 +94,17 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " Post-update hooks
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
+
+Plug 'Valloric/YouCompleteMe', { 'do': 'python3 ./install.py --all'}
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_min_num_of_chars_for_completion = 1
+
+" Use release branch (Recommend)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Or build from source code by use yarn: https://yarnpkg.com
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+
 
 " This is a vim syntax plugin for Ansible 2.0, it supports YAML playbooks, Jinja2 templates, and Ansible's hosts files.
 Plug 'pearofducks/ansible-vim', { 'do': './UltiSnips/generate.py' }

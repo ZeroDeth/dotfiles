@@ -1,66 +1,78 @@
 caarlos0/jvm
 djui/alias-tips
 
-## comments are supported like this
-caarlos0/zsh-mkc
-caarlos0/zsh-open-github-pr
-greymd/tmux-xpanes
 b4b4r07/enhancd
-#zsh-users/zsh-completions
-zchee/zsh-completions
-zsh-users/zsh-autosuggestions
 
-## annotations are also allowed:
-#robbyrussell/oh-my-zsh path:plugins/aws
 junegunn/fzf path:shell
 bbenne10/goenv
 
-## Bundles from the default repo (robbyrussell's oh-my-zsh)
+### Bundles from the default repo (robbyrussell's oh-my-zsh)
 ## https://medium.com/@falieson/setup-zsh-w-antigen-and-a-spacey-theme-7a66808218dc
 robbyrussell/oh-my-zsh path:plugins/git
-#robbyrussell/oh-my-zsh path:plugins/heroku
-robbyrussell/oh-my-zsh path:plugins/pip
-#robbyrussell/oh-my-zsh path:plugins/lein
+robbyrussell/oh-my-zsh folder:plugins/github
+robbyrussell/oh-my-zsh path:plugins/git-extras
 robbyrussell/oh-my-zsh path:plugins/last-working-dir
 robbyrussell/oh-my-zsh path:plugins/command-not-found
-#robbyrussell/oh-my-zsh path:plugins/autojump
-#robbyrussell/oh-my-zsh path:plugins/brew
 robbyrussell/oh-my-zsh path:plugins/common-aliases
 robbyrussell/oh-my-zsh path:plugins/compleat
-robbyrussell/oh-my-zsh path:plugins/git-extras
-#robbyrussell/oh-my-zsh path:plugins/npm
 robbyrussell/oh-my-zsh path:plugins/macos
-#robbyrussell/oh-my-zsh path:plugins/chucknorris
-#robbyrussell/oh-my-zsh path:plugins/docker
-#robbyrussell/oh-my-zsh path:plugins/encode64
-#robbyrussell/oh-my-zsh path:plugins/kubectl
-robbyrussell/oh-my-zsh path:plugins/pyenv
-robbyrussell/oh-my-zsh path:plugins/python
+#robbyrussell/oh-my-zsh path:plugins/heroku
+#robbyrussell/oh-my-zsh path:plugins/lein
+#robbyrussell/oh-my-zsh path:plugins/autojump
+#robbyrussell/oh-my-zsh path:plugins/brew
+#robbyrussell/oh-my-zsh path:plugins/aws
+
+### Programming Lanuguage Plugins
 #robbyrussell/oh-my-zsh path:plugins/redis-cli
 #robbyrussell/oh-my-zsh path:plugins/ruby
 #robbyrussell/oh-my-zsh path:plugins/rvm
 #robbyrussell/oh-my-zsh path:plugins/sbt
 #robbyrussell/oh-my-zsh path:plugins/scala
-#robbyrussell/oh-my-zsh path:plugins/tmux
-robbyrussell/oh-my-zsh path:plugins/tmuxinator
-robbyrussell/oh-my-zsh path:plugins/vagrant
-#robbyrussell/oh-my-zsh path:plugins/vi-mode
+#robbyrussell/oh-my-zsh path:plugins/npm
+
+### Python Plugins
+robbyrussell/oh-my-zsh path:plugins/pip
+robbyrussell/oh-my-zsh path:plugins/python
+robbyrussell/oh-my-zsh folder:plugins/virtualenv
+#robbyrussell/oh-my-zsh path:plugins/pyenv
 #robbyrussell/oh-my-zsh path:plugins/virtualenvwrapper
+
+### iTerm2
+robbyrussell/oh-my-zsh folder:plugins/iterm2
+
+### Tmux
+greymd/tmux-xpanes
+robbyrussell/oh-my-zsh path:plugins/tmuxinator
+#robbyrussell/oh-my-zsh path:plugins/tmux
+
+#robbyrussell/oh-my-zsh path:plugins/vi-mode
 #robbyrussell/oh-my-zsh path:plugins/vscode
 #robbyrussell/oh-my-zsh path:plugins/yarn
-robbyrussell/oh-my-zsh path:plugins/web-search
 #robbyrussell/oh-my-zsh path:plugins/z
 
-#### empty lines are skipped
-
-docker/cli path:contrib/completion/zsh kind:fpath
-#nnao45/zsh-kubectl-completion
-
+### zsh-users
+zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-history-substring-search ./zsh-history-substring-search.zsh
+caarlos0/zsh-mkc
+caarlos0/zsh-open-github-pr
+zchee/zsh-completions
+#zsh-users/zsh-completions
 
-# Theme, should be the last:
+### DevOps Tools
+robbyrussell/oh-my-zsh path:plugins/web-search
+robbyrussell/oh-my-zsh path:plugins/vagrant
+docker/cli path:contrib/completion/zsh kind:fpath
+#robbyrussell/oh-my-zsh path:plugins/docker
+#robbyrussell/oh-my-zsh path:plugins/kubectl
+#nnao45/zsh-kubectl-completion
+#robbyrussell/oh-my-zsh path:plugins/encode64
+#robbyrussell/oh-my-zsh path:plugins/chucknorris
+
+## Bash script that enables you to aggregate (tail/follow) logs from multiple pods into one stream
+#johanhaleby/kubetail
+
+### Theme, should be the last:
 denysdovhan/spaceship-prompt
 
-# Bash script that enables you to aggregate (tail/follow) logs from multiple pods into one stream
-#johanhaleby/kubetail
+## empty lines are skipped
