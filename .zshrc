@@ -102,6 +102,9 @@ eval $($BREW_PREFIX/bin/brew shellenv)
 ## iTerm2 Shell Integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+## #https://github.com/asdf-vm/asdf
+. /usr/local/opt/asdf/libexec/asdf.sh
+
 ## User configuration
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 

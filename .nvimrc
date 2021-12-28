@@ -760,6 +760,6 @@ endif
 
 " --user defined ---------------------------------------------------------------
 
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
+if filereadable(expand("~/$HOME/.config/nvim/init.vim"))
+  source ~/$HOME/.config/nvim/init.vim
 endif
