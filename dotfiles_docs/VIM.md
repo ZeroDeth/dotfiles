@@ -354,7 +354,7 @@ For C++ formating using clang-format see https://github.com/rhysd/vim-clang-form
 * Use ag (silver searcher) as an indexer for Ctrl-P; and py-matcher for ctrl-p matching function: http://blog.patspam.com/2014/super-fast-ctrlp
 * [Command-T authors cheatsheet](https://wincent.com/wiki/Vim_cheatsheet)
 * https://takac.github.io/2013/01/30/vim-grammar/
-
+* [Vim Kuberetes YAML Support](https://octetz.com/docs/2020/2020-01-06-vim-k8s-yaml-support)
 
 ## Plugins ##
 * NERDTree
