@@ -53,6 +53,11 @@ fi
 } &!
 #### #### #### #### #### #### ####
 
+## fzf cannot do that. However, zsh-autocomplete plugin can
+zstyle ':autocomplete:*' default-context history-incremental-search-backward
+# '': Start each new command line with normal autocompletion.
+# history-incremental-search-backward: Start in live history search mode.
+
 ## colorful completion listings
 zmodload -i zsh/complist
 # zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
