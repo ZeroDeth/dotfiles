@@ -12,3 +12,6 @@ eval "$(direnv hook bash)"
 
 ## VMware Fusion command-line utils
 export PATH=$PATH:"/Applications/VMware Fusion.app/Contents/Library"
+
+## fzf (fuzzy finder)
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
