@@ -1,0 +1,11 @@
+#asdf plugins
+
+direnv 2.30.2
+terraform 1.1.2
+golang 1.17.5
+ruby 3.1.0
+python 3.10.1
+nodejs 17.3.0
+haskell 9.2.1
+rust 1.57.0
+neovim nightly

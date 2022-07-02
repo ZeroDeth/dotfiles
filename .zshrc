@@ -103,7 +103,19 @@ eval $($BREW_PREFIX/bin/brew shellenv)
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 ## #https://github.com/asdf-vm/asdf
-. /usr/local/opt/asdf/libexec/asdf.sh
+#Mac Intel:
+# . /usr/local/opt/asdf/libexec/asdf.sh
+#Apple Silicon:
+# . /opt/homebrew/opt/asdf/asdf.sh
+
+# Find where asdf should be installed.
+ASDF_DIR_INTEL="${/usr/local/opt/asdf/libexec}"
+ASDF_DIR_M1="${/opt/homebrew/opt/asdf}"
+
+# Load asdf, if found.
+if [ -f $ASDF_DIR_INTEL/asdf.sh ]; then
+    . $ASDF_DIR_M1/asdf.sh
+fi
 
 ## User configuration
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"

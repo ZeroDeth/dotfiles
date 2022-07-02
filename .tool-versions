@@ -1,0 +1,12 @@
+#asdf plugins
+
+  direnv
+  terraform
+  golang
+  ruby
+  python
+  java
+  nodejs
+  haskell
+  rust
+  yarn
