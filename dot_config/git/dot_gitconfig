@@ -1,4 +1,0 @@
-[user]
-    name = Sherif Abdalla
-    email = "{{ .email }}"
-
