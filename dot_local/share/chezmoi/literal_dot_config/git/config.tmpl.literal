@@ -1,5 +1,8 @@
 # vim: syntax=gitconfig
 
+[ghq]
+    root = "~/Code"
+
 [alias]
 
 	# Credit an author on the latest commit
@@ -16,17 +19,17 @@
 
 	name = Sherif Abdalla
 	email = sherif@abdalla.uk
-	signingkey = ""
+	# signingkey = ""
 
 [gpg]
 
-	program = /usr/local/bin/gpg
+	# program = /usr/local/bin/gpg
 	# program = /usr/local/bin/krgpg
 	# program = /usr/local/bin/keybase
 
 [commit]
 
-	gpgsign = true
+	gpgsign = false
 
 [tag]
 
