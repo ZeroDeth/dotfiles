@@ -1,0 +1,6 @@
+# Install these on work machines only
+{{- if eq .location "work" }}
+cask 'goland'
+cask 'microsoft-teams'
+{{- end }}
+
