@@ -1,5 +1,11 @@
-{{- $location := promptString "location" -}}
+# vim: syntax=toml
+
+# PERSONAL OR COMPANY COMPUTER
+{{ $computer := promptString "computer type (work/self)" -}}
+
 {{- $email := promptString "email" -}}
+
+# FETCH SECRETS FROM BITWARDEN
 
 [data]
     email = {{ $email | quote }}
