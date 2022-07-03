@@ -1,11 +1,6 @@
-# Install these on work machines only
-{{- if eq .location "work" }}
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 brew "chezmoi"
 brew "gh"
-cask 'goland'
-cask 'harvest'
-cask 'microsoft-teams'
-{{- end }}
+cask "github"
