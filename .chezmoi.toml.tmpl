@@ -1,7 +1,9 @@
+{{- $location := promptString "location" -}}
 {{- $email := promptString "email" -}}
 
 [data]
     email = {{ $email | quote }}
+    location = "{{ $location }}"
 
 [git]
     autoCommit = true
