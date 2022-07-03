@@ -1,5 +1,7 @@
 # Install these on work machines only
 {{- if eq .location "work" }}
+brew 'bat'
+brew 'gh'
 cask 'goland'
 cask 'harvest'
 cask 'microsoft-teams'
