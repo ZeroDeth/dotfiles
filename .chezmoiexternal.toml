@@ -22,18 +22,3 @@
   type = "git-repo"
 
 # EXTERNAL BINARIES
-[".local/bin/sn"]
-  url        = "https://github.com/jonhadfield/sn-cli/releases/download/{{ .sn_version }}/sn-cli_Darwin_arm64.zip"
-  type       = "file"
-  executable = true
-  [".local/bin/sn".filter]
-    args    = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "sn"]
-    command = "tar"
-
-[".local/bin/siggo"]
-  url        = "https://github.com/derricw/siggo/releases/download/{{ .siggo_version }}/siggo-{{ .siggo_version }}-darwin-amd64.tar.gz"
-  type       = "file"
-  executable = true
-  [".local/bin/siggo".filter]
-    args    = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "bin/siggo"]
-    command = "tar"

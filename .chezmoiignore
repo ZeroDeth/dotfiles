@@ -11,13 +11,12 @@ README.md
 {{ end }}
 
 # FILES USED ONLY ON SELF COMPUTER
-{{- if ne .computer.type "self" }}
-{{- end }}
+#{{- if ne .computer.type "self" }}
+#{{- end }}
 
 # FILES USED ONLY ON WORK COMPUTER
 {{- if ne .computer.type "work" }}
 .config/aws/config
 .config/aws/credentials
 .config/.jira/.config.yml
-.config/jenkins_jobs/jenkins_jobs.ini
 {{- end }}
