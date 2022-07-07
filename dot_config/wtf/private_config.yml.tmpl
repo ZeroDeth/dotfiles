@@ -106,33 +106,14 @@ wtf:
         height: 2
         width: 1
       refreshInterval: 1
-    jenkins:
-      title: " Jenkins"
-      colors:
-        title: "#b8bb26"
-      url: "{{ .jenkins.prod.url }}/jenkins/view/View"
-      user: "{{ .jenkins.prod.user }}"
-      apiKey: "{{ .jenkins.prod.token }}"
-      enabled: true
-      position:
-        top: 2
-        left: 1
-        width: 2
-        height: 1
-      #jobNameRegex: ".*"
-      refreshInterval: 300
-      successBallColor: "green"
-      verifyServerCertificate: true
     github:
       title: " GitHub"
       colors:
         title: "#b8bb26"
-      apiKey: "{{ .github.token }}"
       baseURL: ""
       customQueries:
         othersPRs:
           title: "Others Pull Requests"
-          filter: "is:open is:pr -author:{{ .github.user }}"
       enabled: true
       enableStatus: true
       position:
@@ -145,6 +126,5 @@ wtf:
         - "az-soft-eng/ecs-ops-infra"
         - "az-soft-eng/ecs-auto-tickets"
       uploadURL: ""
-      username: "{{ .github.user }}"
 
     {{- end }}
