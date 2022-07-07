@@ -1,4 +1,24 @@
 # EXTERNAL REPOSITORIES
+
+[".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+    type = "archive"
+    url = "https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
+
+[".oh-my-zsh/custom/themes/powerlevel10k"]
+    type = "archive"
+    url = "https://github.com/romkatv/powerlevel10k/archive/v1.15.0.tar.gz"
+    exact = true
+    stripComponents = 1
+
+[".oh-my-zsh/custom/themes/spaceship-prompt"]
+    type = "archive"
+    url = "https://github.com/spaceship-prompt/spaceship-prompt/archive/refs/tags/v3.16.7.tar.gz"
+    exact = true
+    stripComponents = 1
+
 [".cache/tpm/tpm"]
   url  = "https://github.com/tmux-plugins/tpm"
   type = "git-repo"
