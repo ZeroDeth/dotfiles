@@ -9,53 +9,11 @@
 # FETCH SECRETS FROM 1Password
 [data]
 
-  [data.git]
-    {{- if eq $computer "work" }}
-    #public_key = "{{ PublicKey.value }}"
-    {{- end }}
-    {{- if eq $computer "self" }}
-    #public_key = "{{ PublicKey.value }}"
-    {{- end }}
-
   [data.user]
     name   = "Sherif Abdalla"
     {{- if eq $computer "work" }}
     email  = "{{ login.username }}"
-    #gpg_id = "{{ PublicKey.value }}"
     {{- end }}
     {{- if eq $computer "self" }}
     email  = "{{ Email.value }}"
-    #gpg_id = "{{ PublicKey.value }}"
     {{- end }}
-
-  [data.github]
-    {{- if eq $computer "work" }}
-    user  = "{{ login.username }}"
-    #token = "{{ Token.value }}"
-    {{- end }}
-    {{- if eq $computer "self" }}
-    user  = "{{ login.username }}"
-    #token = "{{ Token.value }}"
-    {{- end }}
-
-  [data.spotify]
-    client_id     = "{{ ClientId.value }}"
-    client_secret = "{{ ClientSecret.value }}"
-
-  [data.himalaya]
-    email = "{{ Email.value }}"
-
-  [data.newsboat]
-    username = "{{ login.username }}"
-    password = "{{ login.password }}"
-
-  [data.computer]
-    type = "{{ $computer }}"
-
-  [data.infracost]
-  {{- if eq $computer "work" }}
-    token = "{{ TokenWork.value }}"
-  {{- end }}
-  {{- if eq $computer "self" }}
-    token = "{{ TokenSelf.value }}"
-  {{- end }}
