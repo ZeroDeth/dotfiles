@@ -11,9 +11,3 @@
 
   [data.user]
     name   = "Sherif Abdalla"
-    {{- if eq $computer "work" }}
-    email  = "{{ login.username }}"
-    {{- end }}
-    {{- if eq $computer "self" }}
-    email  = "{{ Email.value }}"
-    {{- end }}
