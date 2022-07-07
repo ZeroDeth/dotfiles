@@ -7,8 +7,6 @@
 {{ end }}
 
 # FILES USED ONLY ON SELF COMPUTER
-#{{- if ne .computer.type "self" }}
-#{{- end }}
 
 # FILES USED ONLY ON WORK COMPUTER
 {{- if ne .computer.type "work" }}
