@@ -178,6 +178,8 @@ cask "vimac"
 cask "vscodium"
 cask "yacreader"
 cask "yuna"
+cask "microsoft-teams"
+cask "setapp"
 # mas "Amphetamine", id: 937984704
 # mas "Dark Reader for Safari", id: 1438243180
 # mas "Icedrive", id: 1490075667
