@@ -1,0 +1,20 @@
+# vim: syntax=toml
+
+# PERSONAL OR COMPANY COMPUTER
+{{ $computer := promptString "computer type (work/self)" -}}
+
+[git]
+    autoCommit = true
+    autoPush = true
+
+[diff]
+  pager = "delta"
+
+# FETCH SECRETS FROM 1Password
+[data]
+
+  [data.user]
+    name   = "Sherif Abdalla"
+
+  [data.computer]
+    type = "{{ $computer }}"

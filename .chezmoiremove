@@ -1,0 +1,15 @@
+# FILES USED ONLY ON MACOS
+{{ if ne .chezmoi.os "darwin" }}
+.config/svim/*
+.config/skhd/*
+.config/yabai/*
+.config/sketchybar/*
+{{ end }}
+
+# FILES USED ONLY ON SELF COMPUTER
+
+# FILES USED ONLY ON WORK COMPUTER
+{{- if ne .computer.type "work" }}
+.config/aws/*
+.config/.jira/*
+{{- end }}

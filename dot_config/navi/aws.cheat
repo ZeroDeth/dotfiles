@@ -1,0 +1,23 @@
+# vim: syntax=sh
+
+# Set aws credentials
+% aws, aws-vault
+$ profile: aws configure list-profiles | fzf --preview "bat -l ini --color=always <(rg -A6 {} $XDG_CONFIG_HOME/aws/config)"
+eval "$(env | rg AWS_ | sed '/AWS_VAULT_/d; s/=.*//g; s/^/unset /g')" && \
+    eval "$(aws-vault exec <profile> --no-session -- env | rg AWS_ | sed 's/^/export /g')"
+
+# Login on an ec2 using ssm
+% aws, ec2, ssm
+$ instance: aws ec2 describe-instances --output="text" --filters="Name=instance-state-name,Values=running" --query="Reservations[*].Instances[*].{Id:InstanceId,Name:Tags[?Key=='Name']|[0].Value,Status:State.Name}" | fzf --preview "bat -l json --color=always <(aws ec2 describe-instances --filters='Name=instance-id,Values={1}' | jq '.Reservations[].Instances[]')"
+aws ssm start-session --target <instance>
+
+# Set a secret value on through a text/json file
+% aws, secretsmanager
+aws secretsmanager put-secret-value \
+    --secret-id "<id>" \
+    --secret-string file://<file>
+
+# Fetch route table's routes
+% aws, ec2
+aws ec2 describe-route-tables \
+    | jq '.RouteTables[] | select(.RouteTableId=="<id>") | .Routes'

@@ -1,0 +1,11 @@
+# SSH CONFIGURATIONS
+
+Host *
+    UserKnownHostsFile    /dev/null
+    StrictHostKeyChecking no
+
+Host github.com
+    User                  git
+    IdentityFile          ~/.ssh/id_ed25519
+    StrictHostKeyChecking yes
+

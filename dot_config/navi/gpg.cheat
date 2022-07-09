@@ -1,0 +1,9 @@
+# vim: syntax=sh
+
+# Import public gpg key
+% gpg
+gpg --import "<pubic_key>"
+
+# Import private gpg key
+% gpg
+gpg --allow-secret-key-import --import "<private_key""

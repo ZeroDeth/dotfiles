@@ -1,0 +1,11 @@
+# vim: syntax=sh
+
+# SOURCE BAR SEGMENTS
+source ~/.config/sketchybar/opts
+source ~/.config/sketchybar/left
+source ~/.config/sketchybar/right
+#source ~/.config/sketchybar/center
+
+# FINALIZING THE SETUP
+sketchybar --update
+echo "sketchybar configuration loaded.."

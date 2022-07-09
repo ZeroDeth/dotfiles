@@ -1,0 +1,34 @@
+# vim: syntax=sh
+
+# Change branch
+% git, branch
+$ branch: git branch | awk '{print $NF}'
+git checkout <branch>
+
+# Add a git submodule
+% git, submodule
+git submodule add -b "<branch>" "ssh://git@<server>/<repo>.git" "<path>"
+
+# Add gpg sign to a git repo
+% git, gpg, fzf
+$ id: gpg --list-secret-keys | rg '[0-9A-Z]{40,40}' | sed 's/ //g' | awk '{print substr($1,length($1)-15) }' | fzf --preview 'gpg --list-secret-keys {}'
+git config --local gpg.program gpg          \
+    && git config --local user.signkey <id> \
+    && git config --local commit.gpgsign true
+
+# Rename a git branch
+% git
+git switch <old>                      \
+    && git branch -m <new>            \
+    && git push origin --delete <old> \
+    && git push origin -u <new>
+
+# Fork a public repo to a private repo
+% git, gh, ghq
+gh repo create <private> --private                                  \
+    && ghq get <private>                                            \
+    && git clone --bare <public> /tmp/<public>                      \
+    && cd /tmp/<public>                                             \
+    && git push --mirror <private>                                  \
+    && cd ~/Code/"$(echo '<private>' | sed 's#ssh://|https://##g')" \
+    && git remode add public <public>
