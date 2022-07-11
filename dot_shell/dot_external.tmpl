@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+
+# `.external` handles all external tools.
+#
+# This file is used as a part of `.shell_env`
+
+# === Autocomplete ===
+
+## minikube Autocomplete in zsh
+source <(minikube completion zsh)
+
+## Kubectl Autocomplete in zsh into the current shell
+# source <(kubectl completion zsh) # only once
+
+## helm Autocomplete in zsh
+source <(helm completion zsh)
+
+## Istio Autocomplete in zsh
+# source <(istioctl completion zsh)
+
+## Multi pod and container log tailing for Kubernetes
+## https://github.com/wercker/stern
+source <(stern --completion=zsh)
+
+## Code Completion for terraform-docs https://github.com/segmentio/terraform-docs
+source <(terraform-docs completion zsh)
+
+## Vault command line completion
+complete -o nospace -C /usr/local/bin/vault vault
+
+# Installs goenv autocompletion
+# source ~/.goenv/completions/goenv.zsh
+
+## Installs pyenv autocompletion
+# source ~/.pyenv/completions/pyenv.zsh
+
+## npm autocomplete
+# source <(npm completion)
+
+# === Cloud CLI ===
+
+## AWS CLI Command Completion
+source /usr/local/share/zsh/site-functions/_aws
+
+## Azure CLI Command Completion
+source /usr/local/etc/bash_completion.d/az
+
+# === gCloud SDK  ===
+
+## https://cloud.google.com/sdk/docs/quickstart-macos
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'; fi
+
+# === Kubernetes ===
+
+## add autocomplete permanently to your zsh shell
+# if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi
+# zstyle ':completion:*:*:kubectl:*' list-grouped false
+
+# === fzf ===
+# https://github.com/junegunn/fzf
+
+# if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
+#   export PATH="$PATH:/usr/local/opt/fzf/bin"
+# fi
+
+# Auto-completion
+# [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
+
+# # Key bindings
+# source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+
+# # Setting ag as the default source for fzf
+# export FZF_DEFAULT_COMMAND='ag -g ""'
+
+# # To apply the command to CTRL-T as well
+# export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# _fzf_compgen_path() {
+#   ag -g "" "$1"
+# }
+
+## fzf (fuzzy finder)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

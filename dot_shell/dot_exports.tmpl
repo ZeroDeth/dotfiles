@@ -1,0 +1,133 @@
+#!/usr/bin/env bash
+
+# `.exports` is used to provide custom variables.
+#
+# This file is used as a part of `.shell_env`
+
+# === Compiler flags ===
+
+# This is required because `openssl` is keg-only in `brew`,
+# see: `brew info openssl` for more information.
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+# export ARCHFLAGS="-arch x86_64"
+
+# === General ===
+
+## You may need to manually set your language environment
+export LANG=en_GB.UTF-8
+export LC_ALL="${LANG}"
+[[ -n "${LC_CTYPE}" ]] && unset LC_CTYPE
+
+## Added by Krypton
+export GPG_TTY=$(tty)
+eval "$(gpg-agent --daemon --allow-preset-passphrase > /dev/null 2>&1)"
+
+# Using Krypton with Advanced SSH (assh)
+# https://www.krypt.co/docs/use-krypton-with/advanced-ssh.html
+# export KR_SKIP_SSH_CONFIG=1
+
+## Editor:
+# export EDITOR=$(which nvim)
+
+## Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
+
+## direnv
+eval "$(direnv hook zsh)"
+
+## VMware Fusion command-line utils
+export PATH=$PATH:"/Applications/VMware Fusion.app/Contents/Library"
+
+## Command-line option parsing utility
+export GNU_GETOPT_PREFIX="$(brew --prefix gnu-getopt)"
+
+# === Path modifications ===
+
+##  GNU Command Line Tools on macOS
+## gnu-tar
+PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+## gnu-sed
+PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+## krew is now installed! To start using kubectl plugins, you need to add
+# export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+PATH="$HOME/.krew/bin:$PATH"
+
+## AWS Serverless Application Model (AWS SAM CLI)
+# PATH="/usr/local/opt/sqlite/bin:$PATH"
+
+## Linux man page
+# PATH="/usr/local/man:$PATH"
+
+export PATH
+
+# === GitHub ===
+
+## create a personal access token:
+## https://github.com/settings/tokens/new?scopes=gist,public_repo&description={{ .chezmoi.version.builtBy }}
+export HOMEBREW_GITHUB_API_TOKEN=""
+
+# === {{ .chezmoi.version.builtBy }} ===
+
+## Tell homebrew to not autoupdate every single time I run it (just once a week).
+export HOMEBREW_AUTO_UPDATE_SECS=604800
+
+## Disables statistics that brew collects
+export HOMEBREW_NO_ANALYTICS=1
+
+
+# === Go Settings ===
+
+export GOPATH=$HOME/go
+## For Go binaries by the Go installer
+# export $PATH=/usr/local/bin/go
+## For Go binaries you compiled yourself
+PATH=$PATH:$GOPATH/bin
+
+# === Kubernetes ===
+
+## Set the KUBECONFIG environment variable, Add paths similar to:
+# export KUBECONFIG=$HOME/.kube/la-config:$HOME/.kube/config
+
+## Set KUBE_EDITOR to Visual Studio Code, assumes 'code' is in PATH
+## Running `k edit ...` will open up the yaml using Visual Studio Code
+export KUBE_EDITOR='code --wait'
+## inline temporary editor change for mac users
+# export KUBE_EDITOR='open -a "Visual Studio Code" --wait'
+
+## Tetrate Istio Distro
+export GETMESH_HOME="$HOME/.getmesh"
+export PATH="$GETMESH_HOME/bin:$PATH"
+
+# === Version managers ===
+
+## goenv intercepts Go commands using shim executables injected into your PATH
+eval "$(goenv init -)"
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+
+# === Virtualenvs ===
+
+## Setup virtualenv home
+# export WORKON_HOME=$HOME/.virtualenvs
+# source /usr/local/bin/virtualenvwrapper.sh
+
+## Tell pyenv-virtualenvwrapper to use pyenv when creating new Python environments
+# export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+
+## pyenv shims to initialize
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+if which pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
+  eval "$(pyenv init -)"
+  ## pyenv-virtualenv
+  eval "$(pyenv virtualenv-init -)"
+fi

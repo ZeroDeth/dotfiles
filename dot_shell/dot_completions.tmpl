@@ -1,0 +1,135 @@
+#!/usr/bin/env bash
+
+# `.completions` is used to provide autocompletion and autosuggestions.
+#
+# This file is used as a part of `.shell_env`
+
+# === TODO: move to .external ===
+
+## On slow systems, checking the cached .zcompdump file to see if it must be
+## regenerated adds a noticable delay to zsh startup.  This little hack restricts
+## it to once a day.  It should be pasted into your own completion file.
+##
+## The globbing is a little complicated here:
+## - '#q' is an explicit glob qualifier that makes globbing {{ .computer.type }} within zsh's [[ ]] construct.
+## - 'N' makes the glob pattern evaluate to nothing when it doesn't match (rather than throw a globbing error)
+## - '.' matches "regular files"
+## - 'mh+24' matches files (or directories or whatever) that are older than 24 hours.
+# autoload -Uz compinit && compinit -i
+# autoload -U +X compinit && compinit
+# if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+# 	compinit;
+# else
+# 	compinit -C;
+# fi;
+
+# Save the location of the current completion dump file.
+# if [ -z "$ZSH_COMPDUMP" ]; then
+#   ZSH_COMPDUMP="${ZDOTDIR:-${ZSH{{ "}}" }}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+# fi
+
+## Separate path for .zcompdump files
+# compinit -d ~/.cache/zsh/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}
+
+#### #### Optimising completion system #### ####
+## Simple excerpt based on Carlos’s solution.
+# https://htr3n.github.io/2018/07/faster-zsh/
+autoload -U +X bashcompinit && bashcompinit
+
+# autoload -Uz compinit
+if [ $(date +'%j') != $(/usr/bin/stat -f '%Sm' -t '%j' ${ZDOTDIR:-$HOME}/.zcompdump) ]; then
+  compinit
+else
+  compinit -C
+fi
+#### #### Compiling completion dumped files #### ####
+## Execute code in the background to not affect the current session
+{
+  # Compile zcompdump, if modified, to increase startup speed.
+  zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
+  if [[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc") ]]; then
+    zcompile "$zcompdump"
+  fi
+} &!
+#### #### #### #### #### #### ####
+
+## fzf cannot do that. However, zsh-autocomplete plugin can
+zstyle ':autocomplete:*' default-context history-incremental-search-backward
+# '': Start each new command line with normal autocompletion.
+# history-incremental-search-backward: Start in live history search mode.
+
+## colorful completion listings
+zmodload -i zsh/complist
+# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# zmodload zsh/complist
+
+## Allow completion from within a word/phrase
+setopt COMPLETE_IN_WORD
+
+zstyle ':completion:*' completer _complete _prefix
+zstyle ':completion:*' add-space true
+
+## If a new command line being added to the history list duplicates an older one, the older command is removed from the list (even if it is not the previous event).
+setopt HIST_IGNORE_ALL_DUPS
+## Remove superfluous blanks from each command line being added to the history list.
+setopt HIST_REDUCE_BLANKS
+## Save history entries as soon as they are entered.
+# setopt INC_APPEND_HISTORY
+## Share history between different instances of the shell.
+# setopt SHARE_HISTORY
+## Automatically list choices on an ambiguous completion.
+setopt AUTO_LIST
+## Automatically use menu completion after the second consecutive request for completion, for example by pressing the tab key repeatedly. This option is overridden by MENU_COMPLETE.
+setopt AUTO_MENU
+## When completing from the middle of a word, move the cursor to the end of the word
+setopt ALWAYS_TO_END
+
+## Smart case matching && match inside filenames
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+# 'm:{a-z}={A-Z}'
+# zstyle ':completion:*' matcher-list '' '' 'l:|=* r:|=*' 'l:|=* r:|=*'
+
+zstyle ':completion:*:*:*:*:*' menu select
+
+## Rehash when completing commands
+zstyle ":completion:*:commands" rehash 1
+
+### Process completion shows all processes with colors
+zstyle ':completion:*:*:*:*:processes' menu yes select
+zstyle ':completion:*:*:*:*:processes' force-list always
+zstyle ':completion:*:*:*:*:processes' command 'ps -A -o pid,user,cmd'
+zstyle ':completion:*:*:*:*:processes' list-colors "=(#b) #([0-9]#)*=0=${color[green]}"
+zstyle ':completion:*:*:kill:*:processes' command 'ps --forest -e -o pid,user,tty,cmd'
+## zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+
+## List all processes for killall
+zstyle ':completion:*:processes-names' command "ps -eo cmd= | sed 's:\([^ ]*\).*:\1:;s:\(/[^ ]*/\)::;/^\[/d'"
+
+
+## SSH usernames
+if [[ -f ~/.ssh/config ]]; then
+  _accounts=(`egrep "^User" ~/.ssh/config | sed s/User\ // | egrep -v '^\*$'`)
+  zstyle ':completion:*:users' users $_accounts
+fi
+
+## Colors in completion
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+## Display message when no matches are found
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+
+## Ignore internal zsh functions
+zstyle ':completion:*:functions' ignored-patterns '_*'
+
+## Grouping for completion types (trial)
+zstyle ':completion:*:matches' group 'yes'
+zstyle ':completion:*:descriptions' format "%{${fg_bold[magenta]}%}= %d =%{$reset_color%}"
+## zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*' group-name ""
+
+## Speedup path completion
+zstyle ':completion:*' accept-exact '*(N)'
+
+## Cache expensive completions
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.cache/zsh
