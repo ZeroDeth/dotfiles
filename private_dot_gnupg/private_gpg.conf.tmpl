@@ -1,4 +1,7 @@
 ## https://www.gnupg.org/documentation/manuals/gnupg/GPG-Configuration-Options.html
 default-key E5792D6035387762DC77F467FDA619F16BBFA377
-keyserver hkps://keys.openpgp.org
+#keyserver
+no-emit-version
+# This option tells gpg not to expect a TTY interface and allows IntelliJ to sign commits
+no-tty
 verbose
