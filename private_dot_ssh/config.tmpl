@@ -1,0 +1,12 @@
+# SSH CONFIGURATIONS
+
+Host *
+    UserKnownHostsFile    /dev/null
+    StrictHostKeyChecking no
+    IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+
+Host github.com
+    User                  git
+    IdentityFile          ~/.ssh/id_ed25519
+    StrictHostKeyChecking yes
+
