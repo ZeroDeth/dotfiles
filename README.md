@@ -7,7 +7,27 @@ you'll also need to tweak the secrets as this repository is specific to my use
 case. Once you tweaked the secrets you can just run the below command:
 
 ``` sh
-chezmoi init ZeroDeth/dotfiles
+# github.com/zerodeth/dotfiles
+
+dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
+
+## Install
+
+# This'll install Homebrew and chezmoi. After installation `chezmoi` will be initialized.
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/zerodeth/dotfiles/main/install.sh)"
+```
+
+## Manual install
+
+Prerequisite: Homebrew & chezmoi
+
+```shell
+# Setup
+chezmoi init https://github.com/zerodeth/dotfiles.git
+
+# Configure ~/.config/chezmoi/chezmoi.toml
+chezmoi init
 ```
 
 ## :keyboard: SHORTCUTS
