@@ -1,0 +1,50 @@
+# SSH CONFIGURATIONS
+
+Host *
+	AddKeysToAgent yes
+	UseKeychain yes
+    UserKnownHostsFile    /dev/null
+    StrictHostKeyChecking no
+    IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+
+Host github.com
+    User                  git
+    IdentityFile          ~/.ssh/id_ed25519
+    StrictHostKeyChecking yes
+
+  # Added by VS Code
+  Host 192.168.100.132
+	# HostName dev
+	User zerodeth
+	ForwardAgent yes
+	AddKeysToAgent yes
+	UseKeychain yes
+	# LogLevel verbose
+	# ProxyCommand /usr/local/bin/krssh %h %p
+	# IdentityFile ~/.ssh/id_krypton
+	IdentityFile ~/.ssh/id_ed25519
+	# IdentityFile ~/.ssh/id_rsa
+
+  Host 172.16.248.133
+	# HostName 172.16.248.133
+	User zerodeth
+	ForwardAgent yes
+	AddKeysToAgent yes
+	UseKeychain yes
+	# LogLevel verbose
+	# ProxyCommand /usr/local/bin/krssh %h %p
+	# IdentityFile ~/.ssh/id_krypton
+	IdentityFile ~/.ssh/id_ed25519
+	# IdentityFile ~/.ssh/id_rsa
+
+  Host 192.168.159.23
+	# HostName dev
+	User zerodeth
+	ForwardAgent yes
+	AddKeysToAgent yes
+	UseKeychain yes
+	# LogLevel verbose
+	# ProxyCommand /usr/local/bin/krssh %h %p
+	# IdentityFile ~/.ssh/id_krypton
+	IdentityFile ~/.ssh/id_ed25519
+	# IdentityFile ~/.ssh/id_rsa
