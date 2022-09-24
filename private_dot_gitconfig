@@ -1,10 +1,10 @@
 [user]
-	name = Asen Lekov
-	email = asenlekoff@gmail.com
-	signingkey = 6C0C9DCD8A46C061
+	name = Sherif Abdalla
+	email = sherif@abdalla.uk
+	signingkey = FDA619F16BBFA377
 
-[includeIf "gitdir:~/Workspace/dl/"]
-    path = ~/Workspace/dl/.gitconfig
+[includeIf "gitdir:~/Workspace/personal/"]
+    path = ~/Workspace/personal/.gitconfig
 
 [alias]
   tags = tag -l
@@ -96,7 +96,7 @@
 	user = L3K0V
 
 [ghi]
-	token = !security find-internet-password -a L3K0V -s github.com -l 'ghi token' -w
+	token = !security find-internet-password -a ZeroDeth -s github.com -l 'ghi token' -w
 
 [filter "hawser"]
 	clean = git hawser clean %f
