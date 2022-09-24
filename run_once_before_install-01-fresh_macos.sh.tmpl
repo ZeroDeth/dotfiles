@@ -23,6 +23,9 @@ Linux) BREW_PREFIX='/home/linuxbrew/.linuxbrew' ;;
 esac
 eval $($BREW_PREFIX/bin/brew shellenv)
 
+# Install Rosetta 2
+sudo softwareupdate -install-rosetta -agree-to-license
+
 # Update Homebrew
 brew update
 
