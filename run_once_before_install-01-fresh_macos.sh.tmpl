@@ -8,6 +8,22 @@ if test ! $(which brew); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+echo "Add Homebrew to PATH:"
+
+# Detect macOS
+case $(uname) in
+Darwin)
+  if [[ $(uname -m) == 'arm64' ]]; then
+    BREW_PREFIX='/opt/homebrew'
+  elif [[ $(uname -m) == 'x86_64' ]]; then
+    BREW_PREFIX='/usr/local'
+  fi
+  ;;
+Linux) BREW_PREFIX='/home/linuxbrew/.linuxbrew' ;;
+esac
+eval $($BREW_PREFIX/bin/brew shellenv)
+
+# Update Homebrew
 brew update
 
 {{ end -}}

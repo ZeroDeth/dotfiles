@@ -5,5 +5,5 @@ yarn
 gatsby-cli
 commitizen
 cz-conventional-changelog
-netlify-cli
+#netlify-cli
 pnpm
