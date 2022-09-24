@@ -10,18 +10,9 @@ fi
 
 echo "Add Homebrew to PATH:"
 
-# Detect macOS
-case $(uname) in
-Darwin)
-  if [[ $(uname -m) == 'arm64' ]]; then
-    BREW_PREFIX='/opt/homebrew'
-  elif [[ $(uname -m) == 'x86_64' ]]; then
-    BREW_PREFIX='/usr/local'
-  fi
-  ;;
-Linux) BREW_PREFIX='/home/linuxbrew/.linuxbrew' ;;
-esac
-eval $($BREW_PREFIX/bin/brew shellenv)
+# Run these two commands in your terminal to add Homebrew to your PATH:
+    #echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/joshalletto/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install Rosetta 2
 sudo softwareupdate -install-rosetta -agree-to-license
