@@ -34,3 +34,16 @@ export GPG_TTY=$TTY
 export LANG=en_GB.UTF-8
 export LC_ALL="${LANG}"
 [[ -n "${LC_CTYPE}" ]] && unset LC_CTYPE
+
+## homebrew
+case $(uname) in
+Darwin)
+  if [[ $(uname -m) == 'arm64' ]]; then
+    BREW_PREFIX='/opt/homebrew'
+  elif [[ $(uname -m) == 'x86_64' ]]; then
+    BREW_PREFIX='/usr/local'
+  fi
+  ;;
+Linux) BREW_PREFIX='/home/linuxbrew/.linuxbrew' ;;
+esac
+eval $($BREW_PREFIX/bin/brew shellenv)
