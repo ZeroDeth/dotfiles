@@ -1,18 +1,19 @@
 {{- if (eq .chezmoi.os "darwin") -}}
 #!/bin/bash
 
-mkdir -p $HOME/tmp
-pushd $HOME/tmp
-git clone --depth=1 https://github.com/oh-my-fish/oh-my-fish.git
-oh-my-fish/bin/install --offline --noninteractive
-/bin/rm -rf oh-my-fish
-popd
-
-# make sure the prompt is clear
-/bin/rm ~/.config/fish/functions/fish_prompt.fish || true
-
-omf install bobthefish
-# fish -c "omf theme bobthefish"
-# exec fish
+if test ! $(which brew); then
+    mkdir -p $HOME/tmp
+    pushd $HOME/tmp
+    /bin/bash -c "$(git clone --depth=1 https://github.com/oh-my-fish/oh-my-fish.git)"
+    oh-my-fish/bin/install --offline --noninteractive
+    /bin/rm -rf oh-my-fish
+    popd
+  else
+    # make sure the prompt is clear
+    /bin/rm ~/.config/fish/functions/fish_prompt.fish || true
+    omf install bobthefish
+    fish -c "omf theme bobthefish"
+    exec fish
+end
 
 {{ end -}}
