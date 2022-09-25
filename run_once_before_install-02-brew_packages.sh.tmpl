@@ -11,6 +11,7 @@ tap "argoproj/tap"
 tap "aws/tap"
 tap "hashicorp/tap"
 tap "johanhaleby/kubetail"
+tap "liamg/tfsec"
 #tap 'mdogan/zulu'
 #tap 'heroku/brew'
 tap 'homebrew/bundle'
@@ -39,7 +40,7 @@ brew 'mackup'
 brew 'mas' # Mac App Store manager
 
 # Development
-brew 'ktlint'
+#brew 'ktlint'
 #brew 'swiftformat'
 #brew 'swiftlint'
 #brew 'heroku/brew/heroku'
@@ -71,9 +72,9 @@ brew 'fzf' # For zoxide
 brew 'topgrade'
 
 # Amazon Web Services
+brew "awscli"
 brew "aws-shell"
 brew "aws-sso-util"
-brew "awscli"
 
 # Terraform
 brew "terraform-docs"
@@ -173,11 +174,16 @@ cask "font-sauce-code-pro-nerd-font"
 
 # Mac App Store manager
 mas '1Password for Safari', id: 1569813296
+mas "Magnet", id: 441258766
+mas "SnippetsLab", id: 1006087419
+mas "Pocket", id: 568494494
+mas "Save to Pocket", id: 1477385213
+mas "NextDNS", id: 1464122853
 #mas 'Numbers', id: 409203825
 #mas 'Save to Raindrop.io', id: 1549370672
 #mas 'Pages', id: 409201541
 #mas 'Keynote', id: 409183694
-#mas "Xcode", id: 497799835
+mas "Xcode", id: 497799835
 
 #########################
 # Brewfile contents end #
