@@ -1,6 +1,8 @@
 {{- if (eq .chezmoi.os "darwin") -}}
 #!/bin/sh
 
+touch ~/.tool-versions
+
 while read plugin version
 do
     if asdf plugin list | grep --silent $plugin
