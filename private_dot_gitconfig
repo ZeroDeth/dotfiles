@@ -93,7 +93,7 @@
     tool = vimdiff
 
 [github]
-	user = L3K0V
+	user = ZeroDeth
 
 [ghi]
 	token = !security find-internet-password -a ZeroDeth -s github.com -l 'ghi token' -w
