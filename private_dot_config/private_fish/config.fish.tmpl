@@ -60,9 +60,13 @@ if test -d (brew --prefix)"/share/fish/vendor_completions.d"
     set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
 end
 
+# fish-abbreviation-tips plugin
+set -x ABBR_TIPS_PROMPT "\n💡 \e[1m{{ .abbr }}\e[0m => {{ .cmd }}"
+#set -x ABBR_TIPS_ALIAS_WHITELIST # Not set
+#set -x ABBR_TIPS_REGEXES '(^(\w+\s+)+(-{1,2})\w+)(\s\S+)' '(^( ?\w+){3}).*' '(^( ?\w+){2}).*' '(^( ?\w+){1}).*'
+
 # Configure Starship
 starship init fish | source
 
 # Configure zoxide
 zoxide init fish | source
-
