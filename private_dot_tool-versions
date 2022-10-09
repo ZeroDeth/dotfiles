@@ -2,6 +2,6 @@ nodejs lts
 ruby 3.1.0
 python 3.10.1
 direnv 2.32.1
-terraform 1.1.9
+#terraform 1.1.9
 golang 1.17.5
 neovim nightly
