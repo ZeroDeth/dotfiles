@@ -135,3 +135,6 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+## fzf bat
+alias fzb='fzf --preview "bat {} --color=always"'
