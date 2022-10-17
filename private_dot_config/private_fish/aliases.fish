@@ -27,7 +27,7 @@ alias topten="history | commands | sort -rn | head"
 alias -s {yml,yaml}=vim
 
 ## A global alias enables you to create an alias that is expanded anywhere in the command line, not just at the beginning. This is very useful to replace common filenames or piped commands.
-alias -g G='| grep -i'
+# alias -g G='| grep -i'
 
 ## Filesystem aliases
 alias ..='cd ..'
