@@ -138,3 +138,6 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 
 ## fzf bat
 alias fzb='fzf --preview "bat {} --color=always"'
+
+## Display images in the terminal
+alias icat="kitty +kitten icat"
