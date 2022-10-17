@@ -3,6 +3,11 @@ ilancosman/tide@v5
 andreiborisov/sponge
 patrickf1/fzf.fish
 gazorby/fish-abbreviation-tips
+jorgebucaran/nvm.fish
+wfxr/forgit
+danhper/fish-ssh-agent
+vincentjames501/fish-kill-on-port
+edc/bass
 
 # Themes
 #matchai/spacefish #deprecated
