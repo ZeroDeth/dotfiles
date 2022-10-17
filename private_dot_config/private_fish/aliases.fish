@@ -19,12 +19,13 @@
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 ## Copy public key to clipboard:
-alias pubkey="cat ~/.ssh/id_krypton.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+# alias pubkey="cat ~/.ssh/id_krypton.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
+alias pubkey="cat ~/.ssh/id_ed25519.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 alias topten="history | commands | sort -rn | head"
 
 ## A suffix alias allows you to open the file you type in the command line using the specified program based on the file extension.
-alias -s {yml,yaml}=vim
+# alias -s {yml,yaml}=vim
 
 ## A global alias enables you to create an alias that is expanded anywhere in the command line, not just at the beginning. This is very useful to replace common filenames or piped commands.
 # alias -g G='| grep -i'
