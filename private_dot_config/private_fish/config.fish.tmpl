@@ -95,6 +95,7 @@ set -gx PATH $PATH $HOME/.krew/bin
 
 eval (thefuck --alias | tr '\n' ';')
 
+. ~/.config/fish/aliases.fish
 . ~/.config/fish/kubectl_aliases.fish
 # [ -f "$HOME/.config/fish/kubectl_aliases.fish" ] && . "./kubectl_aliases.fish"
 # source "$HOME/.config/fish/kubectl_aliases"
