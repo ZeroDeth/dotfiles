@@ -1935,6 +1935,8 @@ map super+f pipe @ansi overlay /usr/local/bin/vim-ansi
 # map kitty_mod+, move_tab_backward
 
 #: Set tab title
+
+# Telegram
 terminal-notifier -title test -message 'Testing kitty remote control' -execute '/usr/local/bin/kitty @ --to unix:/tmp/kitty focus-window && /usr/local/bin/kitty @ --to unix:/tmp/kitty focus-tab --no-response -m title:Telegram'
 
 # map kitty_mod+alt+t set_tab_title
