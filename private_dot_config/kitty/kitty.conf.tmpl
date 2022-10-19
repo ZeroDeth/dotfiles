@@ -1201,7 +1201,7 @@ hide_window_decorations titlebar-only
 
 #: Relative paths are resolved from the kitty configuration directory.
 
-# allow_remote_control no
+allow_remote_control yes
 
 #: Allow other programs to control kitty. If you turn this on, other
 #: programs can control all aspects of kitty, including sending text
@@ -1228,7 +1228,7 @@ hide_window_decorations titlebar-only
 #: yes
 #:    Remote control requests are always accepted.
 
-# listen_on none
+listen_on unix:/tmp/kitty
 
 #: Listen to the specified UNIX socket for remote control connections.
 #: Note that this will apply to all kitty instances. It can be
@@ -1607,6 +1607,7 @@ hide_window_decorations titlebar-only
 #: directory without duplication::
 
 #:     map f1 launch_tab vim
+map super+f pipe @ansi overlay /usr/local/bin/vim-ansi
 #:     map f2 launch_tab emacs
 
 #: Similarly, to alias kitten invocation::
@@ -1934,6 +1935,7 @@ hide_window_decorations titlebar-only
 # map kitty_mod+, move_tab_backward
 
 #: Set tab title
+terminal-notifier -title test -message 'Testing kitty remote control' -execute '/usr/local/bin/kitty @ --to unix:/tmp/kitty focus-window && /usr/local/bin/kitty @ --to unix:/tmp/kitty focus-tab --no-response -m title:Telegram'
 
 # map kitty_mod+alt+t set_tab_title
 # map shift+cmd+i     set_tab_title
