@@ -24,9 +24,6 @@ alias pubkey="cat ~/.ssh/id_ed25519.pub | pbcopy | echo '=> Public key copied to
 
 alias topten="history | commands | sort -rn | head"
 
-## Automatically sets up Shell integration on the remote host and copies the kitty terminfo database there
-alias s="kitty +kitten ssh"
-
 ## A suffix alias allows you to open the file you type in the command line using the specified program based on the file extension.
 # alias -s {yml,yaml}=vim
 
@@ -139,5 +136,13 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 ## fzf bat
 alias fzb='fzf --preview "bat {} --color=always"'
 
+# === Kitty ===
+
+## Automatically sets up Shell integration on the remote host and copies the kitty terminfo database there
+alias s="kitty +kitten ssh"
+
 ## Display images in the terminal
 alias icat="kitty +kitten icat"
+
+## Download kitty themes "git clone https://github.com/dexpota/kitty-themes ~/.config/kitty/themes"
+alias kthemes="cd ~/.config/kitty/themes && fzf --preview 'head -n 40 {} && kitty @ --to unix:/tmp/kitty set-colors -a -c {}'; cd -"
