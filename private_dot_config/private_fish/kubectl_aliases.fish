@@ -7,6 +7,7 @@
 # === Aliases ===
 
 # alias kubectl="kubecolor"
+alias kubectl="kubecolor"
 alias kx='kubectx'
 alias kn='kubens'
 
