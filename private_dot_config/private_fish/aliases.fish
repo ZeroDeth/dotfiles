@@ -119,9 +119,12 @@ alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
 # alias flush="dscacheutil -flushcache"
 alias flushsudo="sudo killall -HUP mDNSResponder; sleep 2"
 
-# View HTTP traffic
+## View HTTP traffic
 alias sniff="sudo ngrep -d 'en0' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en0 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
+## Using prettyping instead of ping
+alias prettyping=ping
 
 # === macOS ===
 
