@@ -85,9 +85,15 @@ funcsave fish_greeting
 #-------------------------------------------------------------------------------
 # Kubernetes
 #-------------------------------------------------------------------------------
+
 # Krew is the plugin manager for kubectl command-line tool.
 # Show a tree of object hierarchies through ownerReferences.
 set -gx PATH $PATH $HOME/.krew/bin
+
+# Use GNU watch command instead of kubectl [...] --watch
+# https://github.com/ahmetb/kubectl-aliases#fish
+test -f ~/.config/fish/kubectl_aliases.fish && source \
+    (cat ~/.config/fish/kubectl_aliases.fish | sed -r 's/(kubectl.*) --watch/watch \1/g' | psub)
 
 #-------------------------------------------------------------------------------
 # Aliases
@@ -96,9 +102,6 @@ set -gx PATH $PATH $HOME/.krew/bin
 eval (thefuck --alias | tr '\n' ';')
 
 . ~/.config/fish/aliases.fish
-. ~/.config/fish/kubectl_aliases.fish
-# [ -f "$HOME/.config/fish/kubectl_aliases.fish" ] && . "./kubectl_aliases.fish"
-# source "$HOME/.config/fish/kubectl_aliases"
 
 
 if status is-interactive
