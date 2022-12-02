@@ -103,11 +103,18 @@ eval (thefuck --alias | tr '\n' ';')
 
 . ~/.config/fish/aliases.fish
 
+#-------------------------------------------------------------------------------
+# Personal/Work spacess
+#-------------------------------------------------------------------------------
 
 if status is-interactive
     abbr --add --global workspace cd ~/Workspace
     abbr --add --global personal cd ~/Workspace/personal
     abbr --add --global business cd ~/Workspace/business
+
+#-------------------------------------------------------------------------------
+# General
+#-------------------------------------------------------------------------------
 
     # Administer like a sir
     abbr --add --global please sudo
