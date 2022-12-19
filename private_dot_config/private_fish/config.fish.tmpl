@@ -174,7 +174,8 @@ end
 
 # Configure ASDF
 # source (brew --prefix asdf)"/libexec/asdf.fish"
-asdf direnv hook fish | source
+eval "$($ASDF_DIRENV_BIN hook fish)"
+# asdf direnv hook fish | source
 
 # Configure Starship
 starship init fish | source
