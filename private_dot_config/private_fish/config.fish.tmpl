@@ -158,9 +158,6 @@ set -gx SSH_AUTH_SOCK ~/.1password/agent.sock
 set -U fish_user_paths /usr/local/bin $fish_user_paths
 # set -U fish_user_paths /usr/local/MacGPG2/bin $fish_user_paths
 
-# Configure ASDF
-source (brew --prefix asdf)"/libexec/asdf.fish"
-
 # Configure Homebrew completions
 if test -d (brew --prefix)"/share/fish/completions"
     set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/completions
@@ -174,6 +171,10 @@ end
 
 # Configure byobu //TODO: unkown command
 # status --is-login; and status --is-interactive; and exec byobu-launcher status --is-login; and status --is-interactive; and exec byobu-launcher
+
+# Configure ASDF
+# source (brew --prefix asdf)"/libexec/asdf.fish"
+asdf direnv hook fish | source
 
 # Configure Starship
 starship init fish | source
