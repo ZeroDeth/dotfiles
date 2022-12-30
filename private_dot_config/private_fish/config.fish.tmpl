@@ -158,6 +158,10 @@ end
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/sbin
 
+## pnpm
+set -gx PNPM_HOME "$HOME/Library/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+
 set -gx VISUAL "code"
 #set -gx JAVA_HOME (/usr/libexec/java_home -v 11)
 set -gx SSH_AUTH_SOCK ~/.1password/agent.sock
