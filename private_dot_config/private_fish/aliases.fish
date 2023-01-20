@@ -100,6 +100,7 @@ alias chrome="/Applications/Google\\ \\Chrome.app/Contents/MacOS/Google\\ \\Chro
 # autoload run-help-svk
 
 ## Git aliases.
+alias git=hub
 # alias gs='git status'
 # alias gc='git commit'
 # alias gp='git pull --rebase'
