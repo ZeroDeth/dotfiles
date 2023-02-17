@@ -6,7 +6,7 @@ brew bundle --no-lock --file=/dev/stdin <<EOF
 # Brewfile contents #
 #####################
 
-# Taps
+## Taps
 tap "argoproj/tap"
 tap "aws/tap"
 tap "hashicorp/tap"
@@ -26,11 +26,11 @@ tap "paul-nameless/homebrew-repo"
 tap "minamijoyo/hcledit"
 tap "gofireflyio/aiac"
 
-# GNU utils
+## GNU utils
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'findutils'
 
-# Bash ZSH fish
+## Bash ZSH fish
 brew 'bash' # Latest Bash version
 brew 'bash-completion@2'
 brew 'zsh'
@@ -43,7 +43,7 @@ brew 'starship'  # fish theme prompt
 brew 'mackup'
 brew 'mas' # Mac App Store manager
 
-# Development
+## Development
 #brew 'ktlint'
 #brew 'swiftformat'
 #brew 'swiftlint'
@@ -52,11 +52,11 @@ brew 'cocoapods'
 brew 'httpie'
 brew 'cloc'
 
-# Development environment
+## Development environment
 brew 'asdf'
 brew 'pipx'
 
-# Utilities
+## Utilities
 brew "bat"
 brew "bat-extras"
 brew 'byobu'
@@ -92,12 +92,12 @@ brew 'prettyping'
 brew 'figlet'
 brew 'yamllint'
 
-# Amazon Web Services
+## Amazon Web Services
 brew "awscli"
 #brew "aws-shell"
 brew "aws-sso-util"
 
-# Terraform
+## Terraform
 brew "checkov"
 brew "terraform-docs"
 brew "terraform-ls"
@@ -110,18 +110,18 @@ brew "tfupdate"
 brew "minamijoyo/hcledit/hcledit"
 brew "pre-commit"
 
-# Linux virtual machine
+## Linux virtual machine
 brew "colima", args: ["HEAD"]
 brew "lima", args: ["HEAD"]
 
-# docker
+## docker
 brew "docker", args: ["HEAD"]
 #brew "docker-compose", args: ["HEAD"]
 
-# Containerd
+## Containerd
 #brew "nerdctl", args: ["HEAD"]
 
-# Kubernetes
+## Kubernetes
 brew "kubernetes-cli"
 #brew "minikube"
 brew "kustomize"
@@ -139,12 +139,12 @@ brew "kubecolor/tap/kubecolor"
 brew "yq"
 brew "velero"
 
-# CDK
+## CDK
 brew "aws-cdk"
 brew "cdk8s"
 brew "cdktf"
 
-# AI
+## AI
 brew "gofireflyio/aiac/aiac"
 
 # Task is just a single binary and has no other dependencies,
@@ -202,12 +202,12 @@ cask "google-chrome", args: { appdir: "/Applications" }
 #cask "microsoft-edge"
 cask "vivaldi", args: { appdir: "/Applications" }
 
-# Quicklook
+## Quicklook
 #cask 'qlmarkdown'
 #cask 'quicklook-json'
 #cask 'qlstephen'
 
-# Fonts
+## Fonts
 cask "font-cascadia-code"
 cask "font-cascadia-code-pl"
 cask "font-fira-code"
@@ -230,7 +230,7 @@ cask "font-hack-nerd-font"
 cask "font-sauce-code-pro-nerd-font"
 #cask "font-ubuntu"      #TODO:// Install svn
 
-# Mac App Store manager
+## Mac App Store manager
 mas '1Password for Safari', id: 1569813296
 mas "Grammarly for Safari", id: 1462114288
 mas "Magnet", id: 441258766
