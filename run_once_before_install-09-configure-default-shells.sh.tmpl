@@ -1,8 +1,0 @@
-{{- if (eq .chezmoi.os "darwin") -}}
-#!/bin/bash
-
-sudo sh -c 'echo /opt/homebrew/bin/fish >> /etc/shells'
-
-chsh -s /opt/homebrew/bin/fish
-
-{{ end -}}
