@@ -1,18 +1,20 @@
 {{- if (eq .chezmoi.os "darwin") -}}
 #!/bin/bash
 
+echo "🍺 Installing homebrew packages..."
+
 brew bundle --no-lock --file=/dev/stdin <<EOF
 #####################
 # Brewfile contents #
 #####################
 
 ## Taps
-tap "argoproj/tap"
-tap "aws/tap"
-tap "bridgecrewio/airiam"
-tap "hashicorp/tap"
-tap "johanhaleby/kubetail"
-tap "liamg/tfsec"
+#tap "argoproj/tap"
+#tap "aws/tap"
+#tap "bridgecrewio/airiam"
+#tap "hashicorp/tap"
+#tap "johanhaleby/kubetail"
+#tap "liamg/tfsec"
 #tap 'mdogan/zulu'
 #tap 'heroku/brew'
 tap 'homebrew/bundle'
@@ -23,7 +25,7 @@ tap 'homebrew/core'
 tap "homebrew/services"
 #tap 'romkatv/powerlevel10k'
 tap "nextdns/tap"
-tap "paul-nameless/homebrew-repo"
+#tap "paul-nameless/homebrew-repo"
 tap "minamijoyo/hcledit"
 tap "gofireflyio/aiac"
 
@@ -32,16 +34,16 @@ brew 'coreutils' # Those that come with macOS are outdated
 brew 'findutils'
 
 ## Bash ZSH fish
-brew 'bash' # Latest Bash version
-brew 'bash-completion@2'
-brew 'zsh'
-brew 'fish'
-brew 'chezmoi'
-brew 'fisher'
-brew 'spaceship' # zsh theme prompt
-brew 'starship'  # fish theme prompt
+#brew 'bash' # Latest Bash version
+#brew 'bash-completion@2'
+#brew 'zsh'
+#brew 'fish'
+#brew 'chezmoi'
+#brew 'fisher'
+#brew 'spaceship' # zsh theme prompt
+#brew 'starship'  # fish theme prompt
 
-brew 'mackup'
+#brew 'mackup'
 brew 'mas' # Mac App Store manager
 
 ## Development
@@ -55,157 +57,156 @@ brew 'cloc'
 
 ## Development environment
 brew 'asdf'
-brew 'pipx'
+#brew 'pipx'
 
 ## Utilities
 brew "act"  # Run your GitHub Actions locally
-brew "bat"
-brew "bat-extras"
-brew 'byobu'
-brew "fd"
-brew "jq"
-brew 'detox'
-brew 'diff-so-fancy'
-brew 'git'
-brew 'gnupg'
-brew 'highlight'
-brew 'hub'
-brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
-brew 'pinentry-mac'
-brew "rg"
-brew "prettyping"
-brew 'tldr'
-brew 'trash'
-brew 'tree'
-brew 'vim'
-brew 'wget'
-brew 'wifi-password'
-brew 'grep' # Global Regural Expression Print
-brew 'zoxide' # Better cd in Terminal
-brew 'fzf' # For zoxide
-brew 'topgrade'
-brew 'lsd'
-brew 'thefuck'
+#brew "bat"
+#brew "bat-extras"
+#brew 'byobu'
+#brew "fd"
+#brew "jq"
+#brew 'detox'
+#brew 'diff-so-fancy'
+#brew 'git'
+#brew 'gnupg'
+#brew 'highlight'
+#brew 'hub'
+#brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
+#brew 'pinentry-mac'
+#brew "rg"
+#brew "prettyping"
+#brew 'tldr'
+#brew 'trash'
+#brew 'tree'
+#brew 'vim'
+#brew 'wget'
+#brew 'wifi-password'
+#brew 'grep' # Global Regural Expression Print
+#brew 'zoxide' # Better cd in Terminal
+#brew 'fzf' # For zoxide
+#brew 'topgrade'
+#brew 'lsd'
+#brew 'thefuck'
 #brew 'nextdns'
-brew 'imagemagick'
-brew 'terminal-notifier'
-brew 'tg'
-brew 'prettyping'
-brew 'figlet'
-brew 'yamllint'
+#brew 'imagemagick'
+#brew 'terminal-notifier'
+#brew 'tg'
+#brew 'figlet'
+#brew 'yamllint'
 
 ## TMUX
-brew 'tmux'
+#brew 'tmux'
 brew 'pam-reattach'  # To use Touch ID for sudo within tmux. See https://github.com/fabianishere/pam_reattach
 
 ## Amazon Web Services
-brew "awscli"
+#brew "awscli"
 #brew "aws-shell"
-brew "aws-sso-util"
+#brew "aws-sso-util"
 
 ## Terraform
 brew "airiam" # Least privilege AWS IAM Terraformer
-brew "checkov"
-brew "terraform-docs"
-brew "terraform-ls"
-brew "terrascan"
+#brew "checkov"
+#brew "terraform-docs"
+#brew "terraform-ls"
+#brew "terrascan"
 #brew "tfenv"
-brew "tflint"
-brew "tfsec"
-brew "infracost"
-brew "tfupdate"
+#brew "tflint"
+#brew "tfsec"
+#brew "infracost"
+#brew "tfupdate"
 brew "minamijoyo/hcledit/hcledit"
-brew "pre-commit"
+#brew "pre-commit"
 
 ## Linux virtual machine
-brew "colima", args: ["HEAD"]
-brew "lima", args: ["HEAD"]
+#brew "colima", args: ["HEAD"]
+#brew "lima", args: ["HEAD"]
 
 ## docker
-brew "docker", args: ["HEAD"]
+#brew "docker", args: ["HEAD"]
 #brew "docker-compose", args: ["HEAD"]
 
 ## Containerd
 #brew "nerdctl", args: ["HEAD"]
 
 ## Kubernetes
-brew "kubernetes-cli"
+#brew "kubernetes-cli"
 #brew "minikube"
-brew "kustomize"
-brew "helm"
-cask "lens"
-brew "argocd"
-brew "argoproj/tap/kubectl-argo-rollouts"
-brew "stern"
+#brew "kustomize"
+#brew "helm"
+#cask "lens"
+#brew "argocd"
+#brew "argoproj/tap/kubectl-argo-rollouts"
+#brew "stern"
 #brew "johanhaleby/kubetail/kubetail", args: ["with-short-names"]
-brew "istioctl"
-brew "k9s"
-brew "kompose"
-brew "krew"
-brew "kubecolor/tap/kubecolor"
-brew "yq"
-brew "velero"
+#brew "istioctl"
+#brew "k9s"
+#brew "kompose"
+#brew "krew"
+#brew "kubecolor/tap/kubecolor"
+#brew "yq"
+#brew "velero"
 
 ## CDK
-brew "aws-cdk"
-brew "cdk8s"
-brew "cdktf"
+#brew "aws-cdk"
+#brew "cdk8s"
+#brew "cdktf"
 
 ## AI
 brew "gofireflyio/aiac/aiac"
 
 # Task is just a single binary and has no other dependencies,
 # which means you don't need to mess with any complicated install setups just to use a build tool.
-brew "go-task/tap/go-task"
+#brew "go-task/tap/go-task"
 
 #####################
 # Casks             #
 #####################
 
-cask "1password-beta"
-cask "1password-cli-beta"
+#cask "1password-beta"
+#cask "1password-cli-beta"
 #cask "zulu-jdk11"
-cask "raycast"
+#cask "raycast"
 #cask "agenda"
 #cask "adguard"
 #cask "coconutbattery"
 #cask 'gpg-suite'
-cask 'keybase'
-cask "github"
-cask "gitkraken", args: { appdir: "/Applications" }
+#cask 'keybase'
+#cask "github"
+#cask "gitkraken", args: { appdir: "/Applications" }
 #cask 'imageoptim'
 #cask "iina" # Open-Source Video Player
-cask "goland"
-cask "jetbrains-toolbox"
-cask "iterm2", args: { appdir: "/Applications" }
+#cask "goland"
+#cask "jetbrains-toolbox"
+#cask "iterm2", args: { appdir: "/Applications" }
 #cask "leapp"
-cask "postman", args: { appdir: "/Applications" }
+#cask "postman", args: { appdir: "/Applications" }
 #cask "kap"
 #cask "keka"
 #cask "kekaexternalhelper"
-cask "keystore-explorer"
-cask "kitty"
+#cask "keystore-explorer"
+#cask "kitty"
 #cask "ledger-live"
 #cask "microsoft-auto-update"
 #cask "microsoft-office"
-cask "microsoft-teams"
+#cask "microsoft-teams"
 #cask "obsidian"
-cask "parallels"
+#cask "parallels"
 cask "setapp" # A collection of apps
-cask "sketch"
-cask "slack"
-cask "spotify"
+#cask "sketch"
+#cask "slack"
+#cask "spotify"
 #cask "swiftformat-for-xcode"
 #cask "raindropio"
-cask "telegram"
-cask "transmission"
-cask "visual-studio-code", args: { appdir: "/Applications" }
+#cask "telegram"
+#cask "transmission"
+#cask "visual-studio-code", args: { appdir: "/Applications" }
 cask "warp", args: { appdir: "/Applications" }
 
 ## Web Browser
-cask "brave-browser", args: { appdir: "/Applications" }
-cask "firefox", args: { appdir: "/Applications" }
-cask "google-chrome", args: { appdir: "/Applications" }
+#cask "brave-browser", args: { appdir: "/Applications" }
+#cask "firefox", args: { appdir: "/Applications" }
+#cask "google-chrome", args: { appdir: "/Applications" }
 #cask "microsoft-edge"
 cask "vivaldi", args: { appdir: "/Applications" }
 
@@ -215,26 +216,26 @@ cask "vivaldi", args: { appdir: "/Applications" }
 #cask 'qlstephen'
 
 ## Fonts
-cask "font-cascadia-code"
-cask "font-cascadia-code-pl"
-cask "font-fira-code"
-cask "font-hack-nerd-font"
+#cask "font-cascadia-code"
+#cask "font-cascadia-code-pl"
+#cask "font-fira-code"
+#cask "font-hack-nerd-font"
 #cask "font-hack-nerd-font-mono", args: { appdir: "/Applications" }
 #cask "font-hasklig-nerd-font", args: { appdir: "/Applications" }
 #cask "font-sourcecodepro-nerd-font", args: { appdir: "/Applications" }
 #cask "font-sourcecodepro-nerd-font-mono", args: { appdir: "/Applications" }
-cask 'font-lato'
+#cask 'font-lato'
 #cask 'font-open-sans'  #TODO:// Install svn
 #cask 'font-roboto'    #TODO:// Install svn
 #cask 'font-source-code-pro-for-powerline'    #TODO:// Install svn
 #cask 'font-source-code-pro'  #TODO:// Install svn
 #cask 'font-source-sans-pro'    #TODO:// Install svn
 #cask 'font-source-serif-pro'      #TODO:// Install svn
-cask 'font-meslo-for-powerline'
-cask 'font-meslo-lg-nerd-font'
-cask 'font-meslo-lg'
-cask "font-hack-nerd-font"
-cask "font-sauce-code-pro-nerd-font"
+#cask 'font-meslo-for-powerline'
+#cask 'font-meslo-lg-nerd-font'
+#cask 'font-meslo-lg'
+#cask "font-hack-nerd-font"
+#cask "font-sauce-code-pro-nerd-font"
 #cask "font-ubuntu"      #TODO:// Install svn
 
 ## Mac App Store manager
@@ -245,7 +246,7 @@ mas "SnippetsLab", id: 1006087419
 mas "Pocket", id: 568494494
 mas "Save to Pocket", id: 1477385213
 mas "Microsoft Outlook", id: 985367838
-mas "NextDNS", id: 1464122853
+#mas "NextDNS", id: 1464122853
 mas "Notion Web Clipper", id: 1559269364
 #mas 'Numbers', id: 409203825
 #mas 'Save to Raindrop.io', id: 1549370672
@@ -260,3 +261,8 @@ mas "Xcode", id: 497799835
 EOF
 
 {{ end -}}
+
+echo "🍺 Cleaning up after homebrew..."
+brew cleanup
+
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
