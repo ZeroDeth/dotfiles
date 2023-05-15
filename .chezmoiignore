@@ -1,8 +1,8 @@
 README.md
 Makefile
 install.sh
-**/docs/*
 
+**/docs/*
 **/private_dot_config/*
 **/private_dot_gnupg/*
 **/private_dot_ssh/*
