@@ -20,12 +20,12 @@ do
     asdf global $plugin $version
     asdf reshim $plugin
 
-    if [ $plugin = "nodejs" ]
-    then
-        corepack enable
-        corepack prepare pnpm@latest --activate
-        corepack prepare yarn@stable --activate
-    fi
+    #if [ $plugin = "nodejs" ]
+    #then
+        #corepack enable
+        #corepack prepare pnpm@latest --activate
+        #corepack prepare yarn@stable --activate
+    #fi
 
 done < ~/.tool-versions
 
