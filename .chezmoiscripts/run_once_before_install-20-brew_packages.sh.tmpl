@@ -162,6 +162,10 @@ brew "gofireflyio/aiac/aiac"
 # which means you don't need to mess with any complicated install setups just to use a build tool.
 #brew "go-task/tap/go-task"
 
+{{ if .work_device }}
+#cask "bitwarden--cli"
+{{ end }}
+
 #####################
 # Casks             #
 #####################
@@ -245,6 +249,10 @@ cask "vivaldi", args: { appdir: "/Applications" }
 #cask "font-hack-nerd-font"
 #cask "font-sauce-code-pro-nerd-font"
 #cask "font-ubuntu"      #TODO:// Install svn
+
+{{ if .work_device }}
+cask "bitwarden"
+{{ end }}
 
 ## Mac App Store manager
 mas '1Password for Safari', id: 1569813296
