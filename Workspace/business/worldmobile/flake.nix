@@ -29,10 +29,10 @@
             lolcat              # Make console output raibow colored
 
             ## Platform-non-specific Go (for local development)
-            go
+            # go
 
             ## Docker CLI
-            docker
+            # docker
 
             ## Kubernetes
             kubectl
@@ -41,13 +41,14 @@
             # kubernetes-helm
 
             ## cluster management tool
-            # k9s
+            k9s
             # lens
             krew
             kubecolor            #TODO: nixos-unstable has this, update channel to use it.
 
             ## Terraform
-            terraform
+            # terraform
+            terraform-ls
             tflint
             terraform-docs              #0.16.0
             tfsec
@@ -58,7 +59,7 @@
             gawk
 
             ## Code tools
-            pre-commit
+            # pre-commit
             checkov
 
             ## Google Cloud
@@ -74,7 +75,7 @@
             echo "Go `${pkgs.go}/bin/go version`"
             echo "Google Cloud `${pkgs.google-cloud-sdk}/bin/gcloud version`"
             echo "DigitalOcean `${pkgs.doctl}/bin/doctl version`"
-            echo "Terraform `${pkgs.terraform}/bin/terraform version`"
+            # echo "Terraform `${pkgs.terraform}/bin/terraform version`"
             echo "Docker `${pkgs.docker}/bin/docker --version`"
             echo "Kubernetes `${pkgs.kubectl}/bin/kubectl version --short`"
           '';
