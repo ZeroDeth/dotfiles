@@ -133,16 +133,17 @@ brew "minamijoyo/hcledit/hcledit"
 #brew "nerdctl", args: ["HEAD"]
 
 ## Kubernetes
-#brew "kubernetes-cli"
+brew "kubernetes-cli"
 #brew "minikube"
 #brew "kustomize"
-#brew "helm"
+brew "helm"
 cask "lens"
 #brew "argocd"
 #brew "argoproj/tap/kubectl-argo-rollouts"
 #brew "stern"
 #brew "johanhaleby/kubetail/kubetail", args: ["with-short-names"]
 #brew "istioctl"
+#brew "linkerd"
 #brew "k9s"
 #brew "kompose"
 #brew "krew"
@@ -170,8 +171,13 @@ brew "gofireflyio/aiac/aiac"
 # Casks             #
 #####################
 
+## Microsoft
+#cask "microsoft-auto-update"
+#cask "microsoft-office"
+cask "microsoft-teams"
+
 ## Google Cloud
-#cask "google-cloud-sdk"
+cask "google-cloud-sdk"
 
 cask "1password"
 #cask "1password-beta"
@@ -199,9 +205,6 @@ cask "1password-cli"
 #cask "keystore-explorer"
 #cask "kitty"
 #cask "ledger-live"
-#cask "microsoft-auto-update"
-#cask "microsoft-office"
-#cask "microsoft-teams"
 #cask "obsidian"
 #cask "parallels"
 cask "setapp" # A collection of apps

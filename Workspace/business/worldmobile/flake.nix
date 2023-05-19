@@ -35,16 +35,24 @@
             # docker
 
             ## Kubernetes
-            kubectl
+            # kubectl
             kubectx
             # kustomize
             # kubernetes-helm
+            linkerd
+            velero
+            # tracee
 
             ## cluster management tool
             k9s
             # lens
             krew
             kubecolor            #TODO: nixos-unstable has this, update channel to use it.
+
+            ## Argo
+            argo
+            argocd
+            argo-rollouts
 
             ## Terraform
             # terraform
@@ -76,8 +84,11 @@
             echo "Google Cloud `${pkgs.google-cloud-sdk}/bin/gcloud version`"
             echo "DigitalOcean `${pkgs.doctl}/bin/doctl version`"
             # echo "Terraform `${pkgs.terraform}/bin/terraform version`"
-            echo "Docker `${pkgs.docker}/bin/docker --version`"
-            echo "Kubernetes `${pkgs.kubectl}/bin/kubectl version --short`"
+            echo "Docker `${pkgs.docker}/bin/docker version`"
+            echo "Kubernetes `${pkgs.kubectl}/bin/kubectl version`"
+            echo "Velero `${pkgs.kubectl}/bin/velero version`"
+            echo "Linkerd `${pkgs.kubectl}/bin/linkerd version`"
+            echo "Velero `${pkgs.kubectl}/bin/velero version`"
           '';
       };
     });
