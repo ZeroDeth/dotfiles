@@ -1,2 +1,5 @@
 use flake .
 dotenv .env
+
+# Krew #TODO: Temporary hack until disover how to handle by fleek
+export PATH="${PATH}:${HOME}/.krew/bin"
