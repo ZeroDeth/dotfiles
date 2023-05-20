@@ -46,8 +46,8 @@
             ## cluster management tool
             k9s
             # lens
-            krew
-            kubecolor            #TODO: nixos-unstable has this, update channel to use it.
+            # krew
+            # kubecolor            #TODO: nixos-unstable has this, update channel to use it.
 
             ## Argo
             argo
@@ -80,6 +80,7 @@
 
           shellHook = ''
             figlet "World Mobile!" | lolcat --freq 0.5
+
             echo "Go `${pkgs.go}/bin/go version`"
             # echo "Google Cloud `${pkgs.google-cloud-sdk}/bin/gcloud version`"
             echo "DigitalOcean `${pkgs.doctl}/bin/doctl version`"
