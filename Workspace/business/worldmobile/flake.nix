@@ -88,10 +88,9 @@
             # echo "Terraform `${pkgs.terraform}/bin/terraform version`"
             echo "Docker `${pkgs.docker}/bin/docker version`"
             echo "Kubernetes `${pkgs.kubectl}/bin/kubectl version`"
-            echo "Kustomize `${pkgs.kubectl}/bin/kustomize version`"
-            echo "Velero `${pkgs.kubectl}/bin/velero version`"
-            echo "Linkerd `${pkgs.kubectl}/bin/linkerd version`"
-            echo "Velero `${pkgs.kubectl}/bin/velero version`"
+            echo "Kustomize `${pkgs.kustomize}/bin/kustomize version`"
+            echo "Velero `${pkgs.velero}/bin/velero version`"
+            echo "Linkerd `${pkgs.linkerd}/bin/linkerd version`"
           '';
       };
     });
