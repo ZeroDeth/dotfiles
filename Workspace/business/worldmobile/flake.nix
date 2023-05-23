@@ -30,6 +30,7 @@
 
             ## Platform-non-specific Go (for local development)
             # go
+            # gopls
 
             ## Docker CLI
             # docker
@@ -44,7 +45,7 @@
             # tracee
 
             ## cluster management tool
-            k9s
+            # k9s
             # lens
             # krew
             # kubecolor            #TODO: nixos-unstable has this, update channel to use it.
