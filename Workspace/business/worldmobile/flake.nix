@@ -34,6 +34,7 @@
 
             ## Docker CLI
             # docker
+            # docker-compose
 
             ## Kubernetes
             # kubectl
@@ -43,6 +44,7 @@
             linkerd
             velero
             # tracee
+            cilium-cli
 
             ## cluster management tool
             # k9s
@@ -86,8 +88,10 @@
             # echo "Google Cloud `${pkgs.google-cloud-sdk}/bin/gcloud version`"
             echo "DigitalOcean `${pkgs.doctl}/bin/doctl version`"
             # echo "Terraform `${pkgs.terraform}/bin/terraform version`"
+            echo "Infracost `${pkgs.infracost}/bin/infracost --version`"
             echo "Docker `${pkgs.docker}/bin/docker version`"
             echo "Kubernetes `${pkgs.kubectl}/bin/kubectl version`"
+            echo "ArgocD `${pkgs.argocd}/bin/argocd version`"
             echo "Kustomize `${pkgs.kustomize}/bin/kustomize version`"
             echo "Velero `${pkgs.velero}/bin/velero version`"
             echo "Linkerd `${pkgs.linkerd}/bin/linkerd version`"
