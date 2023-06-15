@@ -168,7 +168,9 @@ brew "gofireflyio/aiac/aiac"
 #brew "go-task/tap/go-task"
 
 {{ if .work_device }}
-#cask "bitwarden--cli"
+#brew "bitwarden-cli"
+brew "wireguard-go"
+brew "wireguard-tools"
 {{ end }}
 
 #####################
