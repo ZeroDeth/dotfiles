@@ -3,7 +3,7 @@
 
   inputs = {
     # for nixpkgs
-    nixpkgs.url = "github:NixOS/nixpkgs/release-22.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/release-23.05";
     nixpkgs-unstable.url = github:NixOS/nixpkgs/nixpkgs-unstable;
     flake-utils.url = github:numtide/flake-utils;
   };
@@ -31,6 +31,11 @@
             ## Platform-non-specific Go (for local development)
             # go
             # gopls
+            gotests
+            gomodifytags
+            impl
+            golint
+            gotools
 
             ## Docker CLI
             # docker
@@ -39,12 +44,15 @@
             ## Kubernetes
             # kubectl
             kubectx
-            kustomize
+            # kustomize
             # kubernetes-helm
             linkerd
-            velero
+            # velero
             # tracee
             cilium-cli
+            kubeshark
+            k3d
+            kubebuilder
 
             ## cluster management tool
             # k9s
@@ -55,7 +63,7 @@
             ## Argo
             argo
             argocd
-            argo-rollouts
+            # argo-rollouts
 
             ## Terraform
             # terraform
@@ -63,7 +71,7 @@
             tflint
             terraform-docs              #0.16.0
             tfsec
-            terrascan
+            # terrascan
             infracost                   #0.9.22
             terraformer
             graphviz
@@ -79,10 +87,19 @@
 
             ## Digital Ocean
             doctl
+
+            ## VPN #TODO: move from homebrew
+            # wireguard-go
+            # wireguard-tools
+
           ];
 
           shellHook = ''
-            figlet "World Mobile!" | lolcat --freq 0.5
+            figlet "World Mobile" | lolcat --freq 0.5
+
+            #unset LC_ALL LANG
+            # or set it to a known locale, e.g.
+            #export LC_ALL=C LANG=C
 
             echo "Go `${pkgs.go}/bin/go version`"
             # echo "Google Cloud `${pkgs.google-cloud-sdk}/bin/gcloud version`"
@@ -90,11 +107,14 @@
             # echo "Terraform `${pkgs.terraform}/bin/terraform version`"
             echo "Infracost `${pkgs.infracost}/bin/infracost --version`"
             echo "Docker `${pkgs.docker}/bin/docker version`"
-            echo "Kubernetes `${pkgs.kubectl}/bin/kubectl version`"
+            echo "k3d `${pkgs.k3d}/bin/k3d version`"
+            echo "Kubernetes `${pkgs.kubectl}/bin/kubectl version --short`"
             echo "ArgocD `${pkgs.argocd}/bin/argocd version`"
-            echo "Kustomize `${pkgs.kustomize}/bin/kustomize version`"
-            echo "Velero `${pkgs.velero}/bin/velero version`"
+            # echo "Kustomize `${pkgs.kustomize}/bin/kustomize version`"
+            # echo "Velero `${pkgs.velero}/bin/velero version`"
             echo "Linkerd `${pkgs.linkerd}/bin/linkerd version`"
+            echo "Cilium `${pkgs.cilium-cli}/bin/cilium version`"
+            echo "kubebuilder `${pkgs.kubebuilder}/bin/kubebuilder version`"
           '';
       };
     });
