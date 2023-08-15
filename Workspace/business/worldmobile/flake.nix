@@ -6,20 +6,29 @@
     nixpkgs.url = "github:NixOS/nixpkgs/release-23.05";
     nixpkgs-unstable.url = github:NixOS/nixpkgs/nixpkgs-unstable;
     flake-utils.url = github:numtide/flake-utils;
+    darwin.url = "github:LnL7/nix-darwin";
   };
 
   outputs =
-    { self
-    , nixpkgs
-    , nixpkgs-unstable
-    , flake-utils
+    { self, # A reference to the Flake itself
+      nixpkgs,
+      nixpkgs-unstable,
+      flake-utils,
+      darwin
     }:
-
     flake-utils.lib.eachDefaultSystem (system:
     let
-      goVersion = 19;
-      overlays = [ (self: super: { go = super."go_1_${toString goVersion}"; }) ];
-      pkgs = import nixpkgs-unstable { inherit overlays system; config.allowUnsupportedSystem = true; };
+      goVersion = 20; # Change this to update the whole stack
+      overlays = [
+         (self: super: {
+           go = super."go_1_${toString goVersion}";
+          })
+         ];
+
+      pkgs = import nixpkgs-unstable {
+        inherit overlays system;
+        config.allowUnsupportedSystem = true;
+        };
     in
     {
       devShells.default = pkgs.mkShellNoCC {
@@ -29,13 +38,19 @@
             lolcat              # Make console output raibow colored
 
             ## Platform-non-specific Go (for local development)
-            # go
+            # go 1.20 (specified by overlay)
+            go
             # gopls
+            # goimports
+            # godoc
             gotests
             gomodifytags
             impl
             golint
             gotools
+
+            # https://github.com/golangci/golangci-lint
+            golangci-lint
 
             ## Docker CLI
             # docker
@@ -44,15 +59,17 @@
             ## Kubernetes
             # kubectl
             kubectx
-            # kustomize
+            kustomize
             # kubernetes-helm
             linkerd
             # velero
             # tracee
             cilium-cli
-            kubeshark
+            # kubeshark
             k3d
-            kubebuilder
+	          # k0s
+	          # microk8s
+            # kubebuilder
 
             ## cluster management tool
             # k9s
@@ -114,7 +131,7 @@
             # echo "Velero `${pkgs.velero}/bin/velero version`"
             echo "Linkerd `${pkgs.linkerd}/bin/linkerd version`"
             echo "Cilium `${pkgs.cilium-cli}/bin/cilium version`"
-            echo "kubebuilder `${pkgs.kubebuilder}/bin/kubebuilder version`"
+            # echo "kubebuilder `${pkgs.kubebuilder}/bin/kubebuilder version`"
           '';
       };
     });
