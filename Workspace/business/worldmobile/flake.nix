@@ -67,6 +67,10 @@
             # docker
             # docker-compose
 
+            ## Podman CLI
+            # podman
+            # podman-compose
+
             ## Kubernetes
             # kubectl
             kubectx
@@ -77,6 +81,7 @@
             # tracee
             # cilium-cli
             # kubeshark
+            # kind
             # k3d
 	          # k0s
 	          # microk8s
@@ -133,6 +138,9 @@
             #unset LC_ALL LANG
             # or set it to a known locale, e.g.
             #export LC_ALL=C LANG=C
+
+            # https://stackoverflow.com/a/72560928/6611169
+            # export DOCKER_HOST="unix://$HOME/.colima/docker.sock"
 
             echo "Go `${pkgs.go}/bin/go version`"
             # echo "Google Cloud `${pkgs.google-cloud-sdk}/bin/gcloud version`"
