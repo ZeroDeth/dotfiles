@@ -77,10 +77,10 @@
             # tracee
             # cilium-cli
             # kubeshark
-            k3d
+            # k3d
 	          # k0s
 	          # microk8s
-            kubebuilder
+            # kubebuilder
 
             ## cluster management tool
             # k9s
@@ -140,14 +140,14 @@
             # echo "Terraform `${pkgs.terraform}/bin/terraform version`"
             echo "Infracost `${pkgs.infracost}/bin/infracost --version`"
             echo "Docker `${pkgs.docker}/bin/docker version`"
-            echo "k3d `${pkgs.k3d}/bin/k3d version`"
+            # echo "k3d `${pkgs.k3d}/bin/k3d version`"
             echo "Kubernetes `${pkgs.kubectl}/bin/kubectl version --short`"
             # echo "ArgocD `${pkgs.argocd}/bin/argocd version`"
             # echo "Kustomize `${pkgs.kustomize}/bin/kustomize version`"
             # echo "Velero `${pkgs.velero}/bin/velero version`"
             # echo "Linkerd `${pkgs.linkerd}/bin/linkerd version`"
             # echo "Cilium `${pkgs.cilium-cli}/bin/cilium version`"
-            echo "kubebuilder `${pkgs.kubebuilder}/bin/kubebuilder version`"
+            # echo "kubebuilder `${pkgs.kubebuilder}/bin/kubebuilder version`"
           '';
       };
     });

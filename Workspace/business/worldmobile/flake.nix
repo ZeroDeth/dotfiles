@@ -83,7 +83,7 @@
             # kubebuilder
 
             ## cluster management tool
-            k9s
+            # k9s
             # lens
 	          # octant
             # krew
@@ -140,7 +140,7 @@
             # echo "Terraform `${pkgs.terraform}/bin/terraform version`"
             echo "Infracost `${pkgs.infracost}/bin/infracost --version`"
             echo "Docker `${pkgs.docker}/bin/docker version`"
-            echo "k3d `${pkgs.k3d}/bin/k3d version`"
+            # echo "k3d `${pkgs.k3d}/bin/k3d version`"
             echo "Kubernetes `${pkgs.kubectl}/bin/kubectl version --short`"
             # echo "ArgocD `${pkgs.argocd}/bin/argocd version`"
             # echo "Kustomize `${pkgs.kustomize}/bin/kustomize version`"
