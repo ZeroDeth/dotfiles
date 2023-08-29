@@ -1,6 +1,17 @@
 {
   description = "Google Cloud & DigitalOcean with Nix";
 
+  # https://discourse.nixos.org/t/how-to-set-up-cachix-in-flake-based-nixos-config/31781/2
+  # nixConfig: To prompt the user for confirmation
+  nixConfig = {
+      extra-substituters = [
+        "https://nix-community.cachix.org"
+      ];
+      extra-trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
+    };
+
   inputs = {
     # for nixpkgs
     nixpkgs.url = "github:NixOS/nixpkgs/release-23.05";
@@ -61,26 +72,31 @@
             kubectx
             kustomize
             # kubernetes-helm
-            linkerd
+            # linkerd
             # velero
             # tracee
-            cilium-cli
+            # cilium-cli
             # kubeshark
-            k3d
+            # k3d
 	          # k0s
 	          # microk8s
             # kubebuilder
 
             ## cluster management tool
-            # k9s
+            k9s
             # lens
+	          # octant
             # krew
             # kubecolor            #TODO: nixos-unstable has this, update channel to use it.
+            # timoni
 
             ## Argo
-            argo
-            argocd
+            # argo
+            # argocd
             # argo-rollouts
+
+            ## HashiCorp
+            vault
 
             ## Terraform
             # terraform
@@ -90,7 +106,7 @@
             tfsec
             # terrascan
             infracost                   #0.9.22
-            terraformer
+            # terraformer
             graphviz
             gawk
 
@@ -103,7 +119,7 @@
             # (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin google-cloud-sdk.components.cloud-build-local])
 
             ## Digital Ocean
-            doctl
+            # doctl
 
             ## VPN #TODO: move from homebrew
             # wireguard-go
@@ -120,17 +136,17 @@
 
             echo "Go `${pkgs.go}/bin/go version`"
             # echo "Google Cloud `${pkgs.google-cloud-sdk}/bin/gcloud version`"
-            echo "DigitalOcean `${pkgs.doctl}/bin/doctl version`"
+            # echo "DigitalOcean `${pkgs.doctl}/bin/doctl version`"
             # echo "Terraform `${pkgs.terraform}/bin/terraform version`"
             echo "Infracost `${pkgs.infracost}/bin/infracost --version`"
             echo "Docker `${pkgs.docker}/bin/docker version`"
             echo "k3d `${pkgs.k3d}/bin/k3d version`"
             echo "Kubernetes `${pkgs.kubectl}/bin/kubectl version --short`"
-            echo "ArgocD `${pkgs.argocd}/bin/argocd version`"
+            # echo "ArgocD `${pkgs.argocd}/bin/argocd version`"
             # echo "Kustomize `${pkgs.kustomize}/bin/kustomize version`"
             # echo "Velero `${pkgs.velero}/bin/velero version`"
-            echo "Linkerd `${pkgs.linkerd}/bin/linkerd version`"
-            echo "Cilium `${pkgs.cilium-cli}/bin/cilium version`"
+            # echo "Linkerd `${pkgs.linkerd}/bin/linkerd version`"
+            # echo "Cilium `${pkgs.cilium-cli}/bin/cilium version`"
             # echo "kubebuilder `${pkgs.kubebuilder}/bin/kubebuilder version`"
           '';
       };
