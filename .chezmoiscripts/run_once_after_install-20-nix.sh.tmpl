@@ -1,4 +1,5 @@
 {{- if (eq .chezmoi.os "darwin") -}}
+
 #!/bin/bash
 
 # Define your configuration here
@@ -20,14 +21,20 @@ if [ ! -f "/etc/nix/nix.conf" ]; then
     sudo touch /etc/nix/nix.conf
 fi
 
-# Append configuration to the /etc/nix/nix.conf file and restart the service
-echo "$CONFIG" | awk '{$1=$1};1' | sudo tee -a /etc/nix/nix.conf && sudo pkill nix-daemon
-
-if [ $? -eq 0 ]
+# Check if the configuration already exists in the file
+if grep -Fxq "$CONFIG" /etc/nix/nix.conf
 then
-    echo "Configuration appended successfully and nix-daemon terminated."
+    echo "Configuration already exists."
 else
-    echo "Failed to append configuration."
+    # Append configuration to the /etc/nix/nix.conf file and restart the service
+    echo "$CONFIG" | awk '{$1=$1};1' | sudo tee -a /etc/nix/nix.conf && sudo pkill nix-daemon
+
+    if [ $? -eq 0 ]
+    then
+        echo "Configuration appended successfully and nix-daemon terminated."
+    else
+        echo "Failed to append configuration."
+    fi
 fi
 
 {{ end -}}
