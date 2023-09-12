@@ -13,6 +13,8 @@ config_lines=(
 "experimental-features = nix-command flakes"
 "auto-optimise-store = true"
 "trusted-users = root zerodeth # cachix use nix-community"
+"substituters = https://cache.nixos.org https://cache.iog.io https://nix-community.cachix.org https://mitchellh-nixos-config.cachix.org"
+"trusted-public-keys = cache.iog.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= mitchellh-nixos-config.cachix.org-1:bjEbXJyLrL1HZZHBbO4QALnI5faYZppzkU4D2s0G8RQ="
 )
 
 # If /etc/nix/nix.conf doesn't exist, create it
