@@ -76,16 +76,19 @@
             kubectx
             kustomize
             # kubernetes-helm
-            # linkerd
+            # helmfile
+            kompose
+            linkerd
             # velero
             # tracee
             # cilium-cli
             # kubeshark
             # kind
-            # k3d
+            k3d
 	          # k0s
 	          # microk8s
-            # kubebuilder
+            # vcluster
+            kubebuilder
 
             ## cluster management tool
             # k9s
@@ -133,9 +136,9 @@
           ];
 
           shellHook = ''
-            figlet "World Mobile" | lolcat --freq 0.5
+            figlet "WorldMobile" | lolcat --freq 0.5
 
-            #unset LC_ALL LANG
+            unset LC_ALL LANG
             # or set it to a known locale, e.g.
             #export LC_ALL=C LANG=C
 
@@ -148,14 +151,16 @@
             # echo "Terraform `${pkgs.terraform}/bin/terraform version`"
             echo "Infracost `${pkgs.infracost}/bin/infracost --version`"
             echo "Docker `${pkgs.docker}/bin/docker version`"
-            # echo "k3d `${pkgs.k3d}/bin/k3d version`"
+            echo "k3d `${pkgs.k3d}/bin/k3d version`"
             echo "Kubernetes `${pkgs.kubectl}/bin/kubectl version --short`"
             # echo "ArgocD `${pkgs.argocd}/bin/argocd version`"
             # echo "Kustomize `${pkgs.kustomize}/bin/kustomize version`"
             # echo "Velero `${pkgs.velero}/bin/velero version`"
-            # echo "Linkerd `${pkgs.linkerd}/bin/linkerd version`"
+            echo "Linkerd `${pkgs.linkerd}/bin/linkerd version`"
             # echo "Cilium `${pkgs.cilium-cli}/bin/cilium version`"
-            # echo "kubebuilder `${pkgs.kubebuilder}/bin/kubebuilder version`"
+            echo "kubebuilder `${pkgs.kubebuilder}/bin/kubebuilder version`"
+            # echo "helmfile `${pkgs.helmfile}/bin/helmfile version`"
+            # echo "kompose `${pkgs.kompose}/bin/kompose version`"
           '';
       };
     });
