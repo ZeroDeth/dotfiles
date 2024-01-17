@@ -1,3 +1,4 @@
+# Better managaement https://github.com/srid/nixos-config/blob/master/home/default.nix
 { flake, ... }:
 {
   imports = [

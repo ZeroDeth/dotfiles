@@ -2,6 +2,11 @@
   # DO NOT EDIT: This file is managed by fleek. Manual changes will be overwritten.
    home.shellAliases = {
 
+        g = "git";
+        lg = "lazygit";
+
+        pinentry-mac = "~/.nix-profile/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac";
+
         # `.aliases` is used to provide custom variables.
         #
         # This file is used as a part of `.shell_env`
