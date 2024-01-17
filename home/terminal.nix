@@ -68,7 +68,7 @@
   # must `git add .` or new files won't be found
   home.file = {
     # ".config/aliases/kubectl_aliases" = {
-    #     source = ./kubectl_aliases;
+    #     source = ./aliases/kubectl_aliases;
     #     recursive = true;
     # };
     # ".ssh/config" = {

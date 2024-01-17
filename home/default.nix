@@ -5,7 +5,12 @@
     ./neovim
     ./starship.nix
     ./terminal.nix
+
+    # This loads ./aliases/default.nix
+    ./aliases
+
     # Add more of your home-manager modules here.
+
   ];
 
   # Recommended Nix settings
