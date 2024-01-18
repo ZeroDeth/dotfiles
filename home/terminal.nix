@@ -91,6 +91,7 @@
     docker
     colima
     lima
+    act
 
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
