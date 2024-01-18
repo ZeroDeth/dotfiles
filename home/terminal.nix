@@ -55,6 +55,7 @@
     gopls
     duf
 
+    vscode
     iterm2
     alacritty
     kitty
