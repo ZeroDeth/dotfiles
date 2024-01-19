@@ -2,13 +2,10 @@
 { flake, pkgs, misc, lib, config, ... }:
 {
   imports = [
-    # This loads ./neovim/default.nix - neovim configured for Haskell dev, and other things.
-    ./neovim
-    ./starship.nix
-    ./terminal.nix
+    # ./dotfiles
+    ./programs
 
-    # This loads ./aliases/default.nix
-    ./aliases
+    ./terminal.nix
 
     # Add more of your home-manager modules here.
 

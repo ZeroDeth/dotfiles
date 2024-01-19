@@ -5,6 +5,12 @@
         g = "git";
         lg = "lazygit";
 
+        # Nix garbage collection
+        garbage = "sudo nix-collect-garbage -d && docker image prune --all --force";
+
+        # See which Nix packages are installed with nix-env
+        installed = "nix-env --query --installed";
+
         pinentry-mac = "~/.nix-profile/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac";
 
         # `.aliases` is used to provide custom variables.
