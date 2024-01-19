@@ -6,14 +6,11 @@
     # Configure your nixpkgs instance
     config = {
       # Disable if you don't want unfree packages
-
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = (_: true);
 
-
       allowBroken = true;
-
     };
   };
 
@@ -191,7 +188,7 @@
   programs = {
     bat.enable = true;
     # Type `z <pat>` to cd to some directory
-    zoxide.enable = true;
+    zoxide.enable = true; # Required home-manager-path
     # Type `<ctrl> + r` to fuzzy search your shell history
     fzf.enable = true;
     jq.enable = true;
@@ -468,7 +465,7 @@
       #   RequestTTY = "no";
       # };
 
-      # extraConfig = builtins.readFile $(self)/config; # TODO: Copied manual to "/nix/store/w64p0vgykzdrimvpnhhwj4h7sagpkqrn-source/home"
+      # extraConfig = builtins.readFile ./config; # TODO: Copied manual to "/nix/store/w64p0vgykzdrimvpnhhwj4h7sagpkqrn-source/home"
       # extraConfig = { source = ./ssh_config; recursive = true; };
 
       # ProxyCommand = "/usr/local/bin/krssh %h %p";
