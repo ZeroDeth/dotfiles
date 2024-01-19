@@ -108,5 +108,13 @@ in
           printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh"}}\x9c'
 
       '';
+
+    oh-my-zsh = {
+      enable = true;
+    #   plugins = [
+    #     "git"
+    #     "common-aliases"
+    #  ];
     };
+  };
 }
