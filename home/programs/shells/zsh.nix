@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  inherit (import ./aliases.nix { pkgs = pkgs; }) shellAliases;
+  inherit (import ./aliases.nix { pkgs = pkgs; }) shellAliases ;
 in
 
 {
