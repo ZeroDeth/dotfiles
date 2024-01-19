@@ -5,13 +5,29 @@
         g = "git";
         lg = "lazygit";
 
+        pinentry-mac = "~/.nix-profile/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac";
+
+       ### Nix ###
+
+        ## Nix Shell
+        bnix = "nix-shell --run bash";
+        znix = "nix-shell --run zsh";
+        fnix = "nix-shell --run fish";
+
         # Nix garbage collection
         garbage = "sudo nix-collect-garbage -d && docker image prune --all --force";
 
         # See which Nix packages are installed with nix-env
         installed = "nix-env --query --installed";
 
-        pinentry-mac = "~/.nix-profile/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac";
+        # ossw = "sudo nixos-rebuild switch --flake '/etc/nixos/#nixtst' --impure -v";
+        # hmsw = "home-manager switch --flake ~/.config/nixpkgs/#$USER";
+        # upa = "nix flake update ~/.config/nixpkgs -v && sudo nix flake update '/etc/nixos/' -v";
+        # fusw = "upa && ossw && hmsw";
+        # rusw = "ossw && hmsw";
+        ucl = "nix-collect-garbage -d && nix-store --gc && nix-store --repair --verify --check-contents && nix-store --optimise -vvv";
+        scl = "sudo nix-collect-garbage -d && sudo nix-store --gc && sudo nix-store --repair --verify --check-contents && sudo nix-store --optimise -vvv";
+        acl = "ucl && scl";
 
         # `.aliases` is used to provide custom variables.
         #
@@ -53,10 +69,19 @@
         # d='dirs -v | head -10'
 
         ## Show only hidden files in Terminal
-        lh = "ls -ld .?*";
+        lh = "${pkgs.eza}/bin/eza -ld .?*";
+        #   ls = "${pkgs.eza}/bin/eza";
+        #   ll = "${pkgs.eza}/bin/eza -l";
+        #   la = "${pkgs.eza}/bin/eza --long --all --group --header --group-directories-first --sort=type --icons";
+        #   lla = "${pkgs.eza}/bin/eza -la";
+        lgit = "${pkgs.eza}/bin/eza --long --all --group --header --git";
+        #   lt = "${pkgs.eza}/bin/eza --long --all --group --header --tree --level ";
 
-        ## Show only directories and files in Terminal
-        # alias l="ls -lAh $colorflag"
+        ## Terminal Trash
+        rm = "trash-put";
+        unrm = "trash-restore";
+        rmcl = "trash-empty";
+        rml = "trash-list";
 
         # neovim
         # if command -v nvim >/dev/null 2>&2; then

@@ -107,7 +107,7 @@ in
     lazygit # Better git UI
     tmate
 
-     # Me
+    # Me
     gnupg
     pinentry_mac
 
@@ -115,10 +115,11 @@ in
 
     nodejs-18_x
     yarn
+
     go_1_20
     gopls
-    duf
 
+    fish
     vscode
     iterm2
     alacritty
@@ -128,10 +129,11 @@ in
     gtop
     # btop
     ctop
+    duf
 
-    glab
+    glab # GLab is an open source GitLab CLI tool that brings GitLab to your command line.
+    act
 
-    # vscode
     yq-go
     neofetch
     cheat
@@ -155,7 +157,6 @@ in
     docker
     colima
     lima
-    act
 
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
