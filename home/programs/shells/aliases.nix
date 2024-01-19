@@ -149,7 +149,7 @@
         # === Network ===
 
         ## IP addresses
-        myip = "curl http://ipecho.net/plain; echo";
+        myip = "curl ifconfig.me; echo";
         ip = "dig +short myip.opendns.com @resolver1.opendns.com";
         localip = "ipconfig getifaddr en0";
         # ips = "ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'";
