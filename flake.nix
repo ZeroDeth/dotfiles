@@ -51,7 +51,7 @@
                 home.homeDirectory = "/${if pkgs.stdenv.isDarwin then "Users" else "home"}/${myUserName}";
                 home.stateVersion = "23.11";
 
-                # programs.home-manager.enable = true;
+                programs.home-manager.enable = false;
               });
 
           formatter = pkgs.nixpkgs-fmt;
