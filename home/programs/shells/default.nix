@@ -4,6 +4,7 @@
     ./zsh.nix
     ./fish.nix
     ./starship.nix
+    ./terminal.nix
   ];
 
   # must `git add .` or new files won't be found

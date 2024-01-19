@@ -25,7 +25,6 @@ in
   imports = [
     # ./dotfiles
     ./programs
-    ./terminal.nix
     # Add more of your home-manager modules here.
 
   ];
