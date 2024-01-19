@@ -101,6 +101,9 @@ in
           # Colima and Docker https://stackoverflow.com/a/72560928/6611169
           export DOCKER_HOST="unix://$HOME/.colima/docker.sock"
 
+          # Aliases
+          source ~/.config/aliases/kubectl_aliases
+
           # Warp - For zsh subshells
           printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh"}}\x9c'
 
