@@ -11,9 +11,6 @@
   programs.neovim = {
     enable = true;
 
-    viAlias = true;
-    imAlias = true;
-
     extraPackages = [
       pkgs.lazygit
     ];
