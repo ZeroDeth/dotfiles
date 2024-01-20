@@ -3,6 +3,7 @@
   imports = [
     ./zsh.nix
     ./fish.nix
+    ./git.nix
     ./starship.nix
     ./terminal.nix
   ];
