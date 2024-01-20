@@ -51,26 +51,6 @@ in
         # "iterm2_shell_integration"
     ]);
 
-    shellAliases = {
-      ga = "git add";
-      gc = "git commit";
-      gco = "git checkout";
-      gcp = "git cherry-pick";
-      gdiff = "git diff";
-      gl = "git prettylog";
-      gcount = "git shortlog -sn";
-      glg = "git log --stat";
-      gwch = "git whatchanged -p --abbrev-commit --pretty=medium";
-      gp = "git push";
-      gs = "git status";
-      gt = "git tag";
-      gfa = "git fetch --all";
-      gpa = "git pull --all";
-
-      # oplogin = "op signin --account my.1password.com sherif@abdalla.uk";
-
-    };
-
     # Abbreviate commonly used functions
     # An abbreviation will expand after <space> or <Enter> is hit
     shellAbbrs = {

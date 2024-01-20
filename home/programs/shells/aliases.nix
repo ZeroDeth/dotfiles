@@ -2,12 +2,31 @@
 
    shellAliases = {
 
+        ### Git ###
+
         g = "git";
+        ga = "git add";
+        gc = "git commit";
+        gco = "git checkout";
+        gcp = "git cherry-pick";
+        gdiff = "git diff";
+        gl = "git prettylog";
+        gcount = "git shortlog -sn";
+        glg = "git log --stat";
+        gwch = "git whatchanged -p --abbrev-commit --pretty=medium";
+        gp = "git push";
+        gs = "git status";
+        gt = "git tag";
+        gfa = "git fetch --all";
+        gpa = "git pull --all";
+
         lg = "lazygit";
 
         pinentry-mac = "~/.nix-profile/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac";
 
-       ### Nix ###
+        # oplogin = "op signin --account my.1password.com sherif@abdalla.uk";
+
+        ### Nix ###
 
         ## Nix Shell
         bnix = "nix-shell --run bash";
