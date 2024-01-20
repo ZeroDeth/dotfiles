@@ -176,8 +176,6 @@ in
     EDITOR = "nvim";
     PAGER = "less -FirSwX";
     # MANPAGER = "${manpager}/bin/manpager";
-    # FLEEK_MANAGED= "1";
-    # FLEEK_DEBUG= "1";
     # NIXPKGS_ALLOW_UNFREE= "1";
     # NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM= "1";
     # SSH_AUTH_SOCK = "~/.1password/agent.sock";
