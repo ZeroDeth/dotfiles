@@ -64,7 +64,7 @@
           packages.default = self'.legacyPackages.homeConfigurations.${myUserName}.activationPackage;
 
           devShells.default = pkgs.mkShell {
-            name = "nix-dev-home";
+            name = "nix-zero-home";
             nativeBuildInputs = with pkgs; [ just ];
           };
         };
