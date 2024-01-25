@@ -104,8 +104,8 @@ in
           # Aliases
           source ~/.config/aliases/kubectl_aliases
 
-          # Warp - For zsh subshells
-          printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh"}}\x9c'
+          # To always Warpify the subshell for this command, add the following command to the end of your .zshrc:
+          printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh" }}\x9c'
 
       '';
 
