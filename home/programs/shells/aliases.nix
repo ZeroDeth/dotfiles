@@ -21,6 +21,7 @@
         gpa = "git pull --all";
 
         lg = "lazygit";
+        cat = "bat";
 
         pinentry-mac = "~/.nix-profile/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac";
 
