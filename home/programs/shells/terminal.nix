@@ -110,16 +110,16 @@
       # extraConfig = builtins.readFile ./topgrade; #TODO: Add config file by chezmoi for now
     };
 
-    # Deprecated and replaced with mise https://mise.jdx.dev/demo.html
-    rtx = {
+    # rtx deprecated and replaced with mise https://mise.jdx.dev/demo.html
+    mise = {
       enable = true;
-      settings = {
-        settings = {
-          verbose = false;
-          experimental = false;
-          asdf_compat = true;
-        };
-      };
+#      settings = {
+#        settings = {
+#          verbose = false;
+#          experimental = false;
+#          asdf_compat = true;
+#        };
+#      };
     };
 
   };
