@@ -56,6 +56,13 @@
         scl = "sudo nix-collect-garbage -d && sudo nix-store --gc && sudo nix-store --repair --verify --check-contents && sudo nix-store --optimise -vvv";
         acl = "ucl && scl";
 
+        ### Python ###
+
+        # Once I pick the version of python I want, I use virtual environments and continue my normal workflow.
+        # The following aliases help quickly setup/destroy environments:
+        vin = "virtualenv .venv && source .venv/bin/activate";
+        vout =" deactivate && rm -rf .venv";
+
         # `.aliases` is used to provide custom variables.
         #
         # This file is used as a part of `.shell_env`
