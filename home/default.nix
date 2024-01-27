@@ -47,6 +47,7 @@ in
         "https://nix-gaming.cachix.org"
         "https://chaotic-nyx.cachix.org"
         "https://ezkea.cachix.org"
+        "https://ai.cachix.org"
       ];
 
       trusted-public-keys = [
@@ -57,6 +58,7 @@ in
         "nyx.chaotic.cx-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
         "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
         "ezkea.cachix.org-1:ioBmUbJTZIKsHmWWXPe1FSFbeVe+afhfgqgTSNd34eI="
+        "ai.cachix.org-1:N9dzRK+alWwoKXQlnn0H6aUx0lU/mspIoz8hMvGvbbc="
       ];
 
       accept-flake-config = true;
