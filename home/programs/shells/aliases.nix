@@ -19,6 +19,7 @@
         gt = "git tag";
         gfa = "git fetch --all";
         gpa = "git pull --all";
+        gfpa = "git fetch --all && git pull --all";
 
         lg = "lazygit";
         cat = "bat";
