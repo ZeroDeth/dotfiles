@@ -30,7 +30,7 @@ in
 
   ];
 
-  # Recommended Nix settings
+  # Recommended Nix settings https://github.com/NixOS/nixpkgs/blob/nixos-23.11/nixos/modules/config/nix.nix
   nix = {
     package = pkgs.nixFlakes;
     settings = {
@@ -64,9 +64,14 @@ in
 
       accept-flake-config = true;
       auto-optimise-store = true;
+
+      keep-outputs = false;       # Nice for developers, if true
+      keep-derivations = false;   # Idem, if true
     };
 
-    extraOptions = lib.optionalString (config.nix.package == pkgs.nix)
+    # nix show-derivation --extra-experimental-features nix-command $(ls /nix/store/*.drv | head -n 1)
+    # nix show-derivation --extra-experimental-features nix-command $(find /nix/store -maxdepth 1 -name '*.drv' | head -n 1)
+    extraOptions = lib.optionalString (config.nix.package == pkgs.nixFlakes)
        "experimental-features = nix-command flakes";
 
     registry.nixpkgs.flake = flake.inputs.nixpkgs; # https://yusef.napora.org/blog/pinning-nixpkgs-flake/
