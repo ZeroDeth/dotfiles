@@ -3,6 +3,9 @@
   # https://github.com/srid/nixos-config/blob/f9cf0def19fbc7aa1e836be481ce50d214e34036/home/starship.nix#L4-L19
   programs.starship = {
     enable = true;
+    enableBashIntegration = false;
+    enableZshIntegration = true;
+    enableFishIntegration = true;
       # Configuration written to ~/.config/starship.toml
       settings = {
         add_newline = true;
