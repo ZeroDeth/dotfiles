@@ -33,9 +33,12 @@
         bnix = "nix-shell --run bash";
         znix = "nix-shell --run zsh";
         fnix = "nix-shell --run fish";
+
         # Active Nix Configuration in macOS
         # Run either nix run or nix develop -c just run to active your configuration
         nrs = "nix run . switch --show-trace";
+
+        hmsb = "home-manager switch -b backup";
 
         # Nix garbage collection
         garbage = "sudo nix-collect-garbage -d && docker image prune --all --force";
