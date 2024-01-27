@@ -26,6 +26,7 @@ in
     # ./dotfiles
     ./programs
     # Add more of your home-manager modules here.
+    ./modules
 
   ];
 
@@ -153,6 +154,7 @@ in
     # btop
     ctop
     duf
+    thefuck
 
     glab # GLab is an open source GitLab CLI tool that brings GitLab to your command line.
     act
