@@ -81,6 +81,27 @@ in
     };
   };
 
+  home.sessionVariables = {
+    LANG = "en_GB.UTF-8";
+    LC_CTYPE = "en_GB.UTF-8";
+    LC_ALL = "en_GB.UTF-8";
+    EDITOR = "nvim";
+    PAGER = "less -FirSwX";
+    # MANPAGER = "${manpager}/bin/manpager";
+    # NIXPKGS_ALLOW_UNFREE= "1";
+    # NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM= "1";
+    # SSH_AUTH_SOCK = "~/.1password/agent.sock";
+    # OP_BIOMETRIC_UNLOCK_ENABLED = "true";
+  };
+
+  home.sessionPath = [
+      "$HOME/bin"
+      "$HOME/.local/bin"
+      "$HOME/.gnupg"
+      "/opt/homebrew/bin"
+      "/opt/homebrew/sbin"
+  ];
+
   # Nix packages to install to $HOME
   #
   # Search for packages here: https://search.nixos.org/packages
@@ -164,30 +185,5 @@ in
   fonts.fontconfig.enable = true;
 
   news.display = "silent";
-
-  #---------------------------------------------------------------------
-  # Env vars and dotfiles
-  #---------------------------------------------------------------------
-
-  home.sessionVariables = {
-    LANG = "en_GB.UTF-8";
-    LC_CTYPE = "en_GB.UTF-8";
-    LC_ALL = "en_GB.UTF-8";
-    EDITOR = "nvim";
-    PAGER = "less -FirSwX";
-    # MANPAGER = "${manpager}/bin/manpager";
-    # NIXPKGS_ALLOW_UNFREE= "1";
-    # NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM= "1";
-    # SSH_AUTH_SOCK = "~/.1password/agent.sock";
-    # OP_BIOMETRIC_UNLOCK_ENABLED = "true";
-  };
-
-  home.sessionPath = [
-      "$HOME/bin"
-      "$HOME/.local/bin"
-      "$HOME/.gnupg"
-      "/opt/homebrew/bin"
-      "/opt/homebrew/sbin"
-  ];
 
 }
