@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, fetchFromGitHub, ... }:
 
 let
   inherit (import ./aliases.nix { pkgs = pkgs; }) shellAliases ;
@@ -9,12 +9,12 @@ in
   # echo "$HOME/.nix-profile/bin/fish" | sudo tee -a /etc/shells
   # sudo chsh -s "/run/current-system/sw/bin/fish" "$USER"
   programs.fish = {
-    enable = false;
+    enable = true;
     package = pkgs.fish;
     inherit shellAliases;
 
     functions = {
-     fish_greeting = "";
+#     fish_greeting = "";
 
     shellInit = ''
         direnv hook fish | source
@@ -53,33 +53,33 @@ in
 
     # Abbreviate commonly used functions
     # An abbreviation will expand after <space> or <Enter> is hit
-    shellAbbrs = {
+#    shellAbbrs = {
         # oplogin = "op signin my.1password.com sherif@abdalla.uk";
 
         # Administer like a sir
-        please = "sudo";
+#        please = "sudo";
 
         # Personal/Work spacess
-        ws = "cd ~/workspace";
-        wsp = "cd ~/workspace/personal";
-        wsb = "cd ~/workspace/business";
+#        ws = "cd ~/Workspace";
+#        wsp = "cd ~/Workspace/personal";
+#        wsb = "cd ~/Workspace/business";
         # nixos-config = "cd ~/workspace/nixos-config";
-    };
+#    };
 
-    plugins = [
+#    plugins = [
         # {
         #     name = "iterm2-shell-integration";
         #     src = ./iterm2_shell_integration.fish;
         # }
-        {
-            name = "fish-fzf";
-            src = pkgs.fetchFromGitHub {
-              owner = "jethrokuan";
-              repo = "fzf";
-              rev = "479fa67d7439b23095e01b64987ae79a91a4e283";
-              sha256 = "0k6l21j192hrhy95092dm8029p52aakvzis7jiw48wnbckyidi6v";
-            };
-        }
+#        {
+#            name = "fish-fzf";
+#            src = pkgs.fetchFromGitHub {
+#              owner = "jethrokuan";
+#              repo = "fzf";
+#              rev = "479fa67d7439b23095e01b64987ae79a91a4e283";
+#              sha256 = "0k6l21j192hrhy95092dm8029p52aakvzis7jiw48wnbckyidi6v";
+#            };
+#        }
         # {
         #     name = "fzf";
         #     src = pkgs.fetchFromGitHub {
@@ -99,16 +99,16 @@ in
         #       sha256 = "1hrl22dd0aaszdanhvddvqz3aq40jp9zi2zn0v1hjnf7fx4bgpma";
         #     };
         # }
-        {
-            name = "fish-abbreviation-tips";
-            src = pkgs.fetchFromGitHub {
-              owner = "gazorby";
-              repo = "fish-abbreviation-tips";
-              rev = "8ed76a62bb044ba4ad8e3e6832640178880df485";
-              sha256 = "05b5qp7yly7mwsqykjlb79gl24bs6mbqzaj5b3xfn3v2b7apqnqp";
-            };
-        }
-     ];
+#        {
+#            name = "fish-abbreviation-tips";
+#            src = pkgs.fetchFromGitHub {
+#              owner = "gazorby";
+#              repo = "fish-abbreviation-tips";
+#              rev = "8ed76a62bb044ba4ad8e3e6832640178880df485";
+#              sha256 = "05b5qp7yly7mwsqykjlb79gl24bs6mbqzaj5b3xfn3v2b7apqnqp";
+#            };
+#        }
+#     ];
    };
   };
 }
