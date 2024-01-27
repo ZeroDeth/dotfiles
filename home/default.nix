@@ -65,7 +65,7 @@ in
       auto-optimise-store = true;
     };
 
-    extraOptions = lib.optionalString (config.nix.package == pkgs.nixFlakes)
+    extraOptions = lib.optionalString (config.nix.package == pkgs.nix)
        "experimental-features = nix-command flakes";
 
     registry.nixpkgs.flake = flake.inputs.nixpkgs; # https://yusef.napora.org/blog/pinning-nixpkgs-flake/
