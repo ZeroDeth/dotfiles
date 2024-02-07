@@ -34,7 +34,7 @@ in
   nix = {
     package = pkgs.nixFlakes;
     settings = {
-      trusted-users = [ "root" "zeroddeth" ];
+      trusted-users = [ "root" "zerodeth" ];
 
       substituters = [
         # cache mirror located in China
