@@ -44,6 +44,9 @@
 
         # Nix garbage collection
         garbage = "sudo nix-collect-garbage -d && docker image prune --all --force";
+        ucl = "nix-collect-garbage -d && nix-store --gc && nix-store --repair --verify --check-contents && nix-store --optimise -vvv";
+        scl = "sudo nix-collect-garbage -d && sudo nix-store --gc && sudo nix-store --repair --verify --check-contents && sudo nix-store --optimise -vvv";
+        acl = "ucl && scl";
 
         # See which Nix packages are installed with nix-env
         installed = "nix-env --query --installed";
@@ -53,9 +56,6 @@
         # upa = "nix flake update ~/.config/nixpkgs -v && sudo nix flake update '/etc/nixos/' -v";
         # fusw = "upa && ossw && hmsw";
         # rusw = "ossw && hmsw";
-        ucl = "nix-collect-garbage -d && nix-store --gc && nix-store --repair --verify --check-contents && nix-store --optimise -vvv";
-        scl = "sudo nix-collect-garbage -d && sudo nix-store --gc && sudo nix-store --repair --verify --check-contents && sudo nix-store --optimise -vvv";
-        acl = "ucl && scl";
 
         ### Python ###
 
