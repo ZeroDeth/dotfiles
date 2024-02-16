@@ -126,7 +126,7 @@ in
     nix-info
     nixpkgs-fmt
     nixci
-
+    grc # Generic Colouriser
     nix-health
 
     fh
