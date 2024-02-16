@@ -15,6 +15,7 @@
         glg = "git log --stat";
         gwch = "git whatchanged -p --abbrev-commit --pretty=medium";
         gp = "git push";
+        gpf = "git push --force-with-lease";
         gs = "git status";
         gt = "git tag";
         gfa = "git fetch --all";
