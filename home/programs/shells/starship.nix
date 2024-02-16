@@ -6,69 +6,69 @@
     enableBashIntegration = false;
     enableZshIntegration = true;
     enableFishIntegration = true;
-      # Configuration written to ~/.config/starship.toml
-      settings = {
-        add_newline = true;
+    # Configuration written to ~/.config/starship.toml
+    settings = {
+      add_newline = true;
 
-        git_branch = {
-          disabled = false;
-          symbol = " ";
-          style = "bold purple";
-          always_show_remote = true;
-          only_attached = false;
+      git_branch = {
+        disabled = false;
+        symbol = " ";
+        style = "bold purple";
+        always_show_remote = true;
+        only_attached = false;
+      };
+
+      time = {
+        disabled = true;
+        use_12hr = true;
+        time_format = "'%T'";
+        utc_time_offset = "'local'";
+      };
+
+      # character = {
+      #   success_symbol = "[➜](bold green)";
+      #   error_symbol = "[➜](bold red)";
+      # };
+
+      directory = {
+        style = "blue";
+        truncate_to_repo = false;
+        truncation_length = 8;
+      };
+
+      hostname = {
+        disabled = false;
+        style = "bold green";
+        ssh_only = true;
+        ssh_symbol = "🌏 ";
+      };
+
+      package.disabled = false;
+      golang.disabled = false;
+      python.disabled = false;
+      ruby.disabled = false;
+      kubernetes.disabled = false;
+      aws.disabled = false;
+      gcloud = {
+        disabled = false;
+        symbol = "☁️ ";
+        # format = "'[$symbol$active]($style)'";
+        format = "on [$symbol$account(@$domain)(\($project\))]($style) ";
+        style = "bold yellow";
+        region_aliases = {
+          europe-west1 = "ew1";
+          europe-west2 = "ew2";
         };
-
-        time = {
-          disabled = true;
-          use_12hr = true;
-          time_format = "'%T'";
-          utc_time_offset = "'local'";
-        };
-
-        # character = {
-        #   success_symbol = "[➜](bold green)";
-        #   error_symbol = "[➜](bold red)";
-        # };
-
-        directory = {
-          style = "blue";
-          truncate_to_repo = false;
-          truncation_length = 8;
-        };
-
-        hostname = {
-          disabled = false;
-          style = "bold green";
-          ssh_only = true;
-          ssh_symbol = "🌏 ";
-        };
-
-        package.disabled = false;
-        golang.disabled = false;
-        python.disabled = false;
-        ruby.disabled = false;
-        kubernetes.disabled = false;
-        aws.disabled = false;
-        gcloud = {
-          disabled = false;
-          symbol = "☁️ ";
-          # format = "'[$symbol$active]($style)'";
-          format = "on [$symbol$account(@$domain)(\($project\))]($style) ";
-          style = "bold yellow";
-          region_aliases = {
-            europe-west1 = "ew1";
-            europe-west2 = "ew2";
-          };
-          project_aliases = {
-            management = "mgmt";
-            production-core = "prd-core";
-            staging-core = "stg-core";
-            testing-core = "tst-core";
-            production-earth = "prd-earth";
-            staging-earth = "stg-earth";
-            testing-earth = "testnet-earth";
-          };
+        project_aliases = {
+          management = "mgmt";
+          production-core = "prd-core";
+          staging-core = "stg-core";
+          testing-core = "tst-core";
+          production-earth = "prd-earth";
+          staging-earth = "stg-earth";
+          testing-earth = "testnet-earth";
         };
       };
+    };
   };
 }

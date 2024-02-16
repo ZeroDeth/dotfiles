@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-  inherit (import ./aliases.nix { pkgs = pkgs; }) shellAliases ;
+  inherit (import ./aliases.nix { pkgs = pkgs; }) shellAliases;
 in
 
 {
@@ -10,7 +10,7 @@ in
     bash = {
       enable = true;
       enableCompletion = false;
-      shellOptions = [];
+      shellOptions = [ ];
       historyControl = [ "ignoredups" "ignorespace" ];
       inherit shellAliases;
 
@@ -21,18 +21,18 @@ in
         export PATH=/run/current-system/sw/bin/:/nix/var/nix/profiles/default/bin:$HOME/.nix-profile/bin:/etc/profiles/per-user/$USER/bin:$PATH
       '';
     };
-      bashrcExtra = ''
-          export GPG_TTY="$(tty)"
-          export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-          # . ${pkgs.asdf-vm}/share/bash-completion/completions/asdf.bash
-          # . ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh
+    bashrcExtra = ''
+      export GPG_TTY="$(tty)"
+      export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+      # . ${pkgs.asdf-vm}/share/bash-completion/completions/asdf.bash
+      # . ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh
 
-          # Aliases
-          source ~/.config/aliases/kubectl_aliases
+      # Aliases
+      source ~/.config/aliases/kubectl_aliases
 
-          # 1Password
-          source ~/.config/op/plugins.sh
-      '';
+      # 1Password
+      source ~/.config/op/plugins.sh
+    '';
 
-    };
+  };
 }
