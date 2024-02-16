@@ -65,14 +65,14 @@ in
       accept-flake-config = true;
       auto-optimise-store = true;
 
-      keep-outputs = false;       # Nice for developers, if true
-      keep-derivations = false;   # Idem, if true
+      keep-outputs = false; # Nice for developers, if true
+      keep-derivations = false; # Idem, if true
     };
 
     # nix show-derivation --extra-experimental-features nix-command $(ls /nix/store/*.drv | head -n 1)
     # nix show-derivation --extra-experimental-features nix-command $(find /nix/store -maxdepth 1 -name '*.drv' | head -n 1)
     extraOptions = lib.optionalString (config.nix.package == pkgs.nixFlakes)
-       "experimental-features = nix-command flakes";
+      "experimental-features = nix-command flakes";
 
     registry.nixpkgs.flake = flake.inputs.nixpkgs; # https://yusef.napora.org/blog/pinning-nixpkgs-flake/
   };
@@ -103,11 +103,11 @@ in
   };
 
   home.sessionPath = [
-      "$HOME/bin"
-      "$HOME/.local/bin"
-      "$HOME/.gnupg"
-      "/opt/homebrew/bin"
-      "/opt/homebrew/sbin"
+    "$HOME/bin"
+    "$HOME/.local/bin"
+    "$HOME/.gnupg"
+    "/opt/homebrew/bin"
+    "/opt/homebrew/sbin"
   ];
 
   # Nix packages to install to $HOME
