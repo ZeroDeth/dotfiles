@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
 
   imports = [
-    # ./k8s
+    ./k8s
     ./terminal-emulator
   ];
 
