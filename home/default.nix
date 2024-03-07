@@ -153,15 +153,16 @@ in
     iterm2
     alacritty
     kitty
+    wezterm
     byobu
     tmux
-    gtop
+    # gtop
     # btop
-    ctop
+    # ctop
     duf
     thefuck
 
-    glab # GLab is an open source GitLab CLI tool that brings GitLab to your command line.
+    # glab # GLab is an open source GitLab CLI tool that brings GitLab to your command line.
     act
 
     yq-go
@@ -177,16 +178,19 @@ in
     tree-sitter
     topgrade
     trash-cli
-    wezterm
     devbox
     prettyping
-    colmena
+    # colmena
     arkade
-    ntfy-sh
+
+    # ntfy-sh
 
     docker
     colima
     lima
+
+    # Kubernetes
+    # k9s
 
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
