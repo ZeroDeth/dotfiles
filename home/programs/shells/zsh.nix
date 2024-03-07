@@ -84,49 +84,49 @@ in
     # '';
     initExtra = ''
 
-          # This is a hack to work around the fact that somehow starting with fish means
-          # that my .nix-profile isn't properly loaded, meaning no binaries, nothing
-          # fish -C clear
+        # This is a hack to work around the fact that somehow starting with fish means
+        # that my .nix-profile isn't properly loaded, meaning no binaries, nothing
+        # fish -C clear
 
-          # Configure PNPM
-          # export PNPM_HOME="/Users/zerodeth/Library/pnpm"
-          # export PATH="$PNPM_HOME:$PATH"
+        # Configure PNPM
+        # export PNPM_HOME="/Users/zerodeth/Library/pnpm"
+        # export PATH="$PNPM_HOME:$PATH"
 
-          # Brew
-          eval "$(/opt/homebrew/bin/brew shellenv)"
+        # Brew
+        eval "$(/opt/homebrew/bin/brew shellenv)"
 
-          # 1Password
-          #export SSH_AUTH_SOCK=~/.1password/agent.sock
-          #source ~/.config/op/plugins.sh
+        # 1Password
+        #export SSH_AUTH_SOCK=~/.1password/agent.sock
+        #source ~/.config/op/plugins.sh
 
-          # Configure ASDF
-          . $(brew --prefix asdf)/libexec/asdf.sh
+        # Configure ASDF
+        . $(brew --prefix asdf)/libexec/asdf.sh
 
-          # Colima and Docker https://stackoverflow.com/a/72560928/6611169
-          export DOCKER_HOST="unix://$HOME/.colima/docker.sock"
+        # Colima and Docker https://stackoverflow.com/a/72560928/6611169
+        export DOCKER_HOST="unix://$HOME/.colima/docker.sock"
 
-          # Aliases
-          source ~/.config/aliases/kubectl_aliases
+        # Aliases
+        source ~/.config/aliases/kubectl_aliases
 
 
-          # This function, `rnix`, is used to run a program within a Nix shell.
-          function rnix() {
-            local program="''${1}"
-            local shell="''${2}"
+        # This function, `rnix`, is used to run a program within a Nix shell.
+        function rnix() {
+          local program="''${1}"
+          local shell="''${2}"
 
-            if [ -z "''${shell}" ]; then
-              shell="zsh"
-            fi
+          if [ -z "''${shell}" ]; then
+            shell="zsh"
+          fi
 
-            if [ "''${shell}" = "zsh" ]; then
-              nix-shell --run zsh -p "''${program}" --run "''${program}"
-            else
-              nix-shell --run "''${shell}" -p "''${program}" --run "''${program}"
-            fi
-          }
+          if [ "''${shell}" = "zsh" ]; then
+            nix-shell --run zsh -p "''${program}" --run "''${program}"
+          else
+            nix-shell --run "''${shell}" -p "''${program}" --run "''${program}"
+          fi
+        }
 
-    # To always Warpify the subshell for this command, add the following command to the end of your .zshrc:
-    printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh" }}\x9c'
+        # To always Warpify the subshell for this command, add the following command to the end of your .zshrc:
+        printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh" }}\x9c'
 
     '';
 
