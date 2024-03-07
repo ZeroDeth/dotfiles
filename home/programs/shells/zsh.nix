@@ -108,10 +108,27 @@ in
           # Aliases
           source ~/.config/aliases/kubectl_aliases
 
-          # To always Warpify the subshell for this command, add the following command to the end of your .zshrc:
-          printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh" }}\x9c'
 
-      '';
+          # This function, `rnix`, is used to run a program within a Nix shell.
+          function rnix() {
+            local program="''${1}"
+            local shell="''${2}"
+
+            if [ -z "''${shell}" ]; then
+              shell="zsh"
+            fi
+
+            if [ "''${shell}" = "zsh" ]; then
+              nix-shell --run zsh -p "''${program}" --run "''${program}"
+            else
+              nix-shell --run "''${shell}" -p "''${program}" --run "''${program}"
+            fi
+          }
+
+    # To always Warpify the subshell for this command, add the following command to the end of your .zshrc:
+    printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh" }}\x9c'
+
+    '';
 
     oh-my-zsh = {
       enable = true;
@@ -120,5 +137,6 @@ in
       #     "common-aliases"
       #  ];
     };
+
   };
 }
