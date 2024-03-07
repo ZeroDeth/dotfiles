@@ -38,7 +38,7 @@
 
     # Active Nix Configuration in macOS
     # Run either nix run or nix develop -c just run to active your configuration
-    nrs = "nix run . switch --show-trace";
+    nrs = "nix fmt; nix run . switch --show-trace";
     nhealth = "nix run nixpkgs#nix-health";
 
     hmsb = "home-manager switch -b backup";
