@@ -63,7 +63,7 @@
     # Once I pick the version of python I want, I use virtual environments and continue my normal workflow.
     # The following aliases help quickly setup/destroy environments:
     vin = "virtualenv .venv && source .venv/bin/activate";
-    vout = " deactivate && rm -rf .venv";
+    vout = "deactivate && rm -rf .venv";
 
     # `.aliases` is used to provide custom variables.
     #
