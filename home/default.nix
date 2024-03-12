@@ -170,6 +170,7 @@ in
     cheat
     python3
     pre-commit
+    # checkov # homebrew
     chezmoi
     shellcheck
     thefuck
