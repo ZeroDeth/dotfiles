@@ -145,7 +145,8 @@ in
     nodejs-18_x
     yarn
 
-    go_1_20
+    # go
+    # go_1_20
     gopls
 
     fish
