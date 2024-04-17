@@ -142,7 +142,7 @@ in
 
     helix
 
-    nodejs-18_x
+    nodejs_18
     yarn
 
     ## Platform-non-specific Go (for local development)
