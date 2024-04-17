@@ -145,9 +145,18 @@ in
     nodejs-18_x
     yarn
 
+    ## Platform-non-specific Go (for local development)
     # go
-    # go_1_20
-    gopls
+    # go_1_22
+    # gopls
+    # goimports
+    # godoc
+    gotests
+    gomodifytags
+    impl
+    golint
+    gotools
+    golangci-lint # https://github.com/golangci/golangci-lint
 
     fish
     vscode
