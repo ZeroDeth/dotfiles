@@ -115,25 +115,28 @@ in
   ## Search for packages here: https://search.nixos.org/packages
   home.packages = with pkgs; [
     ## Unix tools
-    ripgrep   # Better `grep`
+    ripgrep # Better `grep`
     fd
     sd
     tree
 
     ## Nix dev
     cachix
-    nil   # Nix language server
+    nil # Nix language server
     nix-info
     nixpkgs-fmt
     nixci
-    grc   # Generic Colouriser
+    grc # Generic Colouriser
     nix-health
-
-    fh
+    lorri
+    niv
+    statix
+    vulnix
+    fh # https://flakehub.com
 
     ## Dev
     just
-    lazygit   # Better git UI
+    lazygit # Better git UI
     tmate
 
     ## Me
@@ -156,7 +159,7 @@ in
     impl
     golint
     gotools
-    golangci-lint   # https://github.com/golangci/golangci-lint
+    golangci-lint # https://github.com/golangci/golangci-lint
 
     fish
     vscode
