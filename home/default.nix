@@ -110,33 +110,33 @@ in
     "/opt/homebrew/sbin"
   ];
 
-  # Nix packages to install to $HOME
+  ## Nix packages to install to $HOME
   #
-  # Search for packages here: https://search.nixos.org/packages
+  ## Search for packages here: https://search.nixos.org/packages
   home.packages = with pkgs; [
-    # Unix tools
-    ripgrep # Better `grep`
+    ## Unix tools
+    ripgrep   # Better `grep`
     fd
     sd
     tree
 
-    # Nix dev
+    ## Nix dev
     cachix
-    nil # Nix language server
+    nil   # Nix language server
     nix-info
     nixpkgs-fmt
     nixci
-    grc # Generic Colouriser
+    grc   # Generic Colouriser
     nix-health
 
     fh
 
-    # Dev
+    ## Dev
     just
-    lazygit # Better git UI
+    lazygit   # Better git UI
     tmate
 
-    # Me
+    ## Me
     gnupg
     pinentry_mac
 
@@ -156,7 +156,7 @@ in
     impl
     golint
     gotools
-    golangci-lint # https://github.com/golangci/golangci-lint
+    golangci-lint   # https://github.com/golangci/golangci-lint
 
     fish
     vscode
@@ -172,7 +172,7 @@ in
     duf
     thefuck
 
-    # glab # GLab is an open source GitLab CLI tool that brings GitLab to your command line.
+    # glab   # GLab is an open source GitLab CLI tool that brings GitLab to your command line.
     act
 
     yq-go
@@ -180,7 +180,7 @@ in
     cheat
     python3
     pre-commit
-    # checkov # homebrew
+    # checkov   # homebrew
     chezmoi
     shellcheck
     thefuck
@@ -200,7 +200,7 @@ in
     colima
     lima
 
-    # Kubernetes
+    ## Kubernetes
     # k9s
 
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
