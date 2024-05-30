@@ -225,5 +225,10 @@
     ## Download kitty themes "git clone https://github.com/dexpota/kitty-themes ~/.config/kitty/themes"
     kthemes = "cd ~/.config/kitty/themes && fzf --preview 'head -n 40 {} && kitty @ --to unix:/tmp/kitty set-colors -a -c {}'; cd -";
 
+    # === Terraform ===
+
+    tfplan = "terraform fmt; terraform init; terraform plan -out=tfplan; tf-summarize tfplan";
+    tfstate = "terraform state list > tfstate.list";
+
   };
 }
