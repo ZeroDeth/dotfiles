@@ -44,6 +44,7 @@
       config = {
         global.load_dotenv = true;
         global.strict_env = true;
+        global.hide_env_diff = true;
         global.warn_timeout = "400ms";
       };
     };
