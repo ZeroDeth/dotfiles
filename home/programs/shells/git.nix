@@ -162,5 +162,19 @@
     # };
     # };
 
+    # Better git UI
+    lazygit = {
+      enable = true;
+      settings = {
+        # This looks better with the kitty theme.
+        gui.theme = {
+          lightTheme = false;
+          activeBorderColor = [ "white" "bold" ];
+          inactiveBorderColor = [ "white" ];
+          selectedLineBgColor = [ "reverse" "white" ];
+        };
+      };
+    };
+
   };
 }

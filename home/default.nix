@@ -136,7 +136,6 @@ in
 
     ## Dev
     just
-    lazygit # Better git UI
     tmate
 
     ## Me
