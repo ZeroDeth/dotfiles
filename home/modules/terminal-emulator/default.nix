@@ -5,6 +5,7 @@
     ./alacritty
     ./kitty
     ./wezterm
+    # ./nushell # Under development
   ];
 
 }
