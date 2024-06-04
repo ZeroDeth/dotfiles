@@ -36,7 +36,7 @@
                 owner = "derailed";
                 repo = "k9s";
                 rev = "v${version}";
-                sha256 ="sha256-yPSAHqnGdLW2a2TCR7HPl8e5WlG+ruHwITATtivtBnw=";
+                sha256 = "sha256-yPSAHqnGdLW2a2TCR7HPl8e5WlG+ruHwITATtivtBnw=";
               };
             in
             super.k9s.override rec {
@@ -91,95 +91,95 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs;
-          [
-            figlet              # Output text as big ASCII art text
-            lolcat              # Make console output raibow colored
+            [
+              figlet # Output text as big ASCII art text
+              lolcat # Make console output raibow colored
 
-            ## Platform-non-specific Go (for local development)
-            # go 1.20 (specified by overlay)
-            go
-            # gopls
-            # goimports
-            # godoc
-            gotests
-            gomodifytags
-            impl
-            golint
-            gotools
+              ## Platform-non-specific Go (for local development)
+              # go 1.20 (specified by overlay)
+              go
+              # gopls
+              # goimports
+              # godoc
+              gotests
+              gomodifytags
+              impl
+              golint
+              gotools
 
-            # https://github.com/golangci/golangci-lint
-            golangci-lint
+              # https://github.com/golangci/golangci-lint
+              golangci-lint
 
-            ## Docker CLI
-            # docker
-            # docker-compose
+              ## Docker CLI
+              # docker
+              # docker-compose
 
-            ## Podman CLI
-            # podman
-            # podman-compose
+              ## Podman CLI
+              # podman
+              # podman-compose
 
-            ## Kubernetes
-            # kubectl
-            kubectx
-            kustomize
-            # kubernetes-helm
-            # helm-docs
-            # linkerd
-            # velero
-            # tracee
-            # cilium-cli
-            # kubeshark
-            # kind
-            # k3d
-	          # k0s
-	          # microk8s
-            # kubebuilder
-            # cdebug
+              ## Kubernetes
+              # kubectl
+              kubectx
+              kustomize
+              # kubernetes-helm
+              # helm-docs
+              # linkerd
+              # velero
+              # tracee
+              # cilium-cli
+              # kubeshark
+              # kind
+              # k3d
+              # k0s
+              # microk8s
+              # kubebuilder
+              # cdebug
 
-            ## cluster management tool
-            # k9s                  #v0.32.4 #TODO: installed by brew
-            # lens
-	          # octant
-            # krew
-            # kubecolor            #TODO: nixos-unstable has this, update channel to use it.
-            # timoni
+              ## cluster management tool
+              # k9s                  #v0.32.4 #TODO: installed by brew
+              # lens
+              # octant
+              # krew
+              # kubecolor            #TODO: nixos-unstable has this, update channel to use it.
+              # timoni
 
-            ## Argo
-            # argo
-            # argocd
-            # argo-rollouts
+              ## Argo
+              # argo
+              # argocd
+              # argo-rollouts
 
-            ## HashiCorp
-            # vault
+              ## HashiCorp
+              # vault
 
-            ## Terraform
-            # terraform
-            terraform-ls
-            tflint
-            terraform-docs           #0.16.0
-            tfsec
-            # terrascan
-            # infracost                #v0.10.32
-            # terraformer
-            graphviz
-            gawk
+              ## Terraform
+              # terraform
+              terraform-ls
+              tflint
+              terraform-docs #0.16.0
+              tfsec
+              # terrascan
+              # infracost                #v0.10.32
+              # terraformer
+              graphviz
+              gawk
 
-            ## Code tools
-            # pre-commit
-            # checkov
+              ## Code tools
+              # pre-commit
+              # checkov
 
-            ## Google Cloud
-            # Ref: https://github.com/michielboekhoff/nixos-conf/blob/37d2a6f7b4d5c266346b270f5da5db82613eb945/hosts/kyoshi/default.nix#L19
-            # (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin google-cloud-sdk.components.cloud-build-local])
+              ## Google Cloud
+              # Ref: https://github.com/michielboekhoff/nixos-conf/blob/37d2a6f7b4d5c266346b270f5da5db82613eb945/hosts/kyoshi/default.nix#L19
+              # (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin google-cloud-sdk.components.cloud-build-local])
 
-            ## Digital Ocean
-            # doctl
+              ## Digital Ocean
+              # doctl
 
-            ## VPN #TODO: move from homebrew
-            # wireguard-go
-            # wireguard-tools
+              ## VPN #TODO: move from homebrew
+              # wireguard-go
+              # wireguard-tools
 
-          ];
+            ];
 
           shellHook = ''
             figlet "Learn" | lolcat --freq 0.5
@@ -206,7 +206,7 @@
             # echo "Cilium `${pkgs.cilium-cli}/bin/cilium version`"
             # echo "kubebuilder `${pkgs.kubebuilder}/bin/kubebuilder version`"
           '';
-      };
-    });
-  };
+        };
+      });
+    };
 }

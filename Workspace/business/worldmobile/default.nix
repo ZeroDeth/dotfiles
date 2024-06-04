@@ -2,15 +2,16 @@
 # nix develop -f node-shell.nix -c fish
 
 /*
-How to consume Python modules using pip in a virtual environment like I am used to on other Operating Systems? {#how-to-consume-python-modules-using-pip-in-a-virtual-environment-like-i-am-used-to-on-other-operating-systems}
-https://github.com/NixOS/nixpkgs/blob/master/doc/languages-frameworks/python.section.md#how-to-consume-python-modules-using-pip-in-a-virtual-environment-like-i-am-used-to-on-other-operating-systems-how-to-consume-python-modules-using-pip-in-a-virtual-environment-like-i-am-used-to-on-other-operating-systems
+  How to consume Python modules using pip in a virtual environment like I am used to on other Operating Systems? {#how-to-consume-python-modules-using-pip-in-a-virtual-environment-like-i-am-used-to-on-other-operating-systems}
+  https://github.com/NixOS/nixpkgs/blob/master/doc/languages-frameworks/python.section.md#how-to-consume-python-modules-using-pip-in-a-virtual-environment-like-i-am-used-to-on-other-operating-systems-how-to-consume-python-modules-using-pip-in-a-virtual-environment-like-i-am-used-to-on-other-operating-systems
 */
 
 with import <nixpkgs> { config.allowUnsupportedSystem = true; };
 
 let
   pythonPackages = python3Packages;
-in pkgs.mkShell rec {
+in
+pkgs.mkShell rec {
   name = "impurePythonEnv";
   venvDir = "./.venv";
   buildInputs = [
@@ -41,9 +42,9 @@ in pkgs.mkShell rec {
     google-cloud-sdk
     google-cloud-sdk-gce
     (
-            google-cloud-sdk.withExtraComponents(
-            [ google-cloud-sdk.components.gke-gcloud-auth-plugin ]
-        )
+      google-cloud-sdk.withExtraComponents (
+        [ google-cloud-sdk.components.gke-gcloud-auth-plugin ]
+      )
     )
 
     # nodejs-16_x              #v16.13.2
@@ -52,18 +53,18 @@ in pkgs.mkShell rec {
     # terraform_0_15             #0.15.5
     # terraform-full             #1.0.11
     # terraform-ls               #v0.30.1-dev   #TODO: nix profile install #nixpkgs.terraform-ls
-    terraform-docs             #0.16.0
+    terraform-docs #0.16.0
     tflint
     tfsec
     terrascan
-    infracost                   #0.9.22
+    infracost #0.9.22
     terraformer
     # checkov
     pre-commit
     graphviz
     gawk
 
-    act                  #Run your GitHub Actions locally
+    act #Run your GitHub Actions locally
 
     pkgs.kubectl
     # pkgs.minikube
@@ -74,15 +75,15 @@ in pkgs.mkShell rec {
     pkgs.k9s
     # pkgs.lens
     pkgs.krew
-    pkgs.kubecolor            #TODO: nixos-unstable has this, update channel to use it.
+    pkgs.kubecolor #TODO: nixos-unstable has this, update channel to use it.
     # pkgs.kind                    # kubernetes in docker
   ];
 
   # Run this command, only after creating the virtual environment
-#   postVenvCreation = ''
-#     unset SOURCE_DATE_EPOCH
-#     pip install -r ../requirements.txt
-#   '';
+  #   postVenvCreation = ''
+  #     unset SOURCE_DATE_EPOCH
+  #     pip install -r ../requirements.txt
+  #   '';
 
   # Now we can execute any commands within the virtual environment.
   # This is optional and can be left out to run pip manually.
