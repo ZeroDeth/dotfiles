@@ -36,11 +36,20 @@
         truncation_length = 8;
       };
 
+      username = {
+        disabled = true;
+        show_always = true;
+        style_user = "blue bold";
+        style_root = "red bold";
+        format = "[$user]($style) ";
+      };
+
       hostname = {
         disabled = false;
         style = "bold green";
         ssh_only = true;
         ssh_symbol = "🌏 ";
+        trim_at = ".local";
       };
 
       package.disabled = false;
