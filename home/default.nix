@@ -173,6 +173,7 @@ in
     # ctop
     duf
     thefuck
+    terminaltexteffects
 
     # glab   # GLab is an open source GitLab CLI tool that brings GitLab to your command line.
     act

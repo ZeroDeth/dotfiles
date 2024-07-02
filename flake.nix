@@ -12,6 +12,8 @@
 
     # see https://github.com/nix-systems/default/blob/main/default.nix
     systems.url = "github:nix-systems/default";
+
+    terminaltexteffects.url = "github:ChrisBuilds/terminaltexteffects/4ba5438e94c43ba46cf37a4edcecdcebbd18e3b2";
   };
 
   outputs = inputs:
@@ -36,6 +38,7 @@
         let
           # TODO: Change username
           myUserName = "zerodeth";
+          # terminaltexteffects = inputs.terminaltexteffects.packages.${pkgs.system}.default;
         in
         {
           legacyPackages.homeConfigurations.${myUserName} =
@@ -52,6 +55,13 @@
                 home.stateVersion = "23.11";
 
                 programs.home-manager.enable = false;
+
+                # Add this line to make terminaltexteffects available
+                nixpkgs.overlays = [
+                  (final: prev: {
+                    terminaltexteffects = inputs.terminaltexteffects.packages.${pkgs.system}.default;
+                  })
+                ];
               });
 
           formatter = pkgs.nixpkgs-fmt;
