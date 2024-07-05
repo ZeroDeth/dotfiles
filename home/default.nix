@@ -159,6 +159,7 @@ in
     golint
     gotools
     golangci-lint # https://github.com/golangci/golangci-lint
+    ko # Build and deploy Go applications
 
     fish
     vscode
@@ -196,6 +197,7 @@ in
     prettyping
     # colmena
     arkade
+    go-task # https://taskfile.dev/
 
     # ntfy-sh
 
