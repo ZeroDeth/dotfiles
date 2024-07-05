@@ -67,7 +67,10 @@
           formatter = pkgs.nixpkgs-fmt;
 
           # Enables 'nix run' to activate.
-          apps.default.program = self'.packages.activate-home;
+          apps.default = {
+            type = "app";
+            program = "${self'.packages.default}/activate";
+          };
 
           # Enable 'nix build' to build the home configuration, but without
           # activating.
