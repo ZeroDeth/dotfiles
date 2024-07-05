@@ -32,6 +32,12 @@ in
 
       # 1Password
       source ~/.config/op/plugins.sh
+
+      # gcloud components
+      # source "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc"
+
+      # For bash subshells, add to ~/.bashrc or ~/.bash_profile.
+      printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "bash"}}\x9c'
     '';
 
   };
