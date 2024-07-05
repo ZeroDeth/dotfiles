@@ -152,8 +152,8 @@
       },
       "original": {
         "owner": "ChrisBuilds",
+        "ref": "release-0.11.0",
         "repo": "terminaltexteffects",
-        "rev": "4ba5438e94c43ba46cf37a4edcecdcebbd18e3b2",
         "type": "github"
       }
     }
