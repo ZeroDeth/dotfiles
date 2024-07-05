@@ -167,6 +167,7 @@ in
     alacritty
     kitty
     wezterm
+    nushell
     byobu
     tmux
     # gtop
