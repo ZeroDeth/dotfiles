@@ -66,14 +66,18 @@
 
           formatter = pkgs.nixpkgs-fmt;
 
-          # Enables 'nix run' to activate.
-          apps.default = {
-            type = "app";
-            program = "${self'.packages.default}/activate";
+          # Enables 'nix run' to activate with additional flexibility
+          apps.default.program = pkgs.writeShellApplication {
+            name = "activate-home";
+            text = ''
+              set -e
+              echo "Activating home-manager configuration for ${myUserName}..."
+              ${self'.packages.default}/activate
+              echo "Activation complete!"
+            '';
           };
 
-          # Enable 'nix build' to build the home configuration, but without
-          # activating.
+          # Enable 'nix build' to build the home configuration, but without activating.
           packages.default = self'.legacyPackages.homeConfigurations.${myUserName}.activationPackage;
 
           devShells.default = pkgs.mkShell {
