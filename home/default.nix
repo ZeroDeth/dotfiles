@@ -108,6 +108,7 @@ in
     "$HOME/.gnupg"
     "/opt/homebrew/bin"
     "/opt/homebrew/sbin"
+    "$HOME/.local/share/mise/shims"
   ];
 
   ## Nix packages to install to $HOME
@@ -131,7 +132,7 @@ in
     lorri
     niv
     statix
-    vulnix
+    # vulnix
     fh # https://flakehub.com
 
     ## Dev
@@ -148,7 +149,7 @@ in
     yarn
 
     ## Platform-non-specific Go (for local development)
-    # go
+    # go # Installed by mise
     # go_1_22
     # gopls
     # goimports
