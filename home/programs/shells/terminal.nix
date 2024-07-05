@@ -38,9 +38,7 @@
     # https://zero-to-flakes.com/direnv
     direnv = {
       enable = true;
-      nix-direnv = {
-        enable = true;
-      };
+      nix-direnv.enable = true;
       config = {
         global.load_dotenv = true;
         global.strict_env = true;
