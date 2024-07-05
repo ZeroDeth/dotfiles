@@ -28,7 +28,9 @@
 
     eza = {
       enable = true;
-      enableAliases = true;
+      enableBashIntegration = false;
+      enableZshIntegration = true;
+      enableFishIntegration = true;
       extraOptions = [
         "--group-directories-first"
         "--header"
@@ -112,6 +114,8 @@
     # rtx deprecated and replaced with mise https://mise.jdx.dev/demo.html
     mise = {
       enable = true;
+      enableZshIntegration = true;
+      enableFishIntegration = true;
       #      settings = {
       #        settings = {
       #          verbose = false;
