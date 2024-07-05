@@ -22,10 +22,7 @@ in
 
     # shellAliases = config.programs.fish.shellAliases;
     enableCompletion = true;
-    enableAutosuggestions = true;
-    syntaxHighlighting = {
-      enable = true;
-    };
+    autosuggestion.enable = true;
     defaultKeymap = "emacs";
     history = {
       size = 10000;
