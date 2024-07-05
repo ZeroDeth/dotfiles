@@ -49,6 +49,24 @@ in
           sha256 = "0za4aiwwrlawnia4f29msk822rj9bgcygw6a8a6iikiwzjjz0g91";
         };
       }
+      {
+        name = "fzf-tab";
+        src = pkgs.fetchFromGitHub {
+          owner = "Aloxaf";
+          repo = "fzf-tab";
+          rev = "bf3ef5588af6d3bf7cc60f2ad2c1c95bca216241";
+          sha256 = "sha256-0/YOL1/G2SWncbLNaclSYUz7VyfWu+OB8TYJYm4NYkM=";
+        };
+      }
+      {
+        name = "fzf-forgit";
+        src = pkgs.fetchFromGitHub {
+          owner = "wfxr";
+          repo = "fzf-forgit";
+          rev = "b35b309ce57062d301a2036a5fd3c149ad2d62f4";
+          sha256 = "sha256-XZeLF0YwUl8N8j8tRRU1QVd8tenTDorZyAHItCE4Jlw=";
+        };
+      }
     ];
 
     completionInit =
@@ -130,10 +148,10 @@ in
 
     oh-my-zsh = {
       enable = true;
-      #   plugins = [
-      #     "git"
-      #     "common-aliases"
-      #  ];
+      # plugins = [
+      # "git"
+      # "common-aliases"
+      # ];
     };
 
   };
