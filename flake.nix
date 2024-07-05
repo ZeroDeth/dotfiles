@@ -13,7 +13,7 @@
     # see https://github.com/nix-systems/default/blob/main/default.nix
     systems.url = "github:nix-systems/default";
 
-    terminaltexteffects.url = "github:ChrisBuilds/terminaltexteffects/4ba5438e94c43ba46cf37a4edcecdcebbd18e3b2";
+    terminaltexteffects.url = "github:ChrisBuilds/terminaltexteffects/release-0.11.0";
   };
 
   outputs = inputs:
