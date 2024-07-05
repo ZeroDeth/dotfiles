@@ -46,9 +46,10 @@
         # golang 1.18.9
         # golang 1.19.12
         # golang 1.20.6
-        golang 1.22.2
+        # golang 1.22.2
+        golang 1.22.5
         # neovim nightly
-        terraform 1.4.2
+        # terraform 1.4.2
         terraform 1.4.7
         terraform 1.5.7
         # terraform-validator 3.1.3
