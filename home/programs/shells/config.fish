@@ -158,10 +158,10 @@ set -gx PATH $PATH $HOME/.krew/bin
 # Warp - Rust-based terminal with AI
 #-------------------------------------------------------------------------------
 #
-# For fish subshells.
-# if status is-interactive
-#     printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "fish"}}\x9c'
-# end
+# For fish subshells, add to ~/.config/fish/config.fish.
+if status is-interactive
+    printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "fish"}}\x9c'
+end
 
 #-------------------------------------------------------------------------------
 # Aliases
