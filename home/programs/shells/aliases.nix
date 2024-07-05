@@ -227,7 +227,11 @@
 
     # === Terraform ===
 
-    tfplan = "terraform fmt; terraform init; terraform plan -out=tfplan; tf-summarize tfplan";
+    tfplan = "terraform fmt; terraform init; terraform plan -out=tfplan && tf-summarize tfplan";
+    tfapply = "terraform fmt; terraform apply";
+    tfout = "terraform output";
+    tfshow = "terraform show";
+    tfconsole = "terraform console";
     tfstate = "terraform state list > tfstate.list";
 
   };
