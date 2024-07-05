@@ -52,7 +52,7 @@
                 imports = [ ./home ];
                 home.username = myUserName;
                 home.homeDirectory = "/${if pkgs.stdenv.isDarwin then "Users" else "home"}/${myUserName}";
-                home.stateVersion = "23.11";
+                home.stateVersion = "23.11"; # TODO: Update to 24.05
 
                 programs.home-manager.enable = false;
 
@@ -61,6 +61,7 @@
                   (final: prev: {
                     terminaltexteffects = inputs.terminaltexteffects.packages.${pkgs.system}.default;
                   })
+                  (import ./home/overlays)
                 ];
               });
 

@@ -207,6 +207,7 @@ in
 
     ## Kubernetes
     # k9s
+    ksctl # TODO: Overlays not working
 
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
