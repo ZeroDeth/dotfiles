@@ -90,6 +90,7 @@
         "*.direnv"
         "*.idea"
         ".mise.toml"
+        ".monokie"
       ];
     };
 
