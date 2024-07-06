@@ -1,5 +1,5 @@
 # Better managaement https://github.com/srid/nixos-config/blob/master/home/default.nix
-{ flake, pkgs, misc, lib, config, ... }:
+{ flake, pkgs, pkgs-stable, lib, config, ... }:
 
 let
   # Symlink macOS apps installed via Nix into ~/Applications
@@ -18,6 +18,12 @@ let
   '';
   scripts = [
     nix-symlink-apps-macos
+  ];
+
+  stable-packages = with pkgs-stable; [
+    # Your stable packages here
+    nh
+
   ];
 
 in
@@ -115,6 +121,8 @@ in
   #
   ## Search for packages here: https://search.nixos.org/packages
   home.packages = with pkgs; [
+    # Your unstable packages
+
     ## Unix tools
     ripgrep # Better `grep`
     fd
@@ -211,7 +219,7 @@ in
     ksctl # TODO: Overlays not working
 
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
-  ];
+  ] ++ stable-packages;
 
   fonts.fontconfig.enable = true;
 

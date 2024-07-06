@@ -147,6 +147,9 @@ funcsave fish_greeting
 # Setup the DOCKER_HOST for Colima
 set -gx DOCKER_HOST "unix://$HOME/.colima/docker.sock"
 
+# gcloud components
+# set -gx PATH $PATH (brew --prefix)/share/google-cloud-sdk/bin
+
 #-------------------------------------------------------------------------------
 # Kubernetes
 #-------------------------------------------------------------------------------

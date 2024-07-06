@@ -4,8 +4,12 @@
   inputs = {
     # Principle inputs (updated by `nix run .#update`)
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixos-flake.url = "github:srid/nixos-flake";
@@ -34,11 +38,13 @@
         };
       };
 
-      perSystem = { self', pkgs, ... }:
+      perSystem = { self', pkgs, system, ... }:
         let
-          # TODO: Change username
           myUserName = "zerodeth";
-          # terminaltexteffects = inputs.terminaltexteffects.packages.${pkgs.system}.default;
+          pkgs-stable = import inputs.nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
         in
         {
           legacyPackages.homeConfigurations.${myUserName} =
@@ -52,14 +58,14 @@
                 imports = [ ./home ];
                 home.username = myUserName;
                 home.homeDirectory = "/${if pkgs.stdenv.isDarwin then "Users" else "home"}/${myUserName}";
-                home.stateVersion = "23.11"; # TODO: Update to 24.05
+                home.stateVersion = "23.11";
 
-                programs.home-manager.enable = false;
+                # Pass stable packages to the configuration
+                _module.args.pkgs-stable = pkgs-stable;
 
-                # Add this line to make terminaltexteffects available
                 nixpkgs.overlays = [
                   (final: prev: {
-                    terminaltexteffects = inputs.terminaltexteffects.packages.${pkgs.system}.default;
+                    terminaltexteffects = inputs.terminaltexteffects.packages.${system}.default;
                   })
                   (import ./home/overlays)
                 ];
