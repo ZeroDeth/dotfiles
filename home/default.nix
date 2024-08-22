@@ -70,7 +70,6 @@ let
     ko # Build and deploy Go applications
 
     fish
-    vscode
     iterm2
     alacritty
     kitty
@@ -123,6 +122,7 @@ let
   stable-packages = with pkgs-stable; [
 
     nh
+    vscode
 
   ];
 
