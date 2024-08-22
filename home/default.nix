@@ -156,6 +156,7 @@ in
         # status: https://mirrors.ustc.edu.cn/status/
         # "https://mirrors.ustc.edu.cn/nix-channels/store"
 
+        "https://cache.flox.dev"
         "https://cache.nixos.org"
         "https://nix-community.cachix.org"
         "https://nix-gaming.cachix.org"
@@ -166,6 +167,7 @@ in
 
       trusted-public-keys = [
         # the default public key of cache.nixos.org, it's built-in, no need to add it here
+        "flox-cache-public-1:7F4OyH7ZCnFhcze3fJdfyXYLQw/aV7GEed86nQ7IsOs="
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
@@ -227,7 +229,8 @@ in
   home.packages =
     unstable-packages
     ++ stable-packages
-    ++ other-packages;
+    ++ other-packages
+    ++ [ flake.inputs.flox.packages.${pkgs.system}.default ]; # Add this line
 
   fonts.fontconfig.enable = true;
 

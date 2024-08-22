@@ -18,6 +18,8 @@
     systems.url = "github:nix-systems/default";
 
     terminaltexteffects.url = "github:ChrisBuilds/terminaltexteffects/release-0.11.0";
+
+    flox.url = "github:flox/flox/v1.3.0";
   };
 
   outputs = inputs:
