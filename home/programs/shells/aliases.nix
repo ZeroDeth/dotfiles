@@ -105,12 +105,12 @@
     # d='dirs -v | head -10'
 
     ## Show only hidden files in Terminal
-    lh = "${pkgs.eza}/bin/eza -ld .?*";
+    lh = "${pkgs.eza}/bin/eza -ld .?* | ${pkgs.terminaltexteffects}/bin/tte waves";
     #   ls = "${pkgs.eza}/bin/eza";
     #   ll = "${pkgs.eza}/bin/eza -l";
     #   la = "${pkgs.eza}/bin/eza --long --all --group --header --group-directories-first --sort=type --icons";
     #   lla = "${pkgs.eza}/bin/eza -la";
-    lgit = "${pkgs.eza}/bin/eza --long --all --group --header --git";
+    lgit = "${pkgs.eza}/bin/eza --long --all --group --header --git | ${pkgs.terminaltexteffects}/bin/tte slide";
     #   lt = "${pkgs.eza}/bin/eza --long --all --group --header --tree --level ";
 
     ## Terminal Trash
