@@ -2,37 +2,16 @@
 
 add_newline = true
 
-[character]
-success_symbol = '[➜](bold green)'
-error_symbol = '[✗](bold red) '
-
-[package]
-disabled = true
-
-[cmd_duration]
-min_time = 5000
-format = 'underwent [$duration](bold yellow)'
-
-[aws]
-disabled = true
-
-[azure]
-format = 'on [$symbol($subscription)]($style) '
-disabled = true
-
-[gcloud]
-disabled = true
-
-[directory]
-truncate_to_repo = true
-
-[docker_context]
-disabled = true
-
 [git_branch]
+disabled = false
+symbol = " "
+style = "bold purple"
+always_show_remote = true
+only_attached = false
 ignore_branches = ['master', 'main']
 
 [git_status]
+disabled = false
 conflicted = '🏳'
 ahead = '🏎💨'
 behind = '😰'
@@ -44,18 +23,109 @@ modified = '📝'
 staged = '[++\($count\)](green)'
 renamed = '👅'
 deleted = '🗑'
+
+[time]
+disabled = true
+use_12hr = true
+time_format = "%T"
+utc_time_offset = "local"
+
+[directory]
+style = "blue"
+truncate_to_repo = true
+truncation_length = 8
+
+[username]
+disabled = true
+format = "[$user]($style) "
+show_always = true
+style_user = "blue bold"
+style_root = "red bold"
+
+[hostname]
+disabled = false
+style = "bold green"
+ssh_only = true
+ssh_symbol = "🌏 "
+trim_at = ".local"
+
+[package]
+disabled = false
+
+[cmd_duration]
+min_time = 5000
+#format = 'underwent [$duration](bold yellow)'
+
+[sudo]
 disabled = false
 
 [golang]
-disabled = true
+disabled = false
+
+[python]
+disabled = false
+
+[ruby]
+disabled = false
+
+[docker_context]
+disabled = false
 
 [kubernetes]
 disabled = false
 
+[[kubernetes.contexts]]
+# Using capture groups
+# Contexts from GKE, AWS and other cloud providers usually carry additional information, like the region/zone.
+# The following entry matches on the GKE format (`gke_projectname_zone_cluster-name`)
+# and renames every matching kube context into a more readable format (`gke-cluster-name`):
+context_pattern = "gke_.*_(?P<cluster>[\\w-]+)"
+context_alias = "gke-$cluster"
+
+[aws]
+disabled = true
+
+[azure]
+disabled = true
+format = 'on [$symbol$account(@$domain)(\($project\))]($style) '
+
+[gcloud]
+disabled = false
+format = '[$symbol$active]($style) '
+symbol = "☁️ "
+style = "bold yellow"
+
+[gcloud.region_aliases]
+europe-west1 = "ew1"
+europe-west2 = "ew2"
+
+[gcloud.project_aliases]
+management = " mgmt"
+production-core = " prd-core"
+staging-core = " stg-core"
+testing-core = " tst-core"
+production-earth = " mainnet-earth"
+staging-earth = " stg-earth"
+testing-earth = " testnet-earth"
+staging-token = " stg-token"
+production-token = " prd-token"
+tm-signer-staging-3848a689 = " signer-sherif"
+
 [nix_shell]
 disabled = false
-impure_msg = 'devbox'
-format = 'via [$symbol$state](bold blue) '
+format = "via [$symbol$state](bold blue) "
+heuristic = false
+impure_msg = "impure" # devbox
+pure_msg = "pure"
 
-[sudo]
-disabled = false
+[direnv]
+disabled = true
+
+[terraform]
+disabled = true
+format = '[🏎💨 $workspace]($style) '
+
+[pulumi]
+disabled = true
+symbol = '🛥 '
+format = '[$symbol$stack]($style) '

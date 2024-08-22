@@ -76,6 +76,7 @@ let
     kitty
     wezterm
     nushell
+    starship
     byobu
     tmux
     # gtop
