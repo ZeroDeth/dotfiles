@@ -131,6 +131,7 @@ let
   other-packages = pkgs: inputs: with pkgs; [
 
     (getDefaultPackage inputs.flox)
+    (getDefaultPackage inputs.talhelper)
 
     ksctl # TODO: Overlays not working
 

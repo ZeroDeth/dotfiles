@@ -20,6 +20,10 @@
     terminaltexteffects.url = "github:ChrisBuilds/terminaltexteffects/release-0.11.0";
 
     flox.url = "github:flox/flox/v1.3.0";
+
+    # talhelper is a tool to help creating Talos configuration files declaratively
+    talhelper.url = "github:budimanjojo/talhelper";
+
   };
 
   outputs = inputs:
@@ -90,7 +94,7 @@
           packages.default = self'.legacyPackages.homeConfigurations.${myUserName}.activationPackage;
 
           devShells.default = pkgs.mkShell {
-            name = "nix-zero-home";
+            name = "nix-0home";
             nativeBuildInputs = with pkgs; [ just ];
           };
         };
