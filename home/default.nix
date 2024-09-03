@@ -16,6 +16,8 @@ let
       ln -s $app ~/Applications/$(basename $app)
     done
   '';
+  getDefaultPackage = input: input.packages.${pkgs.system}.default;
+
   scripts = [
     nix-symlink-apps-macos
   ];
@@ -126,7 +128,9 @@ let
 
   ];
 
-  other-packages = with pkgs; [
+  other-packages = pkgs: inputs: with pkgs; [
+
+    (getDefaultPackage inputs.flox)
 
     ksctl # TODO: Overlays not working
 
@@ -229,8 +233,8 @@ in
   home.packages =
     unstable-packages
     ++ stable-packages
-    ++ other-packages
-    ++ [ flake.inputs.flox.packages.${pkgs.system}.default ]; # Add this line
+    ++ (other-packages pkgs flake.inputs)
+    ++ scripts;
 
   fonts.fontconfig.enable = true;
 
