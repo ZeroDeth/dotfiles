@@ -36,6 +36,9 @@ in
       # gcloud components
       # source "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc"
 
+      # Activate flox environment
+      eval "$(flox activate --dir ~)"
+
       # For bash subshells, add to ~/.bashrc or ~/.bash_profile.
       printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "bash"}}\x9c'
     '';

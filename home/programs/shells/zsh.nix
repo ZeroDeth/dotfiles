@@ -144,7 +144,10 @@ in
           fi
         }
 
-        # To always Warpify the subshell for this command, add the following command to the end of your .zshrc:
+        # Activate flox environment
+        eval "$(flox activate --dir ~)"
+
+        # To always Warpify the subshell
         printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh" }}\x9c'
 
     '';

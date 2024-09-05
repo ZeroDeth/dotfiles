@@ -230,3 +230,6 @@ source ~/.config/op/plugins.sh
 # Configure ASDF
 # Hook direnv into your shell.
 # eval "$($ASDF_DIRENV_BIN hook fish)"
+
+# Activate flox environment
+eval "$(flox activate --dir ~)"
