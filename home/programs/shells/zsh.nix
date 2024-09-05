@@ -128,6 +128,9 @@ in
         source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
         source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
+        # krew
+        export PATH="''${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
         # This function, `rnix`, is used to run a program within a Nix shell.
         function rnix() {
           local program="''${1}"

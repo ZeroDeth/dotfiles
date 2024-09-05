@@ -155,7 +155,8 @@ set -gx DOCKER_HOST "unix://$HOME/.colima/docker.sock"
 #-------------------------------------------------------------------------------
 # Krew is the plugin manager for kubectl command-line tool.
 # Show a tree of object hierarchies through ownerReferences.
-set -gx PATH $PATH $HOME/.krew/bin
+set -q KREW_ROOT
+set -gx PATH $PATH $KREW_ROOT/.krew/bin
 
 #-------------------------------------------------------------------------------
 # Warp - Rust-based terminal with AI
