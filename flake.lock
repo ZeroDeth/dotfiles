@@ -118,22 +118,21 @@
         "crane": "crane",
         "fenix": "fenix",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-bear": "nixpkgs-bear",
         "nixpkgs-process-compose": "nixpkgs-process-compose",
         "pre-commit-hooks": "pre-commit-hooks",
         "sqlite3pp": "sqlite3pp"
       },
       "locked": {
-        "lastModified": 1724089105,
-        "narHash": "sha256-dnsnZKSpK8Iug70TXfUbiyoInT98koDUpv2wo9KCMP8=",
+        "lastModified": 1725379511,
+        "narHash": "sha256-RMLoTEfpI2wqkDQ/Lf/XptDBnpJjgJ2VG1dXpkAUsFs=",
         "owner": "flox",
         "repo": "flox",
-        "rev": "a37e17b959ece64c0dcfa051c48d8b01e643f621",
+        "rev": "58603026047d497dd9bb4a958a55679240cac856",
         "type": "github"
       },
       "original": {
         "owner": "flox",
-        "ref": "v1.3.0",
+        "ref": "v1.3.1",
         "repo": "flox",
         "type": "github"
       }
@@ -207,22 +206,6 @@
       "original": {
         "owner": "NixOS",
         "ref": "release-23.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-bear": {
-      "locked": {
-        "lastModified": 1705957679,
-        "narHash": "sha256-Q8LJaVZGJ9wo33wBafvZSzapYsjOaNjP/pOnSiKVGHY=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "9a333eaa80901efe01df07eade2c16d183761fa3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "release-23.05",
         "repo": "nixpkgs",
         "type": "github"
       }
