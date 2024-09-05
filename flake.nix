@@ -19,7 +19,7 @@
 
     terminaltexteffects.url = "github:ChrisBuilds/terminaltexteffects/release-0.11.0";
 
-    flox.url = "github:flox/flox/v1.3.0";
+    flox.url = "github:flox/flox/v1.3.1";
 
     # talhelper is a tool to help creating Talos configuration files declaratively
     talhelper.url = "github:budimanjojo/talhelper";
