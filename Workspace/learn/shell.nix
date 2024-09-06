@@ -41,11 +41,11 @@ pkgs.mkShell rec {
 
     google-cloud-sdk
     google-cloud-sdk-gce
-    (
-      google-cloud-sdk.withExtraComponents (
-        [ google-cloud-sdk.components.gke-gcloud-auth-plugin ]
-      )
-    )
+    # (
+    #         google-cloud-sdk.withExtraComponents(
+    #         [ google-cloud-sdk.components.gke-gcloud-auth-plugin ]
+    #     )
+    # )
 
     # nodejs-16_x              #v16.13.2
     # yarn                     #1.22.17

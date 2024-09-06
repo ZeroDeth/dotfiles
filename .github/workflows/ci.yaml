@@ -1,0 +1,20 @@
+name: "CI"
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+jobs:
+  nix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+      - uses: cachix/cachix-action@v12
+        with:
+          name: srid
+      - name: Build
+        run: |
+          nix run github:srid/nixci
+          
