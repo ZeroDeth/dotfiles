@@ -116,13 +116,6 @@
       enable = true;
       enableZshIntegration = true;
       enableFishIntegration = true;
-      #      settings = {
-      #        settings = {
-      #          verbose = false;
-      #          experimental = false;
-      #          asdf_compat = true;
-      #        };
-      #      };
     };
 
   };

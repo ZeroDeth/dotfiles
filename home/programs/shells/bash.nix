@@ -24,8 +24,6 @@ in
     bashrcExtra = ''
       export GPG_TTY="$(tty)"
       export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-      # . ${pkgs.asdf-vm}/share/bash-completion/completions/asdf.bash
-      # . ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh
 
       # Aliases
       [ -f ~/.config/aliases/kubectl_aliases ] && source ~/.config/aliases/kubectl_aliases

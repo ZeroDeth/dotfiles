@@ -227,9 +227,5 @@ source ~/.config/op/plugins.sh
 # Configure byobu //TODO: unkown command
 # status --is-login; and status --is-interactive; and exec byobu-launcher status --is-login; and status --is-interactive; and exec byobu-launcher
 
-# Configure ASDF
-# Hook direnv into your shell.
-# eval "$($ASDF_DIRENV_BIN hook fish)"
-
 # Activate flox environment
 eval "$(flox activate --dir ~)"
