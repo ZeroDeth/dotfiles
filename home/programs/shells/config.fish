@@ -172,8 +172,7 @@ end
 #-------------------------------------------------------------------------------
 #
 #
-. ~/.config/aliases/kubectl_aliases #TODO: move to shell/aliasses.nix
-# [ -f "$HOME/.config/fish/kubectl_aliases.fish" ] && . "./kubectl_aliases.fish"
+[ -f ~/.config/aliases/kubectl_aliases ] && . ~/.config/aliases/kubectl_aliases
 
 # When you miswrite command, you can just write fuck and this tool will guess command you wanted to write.
 eval (thefuck --alias | tr '\n' ';')

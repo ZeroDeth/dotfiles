@@ -113,7 +113,7 @@ in
 
         # 1Password
         #export SSH_AUTH_SOCK=~/.1password/agent.sock
-        #source ~/.config/op/plugins.sh
+        #[ -f ~/.config/op/plugins.sh ] && source ~/.config/op/plugins.sh
 
         # Configure ASDF
         # . $(brew --prefix asdf)/libexec/asdf.sh
@@ -122,7 +122,7 @@ in
         export DOCKER_HOST="unix://$HOME/.colima/docker.sock"
 
         # Aliases
-        source ~/.config/aliases/kubectl_aliases
+        [ -f ~/.config/aliases/kubectl_aliases ] && source ~/.config/aliases/kubectl_aliases
 
         # gcloud components
         source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"

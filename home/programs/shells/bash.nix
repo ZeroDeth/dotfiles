@@ -28,10 +28,10 @@ in
       # . ${pkgs.asdf-vm}/share/asdf-vm/asdf.sh
 
       # Aliases
-      source ~/.config/aliases/kubectl_aliases
+      [ -f ~/.config/aliases/kubectl_aliases ] && source ~/.config/aliases/kubectl_aliases
 
       # 1Password
-      source ~/.config/op/plugins.sh
+      [ -f ~/.config/op/plugins.sh ] && source ~/.config/op/plugins.sh
 
       # gcloud components
       # source "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc"
