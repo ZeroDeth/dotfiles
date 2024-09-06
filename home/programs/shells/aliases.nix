@@ -40,6 +40,7 @@
     # Run either nix run or nix develop -c just run to active your configuration
     nrs = "nix fmt; nix run . switch --show-trace";
     nhealth = "nix run nixpkgs#nix-health";
+    ncheck = "nix flake check --no-build --all-systems";
 
     hmsb = "home-manager switch -b backup";
 
