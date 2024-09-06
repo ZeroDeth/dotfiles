@@ -150,7 +150,7 @@ in
   nix = {
     package = pkgs.nixFlakes;
     settings = {
-      trusted-users = [ "root" "zerodeth" ];
+      trusted-users = [ "zerodeth" ];
 
       substituters = [
         # cache mirror located in China
