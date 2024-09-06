@@ -24,12 +24,6 @@ let
 
   unstable-packages = with pkgs; [
 
-    ## Unix tools # TODO: Remove and install via flox
-    # ripgrep # Better `grep`
-    # fd
-    # sd
-    # tree
-
     ## Nix dev
     cachix
     nil # Nix language server
@@ -44,13 +38,9 @@ let
     # vulnix
     fh # https://flakehub.com
 
-    ## Dev
-    # just # TODO: Remove and install via flox
-    # tmate # TODO: Remove and install via flox
-
     ## Me
     gnupg
-    pinentry_mac
+    # pinentry_mac # TODO: Investigate
 
     helix
 
@@ -63,13 +53,6 @@ let
     # gopls
     # goimports
     # godoc
-    # gotests # TODO: Remove and install via flox
-    # gomodifytags # TODO: Remove and install via flox
-    # impl # TODO: Remove and install via flox
-    # golint # TODO: Remove and install via flox
-    # gotools # TODO: Remove and install via flox
-    # golangci-lint # https://github.com/golangci/golangci-lint # TODO: Remove and install via flox
-    # ko # Build and deploy Go applications # TODO: Remove and install via flox
 
     fish
     iterm2
@@ -78,43 +61,27 @@ let
     wezterm
     nushell
     starship
-    # byobu # TODO: Remove and install via flox
-    # tmux # TODO: Remove and install via flox
     # gtop
     # btop
     # ctop
-    # duf # TODO: Remove and install via flox
-    # thefuck # TODO: Remove and install via flox
     terminaltexteffects
 
     # glab   # GLab is an open source GitLab CLI tool that brings GitLab to your command line.
-    # act # TODO: Remove and install via flox
 
     yq-go
     neofetch
     cheat
     python3
-    # pre-commit # TODO: Remove and install via flox
     chezmoi
-    # shellcheck # TODO: Remove and install via flox
-    # chatgpt-cli # TODO: Remove and install via flox
     # tree-sitter
     topgrade
-    # trash-cli # TODO: Remove and install via flox
     devbox
     prettyping
     # colmena
-    # arkade # TODO: Remove and install via flox
-    # go-task # https://taskfile.dev/ # TODO: Remove and install via flox
 
     # ntfy-sh
 
     docker
-    # colima # TODO: Remove and install via flox
-    # lima # TODO: Remove and install via flox
-
-    ## Kubernetes
-    # k9s
 
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
@@ -122,8 +89,6 @@ let
   stable-packages = with pkgs-stable; [
 
     nh
-    # vscode # TODO: Remove and install via flox
-
   ];
 
   other-packages = pkgs: inputs: with pkgs; [
