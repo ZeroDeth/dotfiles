@@ -226,6 +226,3 @@ source ~/.config/op/plugins.sh
 
 # Configure byobu //TODO: unkown command
 # status --is-login; and status --is-interactive; and exec byobu-launcher status --is-login; and status --is-interactive; and exec byobu-launcher
-
-# Activate flox environment
-eval "$(flox activate --dir ~)"
