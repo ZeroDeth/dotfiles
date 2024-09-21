@@ -147,8 +147,8 @@ in
           fi
         }
 
-        # Activate flox environment
-        eval "$(flox activate --dir ~)"
+        # Activate and trust flox environment
+        eval "$(flox activate -r ZeroDeth/macOS -t)"
 
         # To always Warpify the subshell
         printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh" }}\x9c'

@@ -50,6 +50,9 @@ in
 
       # Activate the iTerm 2 shell integration
       # "iterm2_shell_integration"
+
+      # Activate and trust flox environment
+      "eval (flox activate -r ZeroDeth/macOS -t) | source"
     ]);
 
     # Abbreviate commonly used functions
